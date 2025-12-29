@@ -1,0 +1,204 @@
+﻿Terms of Use
+Last Modified: 01/01/2024
+
+
+Acceptance of the Terms of Use
+These terms of use are entered into by and between you and kazpa.io, a Florida limited liability company ("Company," "we," or "us"). The following terms and conditions, together with any documents they expressly incorporate by reference (collectively, "Terms of Use"), govern your access to and use of Algo Trading Accelerator, including any content, functionality, and services offered on or through www.kazpa.ai (the "Platform"), whether as a guest or a registered user.
+Please read the Terms of Use carefully before you start to use the Platform. By using the Platform or by clicking to accept or agree to the Terms of Use when this option is made available to you, you accept and agree to be bound and abide by these Terms of Use and our Privacy Policy, found at https://kazpa.ai/terms-conditions/, incorporated herein by reference. If you do not want to agree to these Terms of Use or the Privacy Policy, you must not access or use the Platform. 
+This Platform is offered and available to users who are 18 years of age or older, and reside in the United States or any of its territories or possessions. By using this Platform, you represent and warrant that you are of legal age to form a binding contract with the Company and meet all of the foregoing eligibility requirements. If you do not meet all of these requirements, you must not access or use the Platform.
+If you are a representative of a legal entity and are registering an entity’s user account, you must provide documents confirming powers of attorney and the authorization to carry out corresponding legal actions on behalf of such a legal entity via the Platform. If you are an agent of an individual or legal entity and empowered by such a person to access the Platform on its behalf, you must provide documents confirming powers of attorney and authorization to carry out such corresponding legal actions.
+If, after reading these Terms of Use and the Privacy Policy, you feel that you are unable to comply with the obligations stated therein, or you do not wish to be bound by them, then you must not proceed to access or use the Platform.
+
+
+Changes to the Terms of Use
+We may revise and update these Terms of Use from time to time in our sole discretion. All changes are effective immediately when we post them, and apply to all access to and use of the Platform thereafter. 
+Your continued use of the Platform following the posting of revised Terms of Use means that you accept and agree to the changes. You are expected to check this page from time to time so you are aware of any changes, as they are binding on you. 
+
+
+Accessing the Platform and Account Security
+We reserve the right to withdraw or amend the Platform, and any service or material we provide on the Platform, in our sole discretion without notice. We will not be liable if, for any reason, all or any part of the Platform is unavailable at any time or for any period. From time to time, we may restrict access to some parts of the Platform, or the entire Platform, to users, including registered users.
+You are responsible for both:
+* Making all arrangements necessary for you to have access to the Platform.
+* Ensuring that all individuals or entities (“persons”) who access the Platform through your internet connection are aware of these Terms of Use and comply with them.
+To access the Platform and the resources it offers, you may be asked to provide certain registration details or other information. It is a condition of your use of the Platform that all the information you provide on the Platform is correct, current, and complete. You agree that all information you provide to register with the Platform or otherwise, including, but not limited to, information provided through the use of any interactive features on the Platform, is governed by our Privacy Policy (at https://kazpa.ai/terms-conditions/), and you consent to all actions we take with respect to your information consistent with our Privacy Policy.
+If you choose, or are provided with, a user name, password, or any other piece of information as part of our security procedures, you must treat such information as confidential, and you must not disclose it to any other person. You also acknowledge that your account is personal to you and agree not to provide any other person with access to this Platform or portions of it using your user name, password, or other security information. You agree to notify us immediately of any unauthorized access to or use of your user name or password or any other breach of security. You also agree to ensure that you exit from your account at the end of each session. You should use particular caution when accessing your account from a public or shared computer so that others are not able to view or record your password or other personal information.
+We have the right to disable any user name, password, or other identifier, whether chosen by you or provided by us, at any time in our sole discretion for any or no reason, including if, in our opinion, you have violated any provision of these Terms of Use.
+
+
+Intellectual Property Rights
+The Platform and its entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio, and the design, selection, and arrangement thereof) are owned by the Company, its licensors, or other providers of such material and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+These Terms of Use permit you to use the Platform for your personal, non-commercial use only. You must not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on our Platform, except as follows:
+* Your computer may temporarily store copies of such materials in RAM incidental to your accessing and viewing those materials.
+* You may store files that are automatically cached by your Web browser for display enhancement purposes.
+* If we provide desktop, mobile, or other applications for download, you may download a single copy to your computer or mobile device solely for your own personal, non-commercial use, provided you agree to be bound by our end user license agreement for such applications.
+You must not:
+* Modify copies of any materials from this site.
+* Use any illustrations, photographs, video or audio sequences, or any graphics separately from the accompanying text.
+* Delete or alter any copyright, trademark, or other proprietary rights notices from copies of materials from this site.
+You must not access or use for any commercial purposes any part of the Platform or any services or materials available through the Platform. Such prohibited use includes, but it not limited to, providing securities, commodities, futures or swaps-trading services or investment advice for compensation or otherwise holding yourself out to another person with access to the Platform as (1) a broker or dealer, as such terms are defined under the U.S. Securities Exchange Act of 1934 and applicable state securities laws, (2) an investment adviser, as defined under the U.S. Investment Advisers Act of 1940 or applicable state securities laws, or a swap dealer, futures commission merchant, commodity pool operator, commodity trading advisor, retail foreign exchange dealer, introducing broker, or associated person of the foregoing.
+If you wish to make any use of material on the Platform other than that set out in this section, please address your request to: support@kazpa.ai. 
+
+
+If you print, copy, modify, download, or otherwise use or provide any other person with access to any part of the Platform in breach of the Terms of Use, your right to use the Platform will stop immediately and you must, at our option, return or destroy (with your evidence or certification of such eradication) any copies of the materials you have made. No right, title, or interest in or to the Platform or any content on the Platform is transferred to you, and all rights not expressly granted are reserved by the Company. Any use of the Platform not expressly permitted by these Terms of Use is a breach of these Terms of Use and may violate copyright, trademark, and other laws.
+
+
+Prohibited Uses
+You may use the Platform only for lawful purposes and in accordance with these Terms of Use. You agree not to use the Platform:
+* In any way that violates any applicable federal, state, local, or international law or regulation (including, without limitation, any laws regarding the export of data or software to and from the U.S. or other countries). 
+* For the purpose of exploiting, harming, or attempting to exploit or harm minors in any way by exposing them to inappropriate content, asking for personally identifiable information, or otherwise.
+* To send, knowingly receive, upload, download, use, or re-use any material that does not comply with the Content Standards set out in these Terms of Use.
+* To transmit, or procure the sending of, any advertising or promotional material, including any "junk mail," "chain letter," "spam," or any other similar solicitation.
+* To impersonate or attempt to impersonate the Company, a Company employee, another user, or any other person or entity (including, without limitation, by using email addresses or screen names associated with any of the foregoing).
+* To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Platform, or which, as determined by us, may harm the Company or users of the Platform, or expose them to liability.
+Additionally, you agree not to:
+* Use the Platform in any manner that could disable, overburden, damage, or impair the site or interfere with any other party's use of the Platform, including their ability to engage in real time activities through the Platform.
+* Use any robot, spider, or other automatic device, process, or means to access the Platform for any purpose, including monitoring or copying any of the material on the Platform.
+* Use any manual process to monitor or copy any of the material on the Platform, or for any other purpose not expressly authorized in these Terms of Use, without our prior written consent.
+* Use any device, software, or routine that interferes with the proper working of the Platform.
+* Introduce any viruses, Trojan horses, worms, logic bombs, or other material that is malicious or technologically harmful.
+* Attempt to gain unauthorized access to, interfere with, damage, or disrupt any parts of the Platform, the server on which the Platform is stored, or any server, computer, or database connected to the Platform. 
+* Attack the Platform via a denial-of-service attack or a distributed denial-of-service attack.
+* Otherwise attempt to interfere with the proper working of the Platform.
+
+
+User Contributions
+The Platform may contain message boards, chat rooms, personal web pages or profiles, forums, bulletin boards, and other interactive features (collectively, "Interactive Services") that allow users to post, submit, publish, display, copy or transmit to other users or other persons (hereinafter, "post") content or materials (collectively, "User Contributions") on or through the Platform.
+All User Contributions must comply with the Content Standards set out in these Terms of Use.
+Any User Contribution you post to the site will be considered non-confidential and non-proprietary. By providing any User Contribution on the Platform, you grant us and our affiliates and service providers, and each of their and our respective licensees, successors, and assigns the right to use, reproduce, modify, perform, display, distribute, and otherwise disclose to third parties any such material for any purpose. 
+You represent and warrant that: 
+* You own or control all rights in and to the User Contributions that you post and have the right to grant the license granted above to us and our affiliates and service providers, and each of their and our respective licensees, successors, and assigns.
+* All of your User Contributions do and will comply with these Terms of Use. 
+You understand and acknowledge that you are responsible for any User Contributions you submit, contribute, or post and you, not the Company, have full responsibility for such content, including its legality, reliability, accuracy, and appropriateness.
+We are not responsible or liable to any third party for the content or accuracy of any User Contributions posted by you or any other user of the Platform. 
+
+
+Monitoring and Enforcement; Termination
+We have the right to:
+* Remove or refuse to post any User Contributions for any or no reason in our sole discretion.
+* Take any action with respect to any User Contribution that we deem necessary or appropriate in our sole discretion, including if we believe that such User Contribution violates the Terms of Use, including the Content Standards, infringes any intellectual property right or other right of any person or entity, threatens the personal safety of users of the Platform or the public, or could create liability for the Company.
+* Disclose your identity or other information about you to any third party who claims that material posted by you violates their rights, including their intellectual property rights or their right to privacy.
+* Take appropriate legal action, including without limitation, referral to government regulators and law enforcement bodies, for any illegal or unauthorized use of the Platform. 
+* Terminate or suspend your access to all or part of the Platform for any or no reason, including without limitation, any violation of these Terms of Use.
+Without limiting the foregoing, we have the right to cooperate fully with any government regulatory agencies, law enforcement authorities or court order requesting or directing us to disclose the identity or other information of anyone posting any materials on or through the Platform. YOU WAIVE AND HOLD HARMLESS THE COMPANY AND ITS AFFILIATES, LICENSEES, AND SERVICE PROVIDERS FROM ANY CLAIMS RESULTING FROM ANY ACTION TAKEN BY THE COMPANY/ANY OF THE FOREGOING PARTIES DURING, OR TAKEN AS A CONSEQUENCE OF, INVESTIGATIONS BY EITHER THE COMPANY/SUCH PARTIES OR GOVERNMENT REGULATORY AGENCIES OR LAW ENFORCEMENT AUTHORITIES.
+However, we cannot review all material before it is posted on the Platform, and cannot ensure prompt removal of objectionable material after it has been posted. Accordingly, we assume no liability for any action or inaction regarding transmissions, communications, or content provided by any user or third party. We have no liability or responsibility to anyone for performance or nonperformance of the activities described in this section. 
+
+
+Content Standards
+These content standards apply to any and all User Contributions and use of Interactive Services. User Contributions must in their entirety comply with all applicable federal, state, local, and international laws and regulations. Without limiting the foregoing, User Contributions must not:
+* Contain any material that is defamatory, obscene, indecent, abusive, offensive, harassing, violent, hateful, inflammatory, or otherwise objectionable.
+* Promote sexually explicit or pornographic material, violence, or discrimination based on race, sex, religion, nationality, disability, sexual orientation, or age.
+* Infringe any patent, trademark, trade secret, copyright, or other intellectual property or other rights of any other person.
+* Violate the legal rights (including the rights of publicity and privacy) of others or contain any material that could give rise to any civil or criminal liability under applicable laws or regulations or that otherwise may be in conflict with these Terms of Use and our Privacy Policy (linked above).
+* Be likely to deceive any person.
+* Promote any illegal activity, or advocate, promote, or assist any unlawful act.
+* Cause annoyance, inconvenience, or needless anxiety or be likely to upset, embarrass, alarm, or annoy any other person.
+* Impersonate any person, or misrepresent your identity or affiliation with any person or organization. 
+* Involve commercial activities or sales, such as contests, sweepstakes, and other sales promotions, barter, or advertising.
+* Give the impression that they emanate from or are endorsed by us or any other person, if this is not the case.
+
+
+Copyright Infringement
+If you believe that any User Contributions violate your copyright, please send us a notice of copyright infringement at: support@kazpa.ai. It is the policy of the Company to terminate the user accounts of repeat infringers. 
+
+
+Reliance on Information Posted
+The information presented on or through the Platform is made available solely for general information purposes and does not constitute investment or financial advice. We do not warrant the accuracy, completeness, or usefulness of this information. Any reliance you place on such information is strictly at your own risk. We disclaim all liability and responsibility arising from any reliance placed on such materials by you or any other visitor to the Platform, or by anyone who may be informed of any of its contents. We are not liable for ant loss or damage, including without limitation, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. 
+This Platform may include content provided by third parties, including materials provided by other users, bloggers, and third-party licensors, syndicators, aggregators, and/or reporting services. All statements and/or opinions expressed in these materials, and all articles and responses to questions and other content, other than the content provided by the Company, are solely the opinions and the responsibility of the person providing those materials. These materials do not necessarily reflect the opinion of the Company. We are not responsible, or liable to you or any third party, for the content or accuracy of any materials provided by any third parties.
+
+
+Risk Warning
+Before deciding to participate on the Platform, you should carefully consider your investment objectives, level or experience, and risk appetite. Do not invest money you cannot afford to lose.
+You acknowledge and understand that all investments involve risk, that losses may exceed the principal invested, and that the performance of a security, industry, sector, market, or product does not guarantee future results or returns. You are solely responsible for all investment decisions associated with your account. 
+There are risks associated with utilizing an Internet-based trading system including, but not limited to, the failure of hardware, software, and Internet connection. We are not responsible for communication failures or delays when trading via the Internet. 
+Required Disclaimer - Trading foreign exchange (“forex”) on margin carries a high level of risk, and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to invest in forex you should carefully consider your investment objectives, level of experience, and risk appetite. The possibility exists that you could sustain a loss of some or all of your initial investment and therefore you should not invest money that you cannot afford to lose. You should be aware of all the risks associated with forex trading, and seek advice from an independent financial advisor if you have any doubts.
+The purchase, sale or advice regarding forex can only be performed by persons registered with (unless exempt from registration) (i) the CFTC (futures commission merchants, introducing brokers, commodity trading advisors, commodity pool operators, retail foreign exchange dealers, and licensed associated persons of such entities), and/or (ii) the SEC (broker-dealers and/or investment advisers and their licensed associated persons), and (iii) a state regulator (each, an “Intermediary”). Neither we, nor our affiliates or associated persons involved in the production and maintenance of our products and services or this website, is an Intermediary. All purchasers of products and services referenced on this website are encouraged to consult with an investment professional regarding any trading strategy or a particular trade. We make no representation that you will or are likely to achieve profits or losses similar to those discussed on this website. The past performance of any trading system or methodology is not necessarily indicative of future results
+We emphasize that no information set forth on this website is an invitation to trade any specific investments. Trading requires risking money in pursuit of future gain. That is your decision. Do not risk any money you cannot afford to lose. This website does not take into account your own individual financial and personal circumstances. It is intended for educational purposes only and NOT as individual investment advice. Do not act on this information without advice from your investment professional, who you should expect to determine what is suitable for your particular needs and circumstances. Failure to seek detailed professional, personally-tailored advice prior to making any investment could result in actions contrary to your best interests and loss of capital.
+*CFTC RULE 4.41(b)(1)/NFA RULE 2-29 - SIMULATED OR HYPOTHETICAL PERFORMANCE RESULTS HAVE CERTAIN INHERENT LIMITATIONS. UNLIKE THE RESULTS SHOWN IN AN ACTUAL PERFORMANCE RECORD, THESE RESULTS DO NOT REPRESENT ACTUAL TRADING. ALSO, BECAUSE THESE TRADES HAVE NOT ACTUALLY BEEN EXECUTED, THESE RESULTS MAY HAVE UNDER-OR-OVER COMPENSATED FOR THE IMPACT, IF ANY, OF CERTAIN MARKET FACTORS, SUCH AS LACK OF LIQUIDITY. SIMULATED OR HYPOTHETICAL TRADING PROGRAMS IN GENERAL ARE ALSO SUBJECT TO THE FACT THAT THEY ARE DESIGNED WITH THE BENEFIT OF HINDSIGHT. NO REPRESENTATION IS BEING MADE THAT ANY ACCOUNT WILL OR IS LIKELY TO ACHIEVE PROFIT OR LOSSES SIMILAR TO THOSE BEING SHOWN.
+NO REPRESENTATION IS BEING MADE THAT ANY PERSON WILL OR IS LIKELY TO ACHIEVE PROFITS OR LOSSES SIMILAR TO THOSE SHOWN. IN FACT, THERE ARE FREQUENTLY SHARP DIFFERENCES BETWEEN HYPOTHETICAL PERFORMANCE RESULTS AND THE ACTUAL RESULTS SUBSEQUENTLY ACHIEVED BY ANY PARTICULAR TRADING PROGRAM.
+IN ADDITION, HYPOTHETICAL TRADING DOES NOT INVOLVE FINANCIAL RISK, AND NO HYPOTHETICAL TRADING RECORD CAN COMPLETELY ACCOUNT FOR THE IMPACT OF FINANCIAL RISK IN ACTUAL TRADING. FOR EXAMPLE, THE ABILITY TO WITHSTAND LOSSES OR TO ADHERE TO A PARTICULAR TRADING PROGRAM IN SPITE OF TRADING LOSSES ARE MATERIAL POINTS WHICH CAN ALSO ADVERSELY AFFECT ACTUAL TRADING RESULTS. THERE ARE NUMEROUS OTHER FACTORS RELATED TO THE MARKETS IN GENERAL OR TO THE IMPLEMENTATION OF ANY SPECIFIC TRADING PROGRAM WHICH CANNOT BE FULLY ACCOUNTED FOR IN THE PREPARATION OF HYPOTHETICAL PERFORMANCE RESULTS AND ALL OF WHICH CAN ADVERSELY AFFECT ACTUAL TRADING RESULTS.
+
+
+Orders and Instructions
+Any instruction or order given for your account, including via the Platform or using your account username and password, will be treated as being from you and fully authorized by you. You agree that we shall be entitled, but not required, to act upon any instructions given by you, including via the Platform or using your account username and password. You instruct and authorize us to rely on such instruction or order without further inquiry, and agree that we will not be liable for doing so. 
+
+
+Third-Party Vendors
+You understand and acknowledge that we may use third-party vendors to provide the software, coding, or other technology required for the Platform. You further agree and acknowledge that we are not responsible or liable for loss or damages incurred as a result of any security breaches or leaks from the third-party’s acts or omissions. 
+
+
+Account Security
+You agree not to allow any person to access your account or permit any other person to give orders or instructions on your Platform account. You are solely responsible for monitoring and safeguarding your account, access to your account, and keeping account login information safe. This includes taking all reasonable steps to avoid the loss, theft, or misuse of your account information which may be saved on a phone, tablet, laptop, or other electronic device through which you access your account. You understand and acknowledge that any loss, theft, or compromise of any such device through which you access your account (“Potential Fraudulent Event”) may result in unauthorized access to your account by third parties. We are not liable or responsible for any loss or damages resulting from a Potential Fraudulent Event and subsequent unauthorized access to your account should you fail to notify us of the Potential Fraudulent Event within 24 hours of becoming aware of the Potential Fraudulent Event. 
+
+
+Changes to the Platform
+We may update the content on this Platform from time to time, but its content is not necessarily complete or up-to-date. Any of the material on the Platform may be out of date at any given time, and we are under no obligation to update such material. 
+
+
+Information About You and Your Visits to the Platform
+All information we collect on this Platform is subject to our Privacy Policy (see link above). By using the Platform, you consent to all actions taken by us with respect to your information in compliance with the Privacy Policy. 
+
+
+Linking to the Platform and Social Media Features
+You may link to our homepage, provided you do so in a way that is fair and legal and does not damage our reputation or take advantage of it, but you must not establish a link in such a way as to suggest any form of association, approval, or endorsement on our part. 
+This Platform may provide certain social media features that enable you to:
+* Link from your own or certain third-party websites to certain content on this Platform.
+* Send emails or other communications with certain content, or links to certain content, on this Platform.
+* Cause limited portions of content on this Platform to be displayed or appear to be displayed on your own or certain third-party websites.
+You may use these features solely as they are provided by us and solely with respect to the content they are displayed with. Subject to the foregoing, you must not:
+* Establish a link from any website that is not owned by you.
+* Cause the Platform or portions of it to be displayed on, or appear to be displayed by, any other site, for example, framing, deep linking, or in-line linking.
+* Link to any part of the Platform other than the homepage.
+* Otherwise take any action with respect to the materials on this Platform that is inconsistent with any other provision of these Terms of Use.
+The website from which you are linking, or on which you make certain content accessible, must comply in all respects with the Content Standards set out in these Terms of Use.
+You agree to cooperate with us in causing any unauthorized framing or linking immediately to stop. We reserve the right to withdraw linking permission without notice.
+We may disable all or any social media features and any links at any time without notice in our discretion.
+
+
+Links from the Platform
+If the Platform contains links to other sites and resources provided by third parties, these links are provided for your convenience only. This includes links contained in advertisements, including banner advertisements and sponsored links. We have no control over the contents of those sites or resources, and accept no responsibility for them or for any loss or damage that may arise from your use of them. If you decide to access any of the third-party websites linked to this Platform, you do so entirely at your own risk and subject to the terms and conditions of use for such websites.
+
+
+Geographic Restrictions
+We make no claims that the Platform or any of its content is accessible or appropriate outside of the United States. Access to the Platform may not be legal by certain persons or in certain countries. If you access the Platform from outside the United States, you do so on your own initiative and are responsible for compliance with local laws.
+
+
+Disclaimer of Warranties
+You understand that we cannot and do not guarantee or warrant that files available for downloading from the internet or the Platform will be free of viruses or other destructive code. You are responsible for implementing sufficient procedures and checkpoints to satisfy your particular requirements for anti-virus protection and accuracy of data input and output, and for maintaining a means external to our site for any reconstruction of any lost data. TO THE FULLEST EXTENT PROVIDED BY LAW, WE WILL NOT BE LIABLE FOR ANY LOSS OR DAMAGE CAUSED BY A DISTRIBUTED DENIAL-OF-SERVICE ATTACK, VIRUSES, OR OTHER TECHNOLOGICALLY HARMFUL MATERIAL THAT MAY INFECT YOUR COMPUTER EQUIPMENT, COMPUTER PROGRAMS, DATA, OR OTHER PROPRIETARY MATERIAL DUE TO YOUR USE OF THE PLATFORM OR ANY SERVICES OR ITEMS OBTAINED THROUGH THE PLATFORM OR TO YOUR DOWNLOADING OF ANY MATERIAL POSTED ON IT, OR ON ANY PLATFORM LINKED TO IT.
+YOUR USE OF THE PLATFORM, ITS CONTENT, AND ANY SERVICES OR ITEMS OBTAINED THROUGH THE PLATFORM IS AT YOUR OWN RISK. THE PLATFORM, ITS CONTENT, AND ANY SERVICES OR ITEMS OBTAINED THROUGH THE PLATFORM ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. NEITHER THE COMPANY NOR ANY PERSON ASSOCIATED WITH THE COMPANY MAKES ANY WARRANTY OR REPRESENTATION WITH RESPECT TO THE COMPLETENESS, SECURITY, RELIABILITY, QUALITY, ACCURACY, OR AVAILABILITY OF THE PLATFORM. WITHOUT LIMITING THE FOREGOING, NEITHER THE COMPANY NOR ANYONE ASSOCIATED WITH THE COMPANY REPRESENTS OR WARRANTS THAT THE PLATFORM, ITS CONTENT, OR ANY SERVICES OR ITEMS OBTAINED THROUGH THE PLATFORM WILL BE ACCURATE, RELIABLE, ERROR-FREE, OR UNINTERRUPTED, THAT DEFECTS WILL BE CORRECTED, THAT OUR SITE OR THE SERVER THAT MAKES IT AVAILABLE ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS, OR THAT THE PLATFORM OR ANY SERVICES OR ITEMS OBTAINED THROUGH THE PLATFORM WILL OTHERWISE MEET YOUR NEEDS OR EXPECTATIONS. 
+TO THE FULLEST EXTENT PROVIDED BY LAW, THE COMPANY HEREBY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, STATUTORY, COURSE OF DEALING, COURSE OF PERFORMANCE, OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, AND FITNESS FOR PARTICULAR PURPOSE.
+THE FOREGOING DOES NOT AFFECT ANY WARRANTIES THAT CANNOT BE EXCLUDED OR LIMITED UNDER APPLICABLE LAW.
+
+
+Limitation on Liability
+TO THE FULLEST EXTENT PROVIDED BY LAW, IN NO EVENT WILL THE COMPANY, ITS AFFILIATES, OR THEIR LICENSORS, SERVICE PROVIDERS, EMPLOYEES, AGENTS, OFFICERS, OR DIRECTORS BE LIABLE FOR DAMAGES OF ANY KIND, UNDER ANY LEGAL THEORY, ARISING OUT OF OR IN CONNECTION WITH YOUR USE, OR INABILITY TO USE, THE PLATFORM, ANY PLATFORMS OR WEBSITES LINKED TO IT, ANY CONTENT ON THE PLATFORM OR SUCH OTHER WEBSITES, INCLUDING ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO, PERSONAL INJURY, PAIN AND SUFFERING, EMOTIONAL DISTRESS, LOSS OF REVENUE, LOSS OF PROFITS, LOSS OF BUSINESS OR ANTICIPATED SAVINGS, LOSS OF USE, LOSS OF GOODWILL, LOSS OF DATA, AND WHETHER CAUSED BY TORT (INCLUDING NEGLIGENCE), BREACH OF CONTRACT, OR OTHERWISE, EVEN IF FORESEEABLE. 
+THE FOREGOING DOES NOT AFFECT ANY LIABILITY THAT CANNOT BE EXCLUDED OR LIMITED UNDER APPLICABLE LAW.
+
+
+Indemnification
+You agree to defend, indemnify, and hold harmless the Company, its affiliates, licensors, and service providers, and its and their respective officers, directors, employees, contractors, agents, licensors, suppliers, successors, and assigns from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to your violation of these Terms of Use or your use of the Platform, including, but not limited to, your User Contributions, any use of the Platform's content, services, and products other than as expressly authorized in these Terms of Use, or your use of any information obtained from the Platform.
+
+
+Governing Law
+All matters relating to the Platform and these Terms of Use, and any dispute or claim arising therefrom or related thereto (in each case, including non-contractual disputes or claims), shall be governed by and construed in accordance with the internal laws of the State of Florida without giving effect to any choice or conflict of law provision or rule (whether of the State of Florida or any other jurisdiction).
+
+
+Arbitration
+Any legal suit, action, or proceeding arising out of, or related to, these Terms of Use or the Platform shall be instituted exclusively in final and binding arbitration under the Rules of Arbitration of the American Arbitration Association applying Florida law, and not as a class, collective, coordinated, mass, and/or representative action. Arbitration will preclude you from bringing any class, collective, coordinated, consolidated, mass and/or representative action against us, and also preclude you from participating or recovering relief in any current or future class, collective, coordinated, consolidated, mass, and/or representative action brought against us by someone else. Thus, the parties agree that the arbitrator shall not conduct any form of class, collective, coordinated, consolidated, mass, and/or representative arbitration, nor join, coordinate, or consolidate claims of multiple individuals against us in a single proceeding. For the avoidance of doubt, this agreement precludes from bringing or participating in any kind of class, collective, coordinated, consolidated, mass and/or representative or other kind of group, multi-plaintiff or joint action against us, other than participating in a classwide, collective, coordinated, consolidated, mass and/or representative settlement of claims.
+You agree that any dispute, claim, or controversy in any way arising out of or relating to (i) these Terms and prior versions of these Terms, or the existence, breach, termination, enforcement, interpretation, scope, waiver, or validity thereof; (ii) your access to or use of the Interactive Services at any time; and (iii) your relationship with us, will be settled by binding individual arbitration between you and us, and not in a court of law. This arbitration provision survives after your relationship with us ends. If you do not wish to be bound by this arbitration provision you must immediately cease using the Platform and you must provide notice by contacting us at the contact information provided below. 
+
+
+Limitation on Time to File Claims
+ANY CAUSE OF ACTION OR CLAIM YOU MAY HAVE ARISING OUT OF OR RELATING TO THESE TERMS OF USE OR THE PLATFORM MUST BE COMMENCED WITHIN ONE (1) YEAR AFTER THE CAUSE OF ACTION ACCRUES; OTHERWISE, SUCH CAUSE OF ACTION OR CLAIM IS PERMANENTLY BARRED.
+
+
+Waiver and Severability
+No waiver by the Company of any term or condition set out in these Terms of Use shall be deemed a further or continuing waiver of such term or condition or a waiver of any other term or condition, and any failure of the Company to assert a right or provision under these Terms of Use shall not constitute a waiver of such right or provision.
+If any provision of these Terms of Use is held by a court or other tribunal of competent jurisdiction to be invalid, illegal, or unenforceable for any reason, such provision shall be eliminated or limited to the minimum extent such that the remaining provisions of the Terms of Use will continue in full force and effect. 
+
+
+Force Majeure
+The Company shall be released from any liability for the complete or partial nonfulfilment or improper fulfillment of obligations provided by these Terms of Use if it has occurred as a result of force majeure circumstances, which are understood as any external circumstances that arose through no fault of the Company, which were not of its will, or contrary to its will and which could not be foreseen or avoided, including natural disasters (earthquakes, floods, hurricanes, destruction due to lightning, etc.), public life circumstances (military actions, public disturbances, epidemics, pandemics, strikes, etc.) that prevent or make it impossible for the Company to fulfill its obligations hereunder. The Company shall notify you by reasonable means to notify you about the existence of force majeure circumstances and their impact on the fulfillment of obligations under the Terms of Use. Force majeure shall not be the reason for your unilateral termination of these Terms of Use. The Company’s fulfillment of the Terms of Use shall be temporarily suspended during the period of force majeure circumstances and restored after their end.
+
+
+Entire Agreement
+The Terms of Use and our Privacy Policy constitute the sole and entire agreement between you and APEX CAPITAL SOLUTIONS LLC regarding the Platform and supersede all prior and contemporaneous understandings, agreements, representations, and warranties, both written and oral, regarding the Platform.

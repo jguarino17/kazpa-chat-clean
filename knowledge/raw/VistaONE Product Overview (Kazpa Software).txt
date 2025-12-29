@@ -1,0 +1,89 @@
+﻿VistaONE Product Overview (kazpa Software)
+________________
+
+
+ VistaONE – Compound Growth on Autopilot
+ A professional-grade algorithm built to grow your capital quietly and safely in the background. VistaONE trades for you—24/5—so you can focus on life.
+ VistaONE is a structured, plug-and-play trading system designed for consistency. It runs 24/5 across multiple forex pairs, executing trades based on pre-programmed logic—not emotion, signals, or guesswork.
+Whether you’re a beginner, a passive investor, or just tired of the hype, VistaONE gives you a real edge in a high-frequency market—without requiring your constant attention.
+Three feature blurbs (use icons):
+* 🔒 Long-Term Focus
+ Built to grow slowly, steadily, and safely—month after month.
+
+* 🤖 True Automation
+ Turn it on once and let it run. No babysitting, no manual trading.
+
+* 📈 Optimized Execution
+ Trades across multiple pairs using battle-tested strategies.
+
+ Proven Results. Real Compounding.
+Sample Stats Block:
+   * Starting Balance: $10,000
+
+   * Verified Profit: $56,000+
+
+   * Avg Monthly Gain: ~17%
+
+   * Max Drawdown: ~12% (adjusted)
+
+These results reflect consistent long-term growth using optimized settings. The true power lies in compounding over time.
+________________
+
+
+Section 4: Who It’s For
+Title:
+ Built for People Who Want Peace of Mind
+Subtext:
+ VistaONE is perfect for those who want to grow their money without constantly checking charts.
+Use cases (4 cards):
+      * 💼 Busy professionals who want passive capital growth
+
+      * 🧘‍♂️ Investors who don’t want to stress about entries and exits
+
+      * 💸 Traders diversifying with low-maintenance automation
+
+      * 👨‍👩‍👧‍👦 Anyone who wants to build wealth in the background
+
+________________
+
+
+Section 5: Why It Works
+Title:
+ Not Just Another Bot. This Is Engineered Compounding.
+Description:
+ Most bots blow accounts or overpromise. VistaONE doesn’t chase the market—it plays it smart, calculated, and steady.
+The strategy is structured, layered, and built with protection in mind.
+Core logic:
+         * ✅ Trades only major forex pairs
+
+         * ✅ Uses controlled basket logic with smart scaling
+
+         * ✅ Includes equity protection & auto-stop features
+
+         * ✅ Built-in safety settings for low, moderate, or aggressive growth
+
+         * ✅ Monitors the market continuously—so you don’t have to
+
+________________
+
+
+Section 6: How It Works
+
+
+ Getting Started Is Simple
+Steps (numbered):
+            1. Fund your MT5 broker account
+
+            2. Load VistaONE using our step-by-step setup guide
+
+            3. Select your preferred growth preset (Conservative, Moderate, Aggressive)
+
+            4. Activate AutoTrading
+
+            5. Monitor performance from your phone once or twice a week
+
+________________
+
+
+ Let Your Capital Work While You Focus on Life.
+ No stress. No guesswork. Just intelligent automation and consistent results.

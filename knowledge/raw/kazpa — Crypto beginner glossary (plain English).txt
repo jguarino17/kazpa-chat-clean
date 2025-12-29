@@ -1,0 +1,104 @@
+﻿kazpa — Crypto beginner glossary (plain English)
+Blockchain
+A public ledger that records all crypto transactions. Once confirmed, transactions cannot be changed.
+________________
+
+
+Wallet
+A tool that stores your crypto keys. Can be:
+* Exchange wallet (Coinbase, etc.)
+
+* Self-custody wallet
+
+________________
+
+
+Address
+A public string used to send and receive crypto (similar to an account number).
+________________
+
+
+Network
+The blockchain used to send crypto.
+Examples:
+   * ERC-20 (Ethereum)
+
+   * TRC-20 (Tron)
+
+⚠️ Asset and network must always match.
+________________
+
+
+USDT (Tether)
+A stablecoin designed to track the value of the US dollar.
+________________
+
+
+ERC-20
+A token standard on the Ethereum blockchain. Commonly used for USDT transfers.
+________________
+
+
+Gas / Network Fee
+A fee paid to process transactions on the blockchain.
+      * Varies with congestion
+
+      * Paid in the network’s native asset (e.g., ETH for ERC-20)
+
+________________
+
+
+Transaction ID (TXID)
+A unique identifier for a crypto transfer.
+Used to:
+         * Track status
+
+         * Prove a transaction occurred
+
+________________
+
+
+Confirmation
+Each block added to the blockchain confirms a transaction.
+More confirmations = more security.
+________________
+
+
+Exchange
+A platform used to buy, sell, and store crypto.
+Examples include centralized exchanges that provide tax reporting and transaction histories.
+________________
+
+
+Withdrawal Hold
+A temporary restriction preventing withdrawals.
+Common reasons:
+            * New purchases
+
+            * Account security checks
+
+________________
+
+
+Stablecoin
+A crypto asset designed to maintain a stable price (usually pegged to USD).
+________________
+
+
+Self-custody
+When you control your own wallet keys instead of an exchange holding them.
+________________
+
+
+Irreversible
+Once a crypto transaction is confirmed, it cannot be undone.
+________________
+
+
+Tax reporting
+Most exchanges provide downloadable reports that can be shared with a tax professional. Tax treatment depends on jurisdiction.
+________________
+
+
+Final reminder
+Crypto is powerful because it’s fast and global — but that power comes with responsibility. Take your time, double-check everything, and keep records.

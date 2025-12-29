@@ -1,0 +1,13 @@
+﻿Welcome back to our series on setting up your trading platform. Today, we're focusing on how to sign into your MT5 trading account. Let's dive in.
+Step 1: Retrieve Account Details:
+Start by finding the email from your broker, sent after you set up your live trading account. This email contains crucial details: your username, password, investor password, and server address. Keep this email handy as we proceed.
+Step 2: Access Your VPS:
+Next, open the Microsoft Remote Desktop app and log into your VPS. This virtual environment is where your trading platform operates 24/7.
+Step 3: Launch MT5 Terminal:
+Now, on your VPS, open the MetaTrader 4 program we installed together in a previous lesson.
+Step 4: Open a Trading Account in MT5:
+In the MT5 app, navigate to 'File' at the top left corner, then select 'Open an Account.' Here, you'll need to input your server address. Simply hit the green plus sign, search for and select your server, then click 'Next.
+Step 5: Enter Account Information:
+Choose 'Existing Trade Account,' and carefully copy the username and password from your broker's email into the corresponding fields in MT5. After entering this information, click 'OK' to proceed.
+To confirm you're successfully signed in, check for a few key indicators. The 'Trade' tab at the bottom left should display your account balance, and the connection status at the bottom right corner should show as green, indicating a stable connection to the server.
+And there you have it! You're now signed into your live trading account on the MetaTrader 5 platform, ready to navigate the financial markets. Stay tuned for our next video, where we'll guide you through downloading and activating The Wraith Bot. Happy trading!

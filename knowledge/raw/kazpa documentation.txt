@@ -1,0 +1,1366 @@
+﻿________________
+
+
+🧭 SECTION 1 — WELCOME TO KAZPA
+________________
+
+
+✅ Onboarding Checklist – Your Full Journey
+Step
+	Stage
+	Description
+	1️⃣
+	Purchase Completed
+	You’ve paid your one-time licensing fee of $10,300 USD (includes $300 processing). No monthly subscription required.
+	2️⃣
+	Member Account Created
+	Your Kazpa Member account is now active — log in to your dashboard to access documentation, downloads and support.
+	3️⃣
+	Read the Documentation
+	Go through this guide step by step to set up your environment (VPS, broker, MT5, software, etc.).
+	4️⃣
+	Fill Out License Activation Form
+	After finishing the docs, complete the short License Activation Form in your Member Dashboard.
+	5️⃣
+	Receive Your License Key (Within 24 Hours)
+	Our team verifies your info and emails your unique license key within 24 hours.
+	6️⃣
+	Download and Install Software
+	While waiting for your key, visit the Downloads page to get MT5 templates and installation files ready.
+	7️⃣
+	Activate and Run the Software
+	Once you receive your key, activate it inside MT5 and confirm the blue cap icon appears on your chart → your software is live!
+	📘 Info: You can complete every setup step before receiving your key so activation takes only minutes once delivered.
+💡 Tip: Most users finish setup in 40 – 60 minutes after downloads. While waiting for your license, use this time to read through every section and be 100 % ready to go.
+________________
+
+
+⚙️ What Kazpa Is
+Kazpa licenses automated trading software engineered for MetaTrader 5 (MT5).
+The software executes algorithmic trades based on pre-defined logic while you retain full control of your funds.
+* You connect our software to your own broker account.
+
+* Kazpa never has access to your money or credentials.
+
+* Performance depends on market conditions, broker execution, and your risk parameters.
+
+📘 Info: Kazpa’s suite includes VistaONE and VistaX — each designed for different styles of growth and risk.
+________________
+
+
+🚫 What Kazpa Is Not
+⚠️ Kazpa does not manage funds, offer financial advice, or provide trading signals.
+All software is licensed for educational use only and does not guarantee profits.
+________________
+
+
+⚖️ Risk Notice
+⚠️ Trading foreign exchange, metals and CFDs is high-risk and may result in loss of capital.
+Always trade with money you can afford to lose.
+Past performance is not indicative of future results.
+________________
+
+
+🧩 Software Overview
+VistaONE — Long-Term Compounding Software
+→ Operates on higher timeframes (H1 – H4)
+ → Focuses on low-risk, steady growth
+ → Trades less frequently and maintains longer positions
+→ Ideal for users seeking consistency and controlled exposure
+________________
+
+
+VistaX — Gold Scalping Software
+→ Trades XAUUSD (Gold) on the M5 timeframe
+ → Higher-frequency, higher-risk strategy built for precision scalps
+→ Optimized for speed and short-term volatility
+→ Best for experienced users comfortable with drawdown and margin management
+⚠️ Warning: VistaX is more aggressive than VistaONE. Use a smaller starting balance and confirm broker settings before running it.
+💡 Tip: If you’re new to automated trading, start with VistaONE first to understand behavior and execution before scaling into VistaX.
+________________
+
+
+🔧 5-Step Setup Overview
+Step
+	Task
+	Description
+	1️⃣
+	Get a VPS
+	Keeps your MT5 and Kazpa software running 24 / 5 even when your computer is off.
+	2️⃣
+	Open & Fund Your Broker Account
+	Use an MT5 broker with hedging enabled and leverage up to 1 : 500 for best performance.
+	3️⃣
+	Install MT5
+	Download MT5 from your broker, log in and enable algorithmic trading.
+	4️⃣
+	Activate Your Kazpa License
+	Retrieve your key after submitting the License Activation Form (issued within 24 hours).
+	5️⃣
+	Install the Software
+	Add VistaONE or VistaX to MT5 and confirm the blue cap icon appears in the top-right corner of your chart.
+	📸 [Screenshot: MT5 chart showing active blue cap icon = software running]
+________________
+
+
+💡 Tips for Success
+💡 Tip #1: Always test on a demo account before going live.
+💡 Tip #2: Use a clean VPS (no extra apps running) to reduce lag.
+💡 Tip #3: Keep MT5 running 24 / 5 — closing it stops the software.
+💡 Tip #4: Ensure “Auto Trading” is ON in the MT5 toolbar.
+💡 Tip #5: Choose a VPS close to your broker (< 50 ms ping) for optimal execution.
+📸 [Screenshot: MT5 toolbar with AutoTrading enabled (green highlight)]
+________________
+
+
+🧾 Summary
+You now know ✔ what Kazpa is, ✔ the difference between VistaONE and VistaX, ✔ your onboarding steps, and ✔ how to prepare for license activation.
+Next ➡️ Section 2: VPS Setup — how to choose, connect and prepare your VPS so your software runs 24 / 5 without interruption.
+________________
+
+
+🛡️ Disclaimer
+Kazpa licenses trading software only. We do not manage funds or guarantee performance.
+All information is for educational use only.
+Users are responsible for their own setup, risk management and results.
+By proceeding, you agree to Kazpa’s Terms & Conditions, Licensing Terms, Disclosures and Refund Policy.
+
+
+
+
+
+
+⚙️ SECTION 2 — VPS SETUP
+________________
+
+
+🧠 Why You Need a VPS
+Your VPS (Virtual Private Server) keeps MT5 and your Kazpa software running 24 / 5, even when your computer is off.
+Think of it as your remote trading computer — always on, always connected to your broker.
+💡 Without a VPS, MT5 stops running whenever you close your laptop or lose internet, meaning the software can’t trade or manage positions.
+________________
+
+
+✅ VPS Requirements
+Requirement
+	Recommended Minimum
+	Notes
+	Operating System
+	Windows Server 2019 or 2022
+	Must support MetaTrader 5 (MT5)
+	CPU Cores
+	2 vCPU or more
+	Higher = smoother performance
+	RAM
+	4 GB or more
+	Critical for running MT5 + software
+	Storage
+	40 GB SSD or higher
+	Faster load = better performance
+	Latency to Broker
+	Under 50 ms
+	Lower = faster order execution
+	Connection Uptime
+	99.9 % +
+	Must run continuously 24 / 5
+	________________
+
+
+🌐 Recommended VPS Providers
+Most members in the Kazpa network use ForexVPS.net due to its stability and low-latency connections to major brokers.
+⚠️ Note: Kazpa does not partner with or endorse any VPS company.
+Do your own research — choose a VPS that meets the specs above and offers a data center near your broker.
+Alternative Options:
+   * Contabo VPS
+
+   * OVHCloud VPS
+
+   * FXVM
+
+   * AccuWeb VPS
+
+💡 Tip:
+Ask your broker which data-center location is closest to their servers (e.g., London LD4, New York NY4) — then pick a VPS in that same region for best latency.
+📸 [Screenshot: Example of ForexVPS.net plan selection page]
+________________
+
+
+🖥️ Step 1 — Purchase Your VPS
+1️⃣ Visit your chosen VPS provider’s website.
+2️⃣ Choose a plan that meets or exceeds the specs above.
+3️⃣ Select Windows Server 2019 or 2022 as your operating system.
+4️⃣ After purchase, you’ll receive:
+      * VPS IP address
+
+      * Username (usually “Administrator”)
+
+      * Password
+
+📘 Info: You’ll use this information to connect via Remote Desktop Connection (RDP).
+________________
+
+
+💻 Step 2 — Connect to Your VPS
+🔹 Windows Users
+1️⃣ Press Start → Remote Desktop Connection.
+2️⃣ Enter your VPS IP address → click Connect.
+3️⃣ When prompted, enter your:
+         * Username: Administrator
+
+         * Password: (from your VPS email)
+ 4️⃣ Click OK → you’re now inside your VPS!
+
+📸 [Screenshot: Windows RDP Connection Window with IP and Username entered]
+________________
+
+
+🔹 Mac Users
+1️⃣ Download Microsoft Remote Desktop from the App Store.
+2️⃣ Open the app → click Add PC.
+3️⃣ Enter:
+            * PC Name: (your VPS IP)
+
+            * User Account: Administrator
+
+            * Password: (your VPS password)
+4️⃣ Double-click to connect → your Windows VPS desktop opens.
+
+📸 [Screenshot: Microsoft Remote Desktop App settings on Mac]
+________________
+
+
+🔐 Step 3 — Secure Your VPS
+⚠️ Security Matters — treat your VPS like your personal trading computer.
+✔ Change Your Password immediately after first login.
+✔ Disable Sleep Mode / Auto Lock (so MT5 never pauses).
+✔ Install Windows Updates manually when the market is closed.
+✔ Do not install unnecessary software — keep it clean and fast.
+💡 Tip:
+Set Windows updates to notify you first instead of auto-restarting (to prevent MT5 restarts mid-trade).
+📸 [Screenshot: Windows Settings > Power & Sleep > Set to Never]
+________________
+
+
+🧩 Step 4 — Prepare Your VPS for MT5
+1️⃣ Open Microsoft Edge (or Chrome) on the VPS.
+2️⃣ Download MT5 from your broker’s website — not from MetaQuotes directly.
+3️⃣ Install MT5 → open and log in using your broker credentials.
+4️⃣ Once connected, you’ll see:
+               * Account balance
+
+               * Market quotes
+
+               * Open charts
+
+📸 [Screenshot: MT5 terminal after successful login]
+________________
+
+
+💡 Connection Tip
+In MT5 → Tools > Options > Server, check your ping to the broker.
+Lower is better — ideally under 50 ms.
+If your ping is high:
+➡ Move your VPS region closer to the broker’s data center.
+➡ Contact your VPS provider for assistance.
+📸 [Screenshot: MT5 Server Ping Status Window]
+________________
+
+
+🧭 Step 5 — Keep Your VPS Running 24 / 5
+⚙️ Kazpa software requires MT5 to run continuously while markets are open (Monday → Friday).
+✅ Leave MT5 open on your VPS at all times.
+✅ You can close the RDP window — the VPS stays active.
+✅ Reconnect any time to monitor progress or make adjustments.
+✅ Avoid shutting down your VPS unless absolutely necessary.
+📘 Info: When you disconnect from RDP, the VPS keeps running in the cloud. You’re simply logging out of the view.
+📸 [Screenshot: MT5 running on VPS desktop – blue cap icon visible]
+________________
+
+
+🧾 Summary
+✔ You’ve chosen a VPS provider and purchased your plan.
+✔ You’ve connected via Remote Desktop and secured it.
+✔ You’ve installed MT5 and verified broker connection.
+✔ Your VPS is now running and ready for Kazpa software installation.
+________________
+
+
+🛡️ Disclaimer
+Kazpa does not own, endorse or guarantee any VPS provider.
+Users are responsible for selecting and maintaining their own VPS.
+A stable VPS is critical for software performance; downtime may impact results.
+________________
+
+
+✅ End of Section 2 — your VPS is now ready.
+Next ➡️ Section 3: Broker Setup — we’ll cover how to open, configure, and link your broker account properly to your MT5 terminal.
+
+
+
+
+
+
+💼 SECTION 3 — BROKER SETUP
+________________
+
+
+🧠 Why Choosing the Right Broker Matters
+Your broker is the bridge between your Kazpa software and the live markets.
+Even with perfect software and a fast VPS, poor broker conditions (like high spreads or bad execution) can ruin performance.
+⚙️ Goal: Choose a broker that’s fast, regulated, and offers low-spread, RAW or PRO account types for the best algo performance.
+________________
+
+
+✅ Broker Requirements
+Requirement
+	Recommendation
+	Why It Matters
+	Platform
+	MetaTrader 5 (MT5)
+	All Kazpa software is built for MT5.
+	Account Type
+	RAW / ECN / PRO
+	Tight spreads and faster execution for automation.
+	Leverage
+	1 : 500 (or highest available)
+	Allows proper margin allocation during trade sequences.
+	Hedging Enabled
+	✅ Required
+	Kazpa software opens hedge positions for risk control.
+	Spread
+	0.0 – 1.5 pips (XAUUSD under 30)
+	Lower spread = lower trading cost.
+	Execution Type
+	Market Execution
+	No requotes, better order flow for EAs.
+	Commission
+	$5 – $7 per lot RT typical
+	Normal for RAW / PRO accounts.
+	Server Uptime
+	99.9 %+
+	Prevents disconnections that pause trading.
+	________________
+
+
+🧩 RAW / PRO vs Standard Accounts
+⚙️ RAW / PRO Accounts
+→ Tightest spreads (often 0.0 – 0.2 pips)
+→ Small commission per trade
+→ Designed for algorithmic trading and scalping
+→ Faster execution & less slippage
+💡 Best for: VistaONE & VistaX — both rely on precise entries and efficient order handling.
+📘 Info: Most professionals and automated systems use RAW / ECN / PRO accounts because the total cost (spread + commission) is lower and execution quality is better.
+________________
+
+
+⚙️ Standard Accounts
+→ No direct commission but higher spreads
+→ Slower execution speed
+→ Less transparent pricing
+→ Fine for manual traders — not ideal for automation
+⚠️ Warning: Standard accounts can inflate entry prices, reduce accuracy and negatively affect risk/reward on scalping software like VistaX.
+________________
+
+
+🏁 Our Network’s Common Choices
+While Kazpa does not recommend or endorse any specific broker, the following MT5 brokers are commonly used within our network due to their trading conditions, stability, and availability of RAW / PRO account types:
+                  * OX Securities – RAW Account
+
+                  * Trade Smart – PRO Account
+
+                  * Plexy Trade – RAW Account
+
+                  * Blaze Markets – PRO / ECN Account
+
+                  * 1XTrade – RAW Account
+
+                  * PupPrime – ECN Account
+
+                  * LQH Markets – RAW Account
+
+📘 Info: These brokers are simply examples based on what many Kazpa users choose.
+You should always conduct your own independent research, compare fees, regulations, and performance, and select a broker that aligns with your own needs and region.
+⚠️ Important Notice:
+Kazpa has no broker partnerships, affiliations, or commissions from any broker listed here.
+You are solely responsible for verifying that your broker is legitimate, regulated, and MT5 compatible with the correct trading conditions (RAW / PRO / ECN accounts, hedging enabled, and reliable execution).
+📸 [Screenshot: Example of a broker’s “RAW / PRO Account” selection page]
+________________
+
+
+🪙 Step 1 — Open Your Broker Account
+1️⃣ Go to your chosen broker’s website.
+2️⃣ Open a Live MT5 account.
+3️⃣ Select RAW / PRO / ECN account type.
+4️⃣ Choose 1 : 500 leverage (or your broker’s maximum).
+5️⃣ Make sure hedging is enabled during setup.
+6️⃣ Complete KYC verification (upload ID + proof of address).
+7️⃣ Once approved, fund your account with your starting balance.
+📘 Tip: Always start small. You can scale your balance once you’ve verified performance and stability on live connection.
+📸 [Screenshot: Example of broker account creation form – leverage & account type fields highlighted]
+________________
+
+
+⚙️ Step 2 — Get Your Server Login Details
+Once your broker approves the account, you’ll receive an email with:
+                     * Server Name: (e.g. ICMarketsSC-Live09)
+
+                     * Login ID: Your trading account number
+
+                     * Password: Generated by broker
+
+                     * MT5 Download Link
+
+💡 Save this email — you’ll need these credentials when you log in to MT5 on your VPS.
+📸 [Screenshot: Example of broker welcome email with MT5 credentials]
+________________
+
+
+💻 Step 3 — Download & Install MT5
+1️⃣ From your broker’s email or website, click Download MT5 for Windows.
+2️⃣ Install it on your VPS (not your personal computer).
+3️⃣ Open MT5 → File > Login to Trade Account.
+ 4️⃣ Enter the Server, Login ID, and Password provided by your broker.
+5️⃣ Click OK — you should see your account balance in the Navigator panel.
+📸 [Screenshot: MT5 login window filled out with server & credentials]
+________________
+
+
+🔎 Step 4 — Verify Symbols & Market Access
+1️⃣ Right-click inside the Market Watch panel → Show All.
+ 2️⃣ Ensure your trading symbols appear, especially:
+                        * XAUUSD (Gold) for VistaX
+
+                        * Major FX pairs for VistaONE
+3️⃣ Confirm the symbol names exactly match your broker’s (e.g. “XAUUSD.a” vs “XAUUSD” matters).
+4️⃣ Open a chart → confirm data is loading and prices are moving.
+
+📸 [Screenshot: MT5 Market Watch showing XAUUSD and EURUSD visible]
+________________
+
+
+💰 Step 5 — Fund Your Account
+Once you’ve verified that MT5 is connected and working:
+1️⃣ Deposit funds through your broker’s client portal.
+2️⃣ Verify the balance updates in MT5.
+3️⃣ Keep at least 10 – 20 % free margin available at all times for safety.
+💡 Tip: Funding with the same currency as your trading pair’s base (e.g. USD for XAUUSD) helps avoid conversion fees.
+________________
+
+
+⚡ Step 6 — Optimize for Algo Trading
+🧩 A few quick adjustments can dramatically improve stability.
+                           * Disable news pop-ups and alerts (Tools > Options > Notifications).
+
+                           * Make sure Auto Trading is enabled in the MT5 toolbar.
+
+                           * Close any unnecessary charts.
+
+                           * Ensure your broker time zone matches the settings you’ll use in your Kazpa software.
+
+                           * Confirm Hedging Mode (not Netting) under Tools > Options > Trade > Positions.
+
+📸 [Screenshot: MT5 Options window with “Allow Algorithmic Trading” enabled]
+________________
+
+
+💡 Tips & Best Practices
+💡 Tip 1: Always open a demo account first to test broker spreads, commissions and execution.
+💡 Tip 2: Use RAW or PRO accounts — tighter spreads = cleaner execution.
+💡 Tip 3: Avoid brokers with mark-ups, slow withdrawals or excessive slippage reports.
+💡 Tip 4: Test your broker’s ping speed directly in MT5 (Tools > Options > Server).
+💡 Tip 5: Keep the broker’s support contact handy in case you ever need login resets or server clarifications.
+📸 [Screenshot: MT5 Server Ping Status – latency under 50 ms]
+________________
+
+
+🧾 Summary
+✔ You’ve chosen a broker with correct MT5 support and account type.
+✔ You’ve opened a RAW / PRO account with 1 : 500 leverage and hedging enabled.
+✔ You’ve downloaded MT5 and logged in successfully.
+✔ You’ve confirmed symbols, spreads and latency are correct.
+✔ Your broker is ready to connect with Kazpa software on your VPS.
+________________
+
+
+🛡️ Disclaimer
+Kazpa does not partner with or endorse any broker.
+Each user is responsible for selecting a licensed and reliable broker that suits their location and risk profile.
+Broker performance, execution speed and spread conditions directly affect software results.
+Always test your setup in a demo environment before trading live capital.
+________________
+
+
+✅ End of Section 3 — your broker account is live and ready.
+Next ➡️ Section 4: MT5 Installation & Configuration — we’ll go step-by-step through setting up MT5 inside your VPS, adjusting core settings, and preparing it for your Kazpa software.
+
+
+
+
+
+
+💻 SECTION 4 — MT5 INSTALLATION & CONFIGURATION
+________________
+
+
+🧠 Why This Step Matters
+MT5 is the platform your Kazpa software connects to and executes trades through.
+If it’s not installed or configured correctly, the software won’t function — so follow each step carefully.
+________________
+
+
+✅ What You’ll Need
+☑ A running VPS (see Section 2)
+☑ Broker login credentials (Server + Login + Password) from Section 3
+☑ Stable internet connection
+☑ Windows Server 2019 or 2022
+________________
+
+
+⚙️ Step 1 — Download MT5 from Your Broker
+⚠️ Always download MT5 from your broker’s website, not MetaQuotes.com — this ensures you get the correct server list.
+1️⃣ Open your VPS browser (Edge / Chrome).
+2️⃣ Go to your broker’s site → Download MetaTrader 5 for Windows.
+ 3️⃣ Run the installer (.exe) and follow the setup wizard.
+4️⃣ After installation, open MT5.
+📸 [Screenshot: MT5 installation wizard on Windows Server]
+________________
+
+
+🔑 Step 2 — Log In to Your Broker Account
+1️⃣ In MT5 top menu → File → Login to Trade Account
+ 2️⃣ Enter:
+ • Login ID: (your account number)
+ • Password: (broker password)
+ • Server: (e.g., OXSecurities-Live02 or TradeSmart-Pro-Live)
+3️⃣ Click OK
+ 4️⃣ If connected successfully you’ll see:
+ ✔ Green/red connection bars (bottom-right)
+ ✔ Account balance & quotes in Market Watch
+📸 [Screenshot: MT5 login window with fields filled in]
+💡 Tip: If you can’t find your broker’s server, click “Add New Broker” and search by name.
+________________
+
+
+🧩 Step 3 — Enable Algorithmic Trading
+1️⃣ On the MT5 toolbar → click Auto Trading so it turns green.
+2️⃣ Go to Tools → Options → Expert Advisors.
+3️⃣ Check the boxes:
+ ✅ Allow algorithmic trading
+ ✅ Allow DLL imports
+ ✅ Allow Algo Trading on live accounts
+📸 [Screenshot: MT5 Options > Expert Advisors tab with checkboxes enabled]
+⚠️ If “Auto Trading” is red, Kazpa software will not execute trades.
+________________
+
+
+🕒 Step 4 — Check Broker Server Ping
+1️⃣ Go to Tools → Options → Server
+ 2️⃣ Look at the ping value next to your broker server
+ • Under 50 ms = Excellent
+ • 50 – 100 ms = Good
+ • Over 150 ms = Too high → consider moving VPS closer
+📸 [Screenshot: Server ping test showing < 50 ms]
+________________
+
+
+📈 Step 5 — Open the Correct Charts for Your Software
+Software
+	Pair / Symbol
+	Timeframe
+	Notes
+	VistaONE
+	EURUSD
+	M15 (15-minute)
+	For long-term compounding strategy
+	VistaX
+	XAUUSD (Gold)
+	M5 (5-minute)
+	For scalping strategy
+	1️⃣ In Market Watch, right-click → Show All to display all symbols.
+2️⃣ Find EURUSD (for VistaONE) and XAUUSD (for VistaX).
+3️⃣ Right-click each symbol → Chart Window.
+ 4️⃣ Set the correct timeframe (M15 for VistaONE / M5 for VistaX).
+📸 [Screenshot: MT5 Market Watch with EURUSD M15 and XAUUSD M5 charts open]
+________________
+
+
+🧾 Summary
+✔ MT5 installed on your VPS
+✔ Logged in to broker successfully
+✔ Algorithmic trading enabled
+✔ Broker ping verified (< 50 ms)
+✔ Correct charts open for VistaONE (EURUSD M15) and VistaX (XAUUSD M5)
+________________
+
+
+🛡️ Disclaimer
+Kazpa does not own or control MetaTrader 5.
+Users are responsible for their own installation, settings and security.
+Improper configuration may affect software performance.
+All trading involves risk; test on a demo account before using live funds.
+________________
+
+
+✅ End of Section 4 — MT5 Installation & Configuration
+ Next ➡️ Section 5: License Activation — we’ll cover how to submit your License Activation Form, receive your unique key, and activate your software inside MT5.
+
+
+
+
+🔑 SECTION 5 — LICENSE ACTIVATION
+________________
+
+
+🧭 Overview
+Once you’ve finished the setup steps (VPS → Broker → MT5), it’s time to activate your Kazpa software license.
+Every license is unique to your account and protects both you and the system from unauthorized use.
+________________
+
+
+✅ Activation Process Summary
+Step
+	Action
+	Description
+	1️⃣
+	Finish Documentation
+	Ensure you’ve completed all prior setup sections and understand the software.
+	2️⃣
+	Fill Out License Activation Form
+	Submit your trading-account details inside your Kazpa Member Dashboard.
+	3️⃣
+	Wait for Verification (≤ 24 hrs)
+	Our team verifies your info and generates your license key.
+	4️⃣
+	Receive Your License Key by Email
+	You’ll get your personal license key once approved.
+	5️⃣
+	Activate Inside MT5
+	Paste the key into the software’s settings window.
+	6️⃣
+	Verify It’s Active (Blue Cap Icon)
+	When active, the blue-cap icon appears in the top-right corner of your MT5 chart.
+	📘 Info: Licenses are bound to the account number and broker details you submit on the activation form.
+If you ever change brokers or account numbers, you’ll need to request a transfer.
+________________
+
+
+📝 Step 1 — Complete the License Activation Form
+1️⃣ Log in to your Kazpa Member Dashboard.
+2️⃣ Go to License Activation Form under the Setup or Activation tab.
+3️⃣ Enter the following information:
+ • Full Name
+ • Email (used for purchase)
+ • Broker Name
+ • MT5 Account Number
+ • Product ( VistaONE or VistaX )
+ • Type of Account (Live or Demo )
+ • VPS Provider (optional)
+4️⃣ Double-check all info → click Submit.
+⚠️ Important: If any info is incorrect (especially account number or broker), your key will not work.
+📸 [Screenshot: Example of Kazpa License Activation Form fields filled out]
+________________
+
+
+⏳ Step 2 — Wait for Verification (Within 24 Hours)
+Our team will:
+✔ Confirm your payment and membership.
+✔ Match your broker and account number to your activation form.
+✔ Generate your license key.
+You’ll receive a confirmation email with the subject line “Your Kazpa License Key Is Ready”.
+📘 Info: Keep this email safe — your license key is private and tied to your account.
+________________
+
+
+🔐 Step 3 — Activate Your License Inside MT5
+1️⃣ Open MT5 on your VPS.
+2️⃣ In the Navigator panel, locate your software (VistaONE or VistaX).
+3️⃣ Drag the software onto the correct chart:
+ • VistaONE → EURUSD M15
+  • VistaX → XAUUSD M5
+ 4️⃣ The settings window will appear.
+5️⃣ In the License Key field, paste your unique key (from your email).
+6️⃣ Click OK to apply and load the software.
+7️⃣ Ensure “Auto Trading” (top toolbar) is green.
+📸 [Screenshot: VistaONE Properties window showing License Key input field]
+________________
+
+
+✅ Step 4 — Verify Activation
+When your license is active, you’ll see:
+✔ Blue-cap icon in the top-right corner of your chart.
+✔ “License OK” message in the MT5 Experts tab.
+✔ Live data and heartbeat logs updating every few minutes.
+📸 [Screenshot: MT5 chart showing blue cap icon (active Kazpa software)]
+⚠️ If you see “Invalid License” or “No Authorization,” double-check your key for extra spaces and confirm your activation form was submitted correctly.
+________________
+
+
+💡 Troubleshooting Tips
+💡 Tip 1: Copy and paste the license key exactly as shown — no spaces before or after.
+💡 Tip 2: If you re-install MT5 or move to a new VPS, you’ll need to re-enter your key.
+💡 Tip 3: License keys are linked to one account; contact support for any account changes.
+💡 Tip 4: Always keep “Auto Trading” enabled for the software to run.
+________________
+
+
+🧾 Summary
+✔ License Activation Form submitted correctly
+✔ License Key received within 24 hours
+✔ Key entered in MT5 software inputs
+✔ Blue-cap icon visible and License OK message confirmed
+You’re now fully licensed and ready to run your Kazpa software!
+________________
+
+
+🛡️ Disclaimer
+Each Kazpa license is for a single account only.
+Sharing or distributing license keys violates Kazpa’s Licensing Terms and may result in termination without refund.
+Users are responsible for entering accurate information and maintaining account security.
+Kazpa does not guarantee profits or performance — all software use is at your own risk.
+________________
+
+
+✅ End of Section 5 — License Activation
+ Next ➡️ Section 6: Software Installation (VistaONE & VistaX) — we’ll go step-by-step through installing each software file, loading presets, and confirming activation inside MT5.
+
+
+
+
+
+
+⚙️ SECTION 6 — SOFTWARE INSTALLATION (VISTAONE & VISTAX)
+________________
+
+
+🧭 Overview
+In this section, you’ll install and activate your licensed Kazpa software on MT5.
+Each product must be attached to its specific chart and timeframe:
+Software
+	Pair / Symbol
+	Timeframe
+	Description
+	VistaONE
+	EURUSD
+	M15 (15-Minute)
+	Long-term compounding software
+	VistaX
+	XAUUSD (Gold)
+	M5 (5-Minute)
+	High-frequency gold scalping software
+	⚠️ Important: Using the wrong chart or timeframe will cause improper behavior or prevent trading.
+________________
+
+
+✅ What You’ll Need
+☑ MT5 installed and configured (Section 4)
+☑ Active license key (Section 5)
+☑ Downloaded software + set files from your Member Dashboard → Downloads Page
+ ☑ Stable VPS connection
+📘 File Types You’ll Receive
+                              * .ex5 file — Kazpa software file
+
+                              * .set file — required preset containing official parameters
+
+📸 [Screenshot: Kazpa Downloads Page showing VistaONE.ex5 and VistaONE.set]
+________________
+
+
+🗂️ Step 1 — Open the MT5 Data Folder
+1️⃣ In MT5 top menu → File → Open Data Folder
+ 2️⃣ Navigate to → MQL5 > Experts
+ 3️⃣ Copy your .ex5 software file(s) here.
+📸 [Screenshot: MT5 Data Folder → MQL5 > Experts]
+💡 Tip: If you have both VistaONE and VistaX, place both .ex5 files in this folder.
+________________
+
+
+🔁 Step 2 — Restart or Refresh MT5
+After copying the files:
+                                 * Close and reopen MT5, or
+
+                                 * In the Navigator panel, right-click → Refresh under Expert Advisors
+
+You should now see the software listed in the Navigator panel.
+📸 [Screenshot: Navigator showing VistaONE and VistaX listed]
+________________
+
+
+💻 Step 3 — Attach the Software to the Correct Chart
+1️⃣ Open the correct chart:
+ • VistaONE → EURUSD M15
+  • VistaX → XAUUSD M5
+ 2️⃣ In the Navigator panel, drag the software onto that chart.
+3️⃣ The settings window will open automatically.
+📸 [Screenshot: Dragging VistaX.ex5 onto XAUUSD M5 chart]
+________________
+
+
+🔑 Step 4 — Enter License Key and Load Set File
+1️⃣ In the software’s settings window, find the License Key field.
+2️⃣ Paste your unique key (copied exactly, no spaces).
+3️⃣ Load the correct .set file:
+  → Click Load → select the matching .set file (from your Downloads folder).
+4️⃣ Click OK to save and apply settings.
+📸 [Screenshot: VistaONE Properties window with License Key and Load Set buttons]
+⚠️ Mandatory: The .set file contains critical parameters (risk, logic, filters, trading times).
+The software will not operate properly without it.
+Always verify you have loaded the correct file for your product before starting.
+________________
+
+
+🧢 Step 5 — Verify the Software is Active
+After activation you should see:
+✔ A blue-cap icon in the top-right corner of the chart.
+✔ “License OK – Kazpa Software Active” in the Experts tab.
+✔ Auto Trading button = green in the toolbar.
+📸 [Screenshot: MT5 chart with blue cap icon active]
+⚠️ If you see “Invalid License” or no blue cap:
+– Re-enter your license key.
+– Confirm Auto Trading is enabled.
+– Ensure the correct chart and timeframe are used.
+– Confirm the proper .set file was loaded.
+________________
+
+
+✅ Step 6 — Before You Start Trading
+1️⃣ Confirm the correct symbol and timeframe are used:
+ • VistaONE → EURUSD M15
+ • VistaX → XAUUSD M5
+2️⃣ Open the Inputs tab to double-check that the set file loaded properly.
+3️⃣ Verify Auto Trading is ON and the blue cap icon is visible.
+4️⃣ Watch the Experts tab for “Monitoring – Active” or “License OK” messages.
+💡 Tip: If anything looks incorrect, remove the software and re-attach it with the correct .set file before market open.
+________________
+
+
+🧾 Summary
+✔ Software file copied into MT5 > Experts
+✔ Set file loaded (successfully mandatory)
+✔ License key entered
+✔ Correct chart opened (EURUSD M15 / XAUUSD M5)
+✔ Blue-cap icon visible and License OK confirmed
+Your Kazpa software is now fully installed, configured, and ready to run.
+________________
+
+
+🛡️ Disclaimer
+Kazpa licenses trading software only and provides no investment advice.
+Using incorrect files, charts, or settings will prevent proper function.
+Always verify your set file and configuration before running live.
+All software use is at your own risk; trading involves the potential for loss.
+________________
+
+
+✅ End of Section 6 — Software Installation (VistaONE & VistaX)
+ Next ➡️ Section 7: MT5 Mobile App — learn how to connect your phone to monitor trades and account performance.
+
+
+
+
+
+
+📱 SECTION 7 — MT5 MOBILE APP
+________________
+
+
+🧭 Overview
+The MT5 mobile app allows you to monitor your Kazpa software and account performance from anywhere.
+It’s great for checking trades, balance, and equity in real time — but you should never manually trade or close positions from the app while the software is running.
+⚠️ Important: The software runs on your VPS — not your phone.
+The mobile app is for viewing only.
+________________
+
+
+✅ What You’ll Need
+☑ Active MT5 account (already logged in on your VPS)
+☑ Your broker’s MT5 server name (from broker email)
+☑ Your MT5 Login ID and Password
+________________
+
+
+📲 Step 1 — Install the App
+📱 On iPhone
+1️⃣ Open the App Store.
+2️⃣ Search for MetaTrader 5.
+3️⃣ Tap Get → wait for installation to finish.
+🤖 On Android
+1️⃣ Open the Google Play Store.
+2️⃣ Search for MetaTrader 5.
+3️⃣ Tap Install.
+📸 [Screenshot: MetaTrader 5 app page on iOS and Android stores]
+________________
+
+
+🔑 Step 2 — Log In to Your Trading Account
+1️⃣ Open the MT5 app.
+2️⃣ Tap Settings → New Account → Login to an Existing Account.
+3️⃣ In the search bar, type your broker’s name (e.g., “OX Securities” or “Trade Smart”).
+4️⃣ Select the correct Live server (example: OXSecurities-Live02).
+5️⃣ Enter:
+ • Login: (your MT5 account number)
+ • Password: (your MT5 password)
+6️⃣ Tap Sign In.
+📸 [Screenshot: MT5 mobile login screen with broker search and fields filled out]
+💡 Tip: If you can’t find your broker’s server, confirm you downloaded MT5 from MetaQuotes, not a broker-branded app.
+________________
+
+
+📈 Step 3 — Monitor Your Account
+Once logged in, you can:
+✔ View open and closed trades
+ ✔ Track balance, equity, and margin level
+ ✔ View charts (for observation only)
+✔ Review trade history and profit reports
+📸 [Screenshot: MT5 mobile “Trade” tab showing open positions]
+⚠️ Do Not:
+ – Modify or close trades manually while the software is active.
+– Change lot sizes or symbols.
+– Add or remove indicators from charts linked to software trades.
+These actions can interrupt automation and cause trade conflicts.
+________________
+
+
+🧩 Step 4 — Check Connection & Sync
+You can confirm your MT5 mobile is synced with your VPS account by checking:
+                                    * Account number matches your VPS MT5 terminal
+
+                                    * Trade list matches what’s visible on your VPS screen
+
+                                    * Equity and balance update in real time
+
+💡 Tip:
+ If you see “No connection” or “Data loading,” switch between Wi-Fi and cellular or re-login.
+📸 [Screenshot: MT5 mobile showing connected account with green signal icon]
+________________
+
+
+🧾 Summary
+✔ MT5 mobile app installed
+✔ Logged in using the same broker server and credentials
+✔ Able to view open trades and account balance
+✔ Confirmed it matches your VPS terminal
+________________
+
+
+🛡️ Disclaimer
+The MT5 mobile app is for monitoring only.
+Manual trading or interference while Kazpa software is running can disrupt trade logic and risk management.
+All trading and automation occurs on your VPS — not your phone.
+________________
+
+
+✅ End of Section 7 — MT5 Mobile App
+ Next ➡️ Section 8: Troubleshooting & Common Fixes — how to identify and solve common issues like “no trades,” “invalid license,” or “trade disabled” messages.
+
+
+
+
+
+
+🧰 SECTION 8 — TROUBLESHOOTING & COMMON FIXES
+________________
+
+
+🧭 Overview
+Even with the correct setup, small configuration errors or broker issues can stop your software from trading.
+This guide shows you how to quickly identify and fix the most common problems inside MT5.
+________________
+
+
+⚠️ Before You Start Troubleshooting
+1️⃣ Make sure:
+ ✔ You’re on the correct chart & timeframe
+   • VistaONE → EURUSD M15
+  • VistaX → XAUUSD M5
+ ✔ Auto Trading = ON (green)
+ ✔ Your .set file is loaded
+ ✔ You’ve entered your License Key correctly
+ ✔ Your VPS is running and connected to your broker
+If all these are correct and it’s still not working, go through the sections below.
+________________
+
+
+🚫 Problem 1: Software Is Not Trading
+Possible Causes & Fixes:
+🔹 Auto Trading is Off
+ → Top toolbar → Click Auto Trading until it turns green.
+🔹 Wrong Chart or Timeframe
+ → Check you attached the software to:
+ • EURUSD M15 (VistaONE)
+ • XAUUSD M5 (VistaX)
+🔹 Wrong or Missing Set File
+ → Right-click chart → Expert Properties → Inputs → confirm settings loaded.
+→ If blank, click Load → select the correct .set file and press OK.
+🔹 Market Closed
+ → Kazpa software only trades when markets are open (Monday – Friday).
+🔹 Spread Too High / No Liquidity
+ → Check spread in Market Watch. If XAUUSD > 30 pips or execution too slow, wait for spread to normalize.
+📘 Info: VistaX may go hours or days without entries if conditions aren’t met — that’s normal and part of its risk control.
+________________
+
+
+🔑 Problem 2: License Error or Invalid Key
+Symptoms: “Invalid License”, “No Authorization”, or software won’t activate.
+Fix:
+ 1️⃣ Double-check you copied the license key exactly (no spaces).
+2️⃣ Confirm the account number matches the one you submitted on the activation form.
+3️⃣ If you changed brokers or accounts, contact Kazpa Support to rebind your license.
+4️⃣ Restart MT5 after re-entering the key.
+📸 [Screenshot: Experts tab showing “License OK” vs “Invalid License” messages]
+________________
+
+
+🧠 Problem 3: “Trade Disabled” or “Invalid Volume” Message
+Causes & Fixes:
+ 🔹 Lot size below your broker’s minimum or not in correct step increments.
+ → Open Market Watch → right-click symbol → Specifications → check Min Lot & Lot Step.
+ → Load the official Kazpa set file to auto-correct this.
+🔹 Account margin too low.
+ → Reduce lot size or add equity.
+🔹 Hedging disabled on account.
+ → Contact broker to enable hedging (necessary for Kazpa software).
+________________
+
+
+⚙️ Problem 4: MT5 Disconnected / No Connection
+Fix:
+ 1️⃣ Bottom-right status bar → if shows “Invalid Account” or “Common Error”:
+ • File → Login to Trade Account → re-enter credentials.
+2️⃣ Test ping: Tools → Options → Server → Ping. Should be < 100 ms.
+3️⃣ If still high or unstable → contact VPS provider to move closer to broker.
+💡 Tip: Avoid Wi-Fi on VPS servers — always wired connections in datacenter for max uptime.
+________________
+
+
+💥 Problem 5: Blue Cap Not Showing
+Means: Software is not attached properly or trading disabled.
+Fix:
+                                       * Re-attach software to chart → confirm set file and license key loaded.
+
+                                       * Make sure Auto Trading is green.
+
+                                       * If still missing, close MT5 → reopen → re-attach software.
+
+📸 [Screenshot: MT5 chart showing active blue cap icon]
+________________
+
+
+🧩 Problem 6: High Drawdown or Margin Warning
+Fix:
+                                          * Check that you’re using the official Kazpa set file for your balance and risk mode.
+
+                                          * Confirm leverage is 1:500 and account type = RAW / PRO.
+
+                                          * Never run multiple Kazpa software products on one account.
+
+                                          * Keep at least 20 – 30 % free margin available.
+
+📘 Info: If Margin Level drops below 20 %, most brokers trigger a margin call and force-close positions.
+________________
+
+
+🔁 Problem 7: No Data or Chart Frozen
+Fix:
+                                             * Right-click chart → Refresh.
+
+                                             * If still frozen, right-click Market Watch → “Show All” to reload symbols.
+
+                                             * Restart MT5 if data feed stops.
+
+________________
+
+
+🧹 Problem 8: Software Stopped After Restart
+Fix:
+ 1️⃣ When MT5 reopens, re-attach software to chart.
+2️⃣ Load the correct set file again and verify Auto Trading = ON.
+3️⃣ Confirm blue cap icon visible.
+💡 Tip: If you use a VPS that restarts weekly for maintenance, reconnect afterward and check your setup.
+________________
+
+
+🧾 Summary
+Issue
+	Likely Cause
+	Quick Fix
+	No Trades
+	Wrong chart/timeframe or Auto Trading OFF
+	Correct chart + enable Auto Trading
+	Invalid License
+	Wrong key or account mismatch
+	Re-enter key + confirm activation form
+	Trade Disabled
+	Lot size or margin issue
+	Load official set file + check margin
+	No Connection
+	Broker server /VPS issue
+	Re-login + test ping + contact VPS
+	Blue Cap Missing
+	Not attached or Auto Trading OFF
+	Re-attach + enable Auto Trading
+	________________
+
+
+🛡️ Disclaimer
+Troubleshooting steps are provided for educational purposes.
+Kazpa is not liable for losses arising from improper setup or failure to follow instructions.
+Always use official Kazpa files and settings, and verify on demo before live use.
+________________
+
+
+✅ End of Section 8 — Troubleshooting & Common Fixes
+ Next ➡️ Section 9: Policies & Safety — we’ll cover disclaimers, refund policy reminders, and responsible-use guidelines.
+
+
+
+
+
+
+🛡️ SECTION 9 — POLICIES & SAFETY
+________________
+
+
+🧭 Overview
+This section outlines the key policies every Kazpa member must understand before, during, and after using our software.
+These policies are designed to protect you, maintain compliance, and ensure every user follows the same safe-use standards.
+________________
+
+
+⚙️ Kazpa’s Role
+Kazpa licenses trading software only.
+ We do not manage funds, provide financial advice, or offer investment recommendations.
+Users retain full control of their broker accounts and trading capital at all times.
+Our mission is to engineer professional-grade automation tools — you remain the account owner and decision-maker.
+________________
+
+
+💰 Refund Policy
+All purchases are final.
+                                                * The Kazpa license is a digital, one-time product that becomes active once your key is issued.
+
+                                                * Because activation binds a license to a specific account, no refunds can be issued after activation.
+
+                                                * Refunds may only be considered if:
+1️⃣ Payment was duplicated due to a billing error, and
+2️⃣ Your license key has not yet been generated.
+
+                                                * Refund requests must be submitted through Kazpa Support within 7 days of purchase.
+
+📘 Info: All refund requests are reviewed manually to prevent fraud or chargeback abuse.
+________________
+
+
+📜 Licensing Terms
+                                                   * Each license is tied to one MT5 account number.
+
+                                                   * Licenses cannot be shared, transferred, or sold.
+
+                                                   * Unauthorized sharing or distribution of files or keys will result in immediate termination without refund.
+
+                                                   * If you need to move your license to a new broker or account, submit a License Transfer Request via Support.
+
+⚠️ Changing brokers or account numbers without notifying Kazpa will deactivate your current license.
+________________
+
+
+⚖️ Risk Disclosure
+⚠️ Trading is high risk.
+ Forex, metals, and CFDs are leveraged products and may result in rapid losses.
+By using Kazpa software, you acknowledge that:
+                                                      * You can lose part or all of your trading capital.
+
+                                                      * Past performance does not guarantee future results.
+
+                                                      * You are solely responsible for your account and trading decisions.
+
+💡 Tip: Always start with a demo account to become comfortable with how the software behaves before going live.
+________________
+
+
+🧩 Software Integrity & Updates
+                                                         * Always download files directly from the Kazpa Member Dashboard.
+
+                                                         * Do not obtain or use files shared elsewhere.
+
+                                                         * Regular updates improve performance and stability; when a new version is released:
+
+                                                            * Remove the old version from MT5.
+
+                                                            * Add the new .ex5 file.
+
+                                                            * Re-enter your license key and load the latest .set file.
+
+⚠️ Using outdated or altered versions voids technical support eligibility.
+________________
+
+
+🔒 Security & Privacy
+                                                               * Keep your license key private; it is linked to your account identity.
+
+                                                               * Never share screenshots or videos showing your key.
+
+                                                               * Kazpa staff will never ask for your broker password.
+
+                                                               * Communicate only through official Kazpa email or dashboard channels.
+
+📘 Info: Our systems use encrypted license validation — no personal trading data is ever collected from your MT5 terminal.
+________________
+
+
+🧠 Responsible Use Guidelines
+1️⃣ Trade only with money you can afford to lose.
+2️⃣ Use realistic expectations — automation does not remove market risk.
+3️⃣ Do not alter advanced settings unless instructed.
+4️⃣ Ensure VPS uptime 24 / 5 and stable internet at all times.
+5️⃣ Back up your MT5 setup before making changes or updates.
+💡 Tip: Checking your software daily for connection, margin level, and license status can prevent avoidable issues.
+________________
+
+
+📩 Support & Communication
+For any issues regarding:
+                                                                  * License activation / transfer
+
+                                                                  * Technical errors
+
+                                                                  * Account changes
+
+                                                                  * Refund requests
+
+👉 Contact Kazpa Support through your Member Dashboard → Support Form.
+Include your name, email, account number, and a clear description of the issue.
+Response time: Within 24 hours on business days.
+________________
+
+
+🧾 Summary
+✔ Kazpa licenses software only — no fund management or guarantees.
+✔ Licenses are non-transferable and non-refundable once activated.
+✔ Trading is risky and results are not guaranteed.
+✔ Users must use official Kazpa files and follow setup instructions exactly.
+✔ Support is available through official channels only.
+________________
+
+
+✅ End of Section 9 — Policies & Safety
+ Next ➡️ Section 10 — Risk Tool (VistaX Only) — we’ll cover how to use the built-in Kazpa Risk Tool to calculate lot sizes, drawdown, and projected performance for gold trading with VistaX.
+
+
+
+
+
+
+
+📊 SECTION 10 — RISK TOOL (VISTAX ONLY)
+________________
+
+
+🧭 Overview
+The Kazpa Risk Tool is built directly into your Member Dashboard under its own tab.
+It’s an interactive web-based calculator made exclusively for VistaX (Gold) users to understand risk, lot sizing, drawdown, and margin usage in real time.
+⚠️ The Risk Tool is for education and planning only.
+It does not change settings inside MT5 — it helps you confirm that your VistaX configuration matches your account size and risk level before trading.
+________________
+
+
+✅ Purpose of the Risk Tool
+✔ Calculate the recommended starting lot size based on your account balance and risk mode.
+✔ Display expected drawdown and margin usage during full trade sequences.
+✔ Model realistic outcomes for three preset risk profiles:
+ • Conservative • Moderate • Aggressive
+📘 Info:
+ VistaX trades XAUUSD on M5 with sequence-based logic.
+The Risk Tool mirrors that structure so you can visualize how your balance reacts under real trading conditions.
+________________
+
+
+🖥️ Step 1 — Access the Risk Tool
+1️⃣ Log in to your Kazpa Member Dashboard.
+2️⃣ In the sidebar, click the tab labeled Risk Tool.
+3️⃣ The page will load automatically — no downloads, no setup required.
+📸 [Screenshot: Member Dashboard sidebar showing “Risk Tool” tab selected]
+________________
+
+
+🧩 Step 2 — Enter Your Inputs
+At the top of the page you’ll see an input panel.
+➡ Account Balance: Type your total account size (e.g., $50 000).
+➡ Risk Mode: Choose Conservative / Moderate / Aggressive.
+➡ (Optional) Manual Lot Override — for testing specific scenarios.
+As soon as you adjust a value, the calculations update instantly.
+📸 [Screenshot: Risk Tool input section with balance + risk mode fields]
+________________
+
+
+📊 Step 3 — Review the Results
+The results panel will automatically display:
+Metric
+	Description
+	Recommended Lot Size
+	The precise starting lot per your balance & risk mode.
+	Trade Sequence View
+	Visual of how lots scale during 8 levels of VistaX logic.
+	Projected Drawdown %
+	Estimated equity drawdown based on real data.
+	Margin Usage %
+	Approximate margin consumption per sequence.
+	Performance Bands
+	Expected range of returns under typical market conditions.
+	📸 [Screenshot: Risk Tool results panel comparing risk modes]
+💡 Tip:
+ Use the Conservative mode to see safe baseline exposure, then explore Moderate or Aggressive only if your account and risk tolerance allow it.
+________________
+
+
+⚠️ Step 4 — Confirm Settings Before Trading
+Before you run VistaX live:
+1️⃣ Confirm the .set file loaded in MT5 matches your selected Risk Mode.
+2️⃣ Verify your starting lot size matches the tool’s recommendation.
+3️⃣ Check that your leverage = 1 : 500 and Margin Level ≥ 500 %.
+4️⃣ Review the Risk Tool one more time whenever you change balance or settings.
+⚠️ Mandatory:
+ Using the wrong lot size or mismatched set file can lead to excessive drawdown or margin call.
+Always verify your numbers in the Risk Tool before activating VistaX.
+📸 [Screenshot: VistaX MT5 Inputs window beside Risk Tool lot size panel]
+________________
+
+
+🧠 Step 5 — Using the Tool for Ongoing Risk Awareness
+                                                                     * Revisit the Risk Tool whenever you fund or withdraw from your account.
+
+                                                                     * The displayed metrics update dynamically to reflect your new balance.
+
+                                                                     * Use it to decide whether to scale risk or stay conservative as your account grows.
+
+💡 Tip:
+ Many users keep the Risk Tool open in a separate browser tab while viewing their MT5 performance — it makes comparing live margin levels effortless.
+________________
+
+
+🧾 Summary
+✔ Accessed Risk Tool directly in Member Dashboard
+✔ Entered account balance + risk mode
+✔ Reviewed recommended lot, drawdown & margin usage
+✔ Matched set file and risk mode before trading
+✔ Confirmed alignment before going live
+________________
+
+
+🛡️ Disclaimer
+The Kazpa Risk Tool is an educational estimator.
+It does not execute trades or guarantee performance.
+All projections are based on past verified data from VistaX but future results may differ.
+Users are solely responsible for applying proper risk management and verifying configurations before live trading.
+________________
+
+
+✅ End of Section 10 — Risk Tool (VistaX Only)
+ Next ➡️ Final Section: Complete Setup Review & Go-Live Checklist — a single, all-in-one recap so members can confirm every requirement before running their software live.
+
+
+
+
+
+
+
+myfx

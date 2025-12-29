@@ -1,0 +1,25 @@
+﻿Installing The VistaONE Software:
+
+
+Step 1: Copy the software to VPS
+1. Connect to your VPS via Remote Desktop.
+2. Locate the EA on your desktop (VistaONE.ex5 file).
+3. Transfer the EA file to the VPS by copying it from your desktop and pasting it onto the VPS desktop.
+Step 2: Load software into MetaTrader 5
+1. Open MetaTrader 5 on your VPS.
+2. Go to File > Open Data Folder.
+3. Open the MQL5 > Experts > Advisors folder.
+4. Paste the EA file into the Advisors folder.
+5. Close and restart MetaTrader 5 for the EA to appear.
+Step 3: Turn on Auto Trading
+1. Ensure Auto Trading is enabled: Click the "Auto Trading" button in MetaTrader 5 (it should be green).
+2. Enable Auto Trading in the software: Drag the EA from the Navigator panel to the desired chart (EURUSD.PRO), and in the EA settings, ensure “Allow Algo Trading” is checked.
+Step 4: Load the Set Files
+1. Apply Set Files: In the software settings panel, select the “Inputs” tab 
+2. Click "Load" and select the set file provided for optimal settings. (Conservative, Normal, Aggressive)
+3. Apply settings and confirm by clicking "OK".
+Step 5: Start Trading
+1. Verify the software is running: The blue hat in the top right of the chart indicates the software is working. If the hat is not dark blue, then the software was not installed correctly.
+2. Monitor your trades: Keep track of your positions via the "Trade" tab at the bottom of MetaTrader 5.
+Now, the software should be up and running on your MetaTrader 5, and you are set to start trading!
+PLEASE ADD TO MAKE SURE TO TURN EURUSD TO M15 TIMEFRAME!

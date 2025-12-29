@@ -1,0 +1,114 @@
+﻿VistaX Product Overview (kazpa Software)
+________________
+Hero Section
+Headline:
+ VistaX – Fast Execution. Real Control. Quick Results.
+Subheadline:
+ A precision-built trading system designed for session-based scalping and rapid gains. VistaX puts the strategy in your hands—and the execution on autopilot.
+CTA Button:
+ [ Get VistaX Now ]
+________________
+
+
+Section 2: Core Concept
+Title:
+ Your Strategy. Our Execution Engine.
+Description:
+ VistaX is an active, high-performance trading algorithm built for short windows of opportunity. It doesn’t run all day—and it’s not meant to. You decide when to turn it on. It does the rest.
+Perfect for sessions like London Open, VistaX enters with size, closes fast, and respects risk. This is not a bot you sleep on—it’s a tool you use to develop your edge and compound results quickly.
+Three feature blurbs (use icons):
+* ⚡ Scalp Mode Enabled
+ Designed for short, controlled bursts during high-volume windows.
+
+* 🔍 Session-Based Precision
+ Best used 1–2 hours per day with sniper entry logic.
+
+* 💥 Built to Flip Accounts
+ Higher risk, higher reward—if you know how to use it right.
+
+________________
+
+
+Section 3: Performance Style
+Title:
+ Designed for Fast, Focused Gains
+Performance Notes:
+   * Pairs: XAUUSD
+
+   * Timeframe: M5
+
+   * Optimal Use: 435AM–550AM EST
+
+   * Entry Style: Directional setups using confluence logic
+
+   * Frequency: 1–25 trades per session
+
+   * Behavior: Large lot size, quick exits, fast sequences
+
+VistaX is not a software that runs 24/5. It's engineered to dominate when the timing is right—and stay out when it’s not.
+________________
+
+
+Section 4: Who It’s For
+Title:
+ For Traders Who Want to Be In the Driver’s Seat
+Subtext:
+ This isn’t passive automation—it’s tactical software for traders who want to learn, master timing, and control the strategy.
+Use cases (4 cards):
+      * 🎯 Traders flipping small accounts into larger ones
+
+      * 🧠 Strategy-focused users looking to refine their edge
+
+      * 💸 High-risk/high-reward profiles with risk management
+
+      * 🕐 Scalpers who want more precision, less chaos
+
+________________
+
+
+Section 5: Why It Works
+Title:
+ Speed + Logic + Control = Power
+Description:
+ VistaX uses a structured, progressive logic system that enters trades with size, closes with intent, and follows your session rules. It can be turned on and off like a machine—but its results are anything but mechanical.
+Core logic:
+         * ✅ Trade entry at fixed pip intervals or time-based filters
+
+         * ✅ Progressive lot size increase using multiplier logic
+
+         * ✅ Auto-close based on net profit target or smart exit
+
+         * ✅ Equity protection to prevent runaway losses
+
+         * ✅ Optional filters for EMA, candle patterns, AOI proximity
+
+________________
+
+
+Section 6: How It Works
+Title:
+ A Strategic Tool. Not a Toy.
+Steps (numbered):
+            1. Load VistaX on an M5 XAUUSD chart
+
+            2. Define your session time window (e.g., 4AM–6AM EST)
+
+            3. Configure your risk profile, multiplier, and lot strategy
+
+            4. Activate AutoTrading when you're ready
+
+            5. Turn it off after session is complete—or let it finish cleanly
+
+Use it 1–2 hours per day. Monitor trades. Learn the behavior.
+VistaX rewards those who trade it like a professional tool.
+________________
+
+
+Section 7: Final CTA
+Headline:
+ This Is Not Just Another Bot. This Is a Weapon.
+Subheadline:
+ VistaX gives you raw execution power with high-level control.
+Use it wisely—and it can print.
+CTA Button:
+ [ Apply for Access to VistaX ]

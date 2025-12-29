@@ -1,0 +1,163 @@
+﻿VPS Guide
+________________
+
+
+A Virtual Private Server (VPS) is like having an extra computer that operates in the cloud rather than as a physical device. It provides dedicated resources like CPU, memory, and storage, allowing users to access and control it remotely. A VPS offers the flexibility, scalability, and accessibility of a standalone machine without the limitations of physical hardware, making it ideal for various trading needs. Essentially, a VPS acts as a virtual computer that is on 24/7. This allows algorithms trading in Forex to be continually on without the need for you to keep a personal computer running. 
+To trade with kazpa’s software, we highly recommend you setup a Virtual Private Server. 
+________________
+
+
+Why Do I Need a VPS?
+Using a VPS for MetaTrader (MT4 or MT5) offers key benefits:
+* Uninterrupted Trading: Ensures your trading platform runs smoothly even if your local device encounters downtime or connectivity issues.
+* Reliable Environment: Provides a stable setup for automated trading, preventing interruptions due to power or internet outages.
+* Improved Execution: Reduces latency, enhancing trade execution speeds by bringing the MetaTrader platform closer to your broker’s server.
+________________
+
+
+Is a VPS Secure?
+The security of a VPS is influenced by factors such as the provider’s infrastructure and security protocols. Reputable VPS providers implement firewalls, intrusion detection, and encryption to safeguard your data. However, users should also secure their VPS by:
+* Using strong passwords
+* Enabling two-factor authentication
+* Keeping software updated
+These precautions help enhance protection and maintain a secure trading environment.
+
+
+________________
+
+
+How to Choose a VPS Provider
+Choosing a reliable Virtual Private Server (VPS) provider is essential for optimal performance and security in your trading operations. With many options available, use this guide to help make an informed decision based on kazpa’s recommended requirements.
+VPS System Requirements
+To ensure compatibility and performance, we recommend a VPS with:
+* At least 2 CPU cores
+* 3 GB of RAM or more
+* Windows Server 
+________________
+
+
+How to Choose a Provider
+1. Performance and Reliability
+* Hardware Infrastructure: Look for providers using high-quality hardware, including SSD storage and redundant connections, for speed and reliability.
+* Uptime Guarantee: Choose providers offering at least 99.9% uptime to minimize downtime and ensure consistent access to your VPS.
+2. Scalability and Resource Allocation
+* Scalability Options: Ensure the VPS can scale with your needs, allowing easy upgrades or downgrades in CPU, RAM, or storage.
+* Resource Allocation: Opt for providers that allocate dedicated resources to avoid performance issues from resource-sharing.
+3. Security and Data Protection
+* Data Center Security: Choose VPS providers with ISO-certified data centers, employing robust security measures.
+* Network Security: Ensure the provider uses firewalls, intrusion detection, and DDoS protection for secure trading.
+4. Technical Support and Customer Service
+* 24/7 Support: Select providers with around-the-clock support accessible via live chat, email, or phone.
+* Response Time: Prioritize providers known for fast and effective support response times.
+5. Pricing and Value for Money
+* Transparent Pricing: Look for clear pricing structures with no hidden fees.
+* Features and Add-ons: Assess whether add-ons like control panels or managed services align with your needs.
+________________
+
+
+VPS Options
+Here are some options for commonly used VPS’s, as well as associated information for them.
+1. Forex Vps - Forex Vps
+* Benefits - Great customer service, fast response times, multiple account options, stability
+________________
+
+
+2. Commercial Network Services - CNS
+* Benefits - Stability, competitive pricing
+________________
+
+
+
+
+
+
+Here are the steps you need to take in order to begin trading:
+1. Select a VPS
+2. Complete the sign-up process
+3. Once the sign-up process is complete, you will receive your VPS information in an email or your account
+4. Download Microsoft Remote Desktop for your computer, or another Remote Desktop application
+5. Sign in to the VPS via Remote Desktop with your VPS information
+6. Once you sign into your VPS, you will need to download MetaTrader 4 or 5 from your broker (steps below).
+
+
+Once you have access to your account via your account number and password, and funds are in your account, we can help you set up your algorithm in order to begin trading.
+
+
+________________
+
+
+
+
+How to Access Your VPS
+Prerequisites:
+* Have your VPS credentials ready, including the IP address or hostname, username, and password.
+* Ensure you have the Windows Remote Desktop app installed on your local computer. You can download it from the Microsoft Store or use the built-in Remote Desktop Connection tool.
+🛈 For macOS Users
+You can install the Windows Remote Desktop application from the App Store.
+________________
+
+
+Steps
+1. Open the Windows Remote Desktop App
+* Launch the Remote Desktop app on your computer. You can find it in the Start menu or by searching for "Remote Desktop."
+2. Add a New Connection
+* Click on the "Add PC" button or use the "+" button to create a new connection.
+* Enter the IP address or hostname of your VPS in the "PC name" field.
+* Optionally, provide a friendly name for the connection.
+* Click Add to save the settings.
+3. Enter VPS Credentials
+* Select Edit to configure additional settings.
+* In the "User account" dropdown, select Add User Account...
+* Enter the Username and Password provided by your VPS provider.
+* Optionally, add a friendly name for this account for easy identification.
+4. Connect to the VPS
+* Select your new connection from the list, then click Connect (or double-click) to initiate the connection to your VPS.
+5. Confirm Certificate Details
+* If prompted about an unverified certificate, click Continue to proceed with the connection.
+________________
+
+
+
+
+For a Step-by-Step guide of the MetraTrader 4 and 5 desktop app, check out our guide.
+
+
+For a Step-by-Step guide of the MetraTrader 4 and 5 phone app, check out our guide.
+
+
+If you have not yet done so, please review our Broker Guide and select a broker. You will need a broker in order to begin trading
+
+
+
+
+DISCLAIMERS
+
+
+U.S. Government Required Disclaimer – Trading foreign exchange on margin carries a high level of risk, and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to invest in foreign exchange you should carefully consider your investment objectives, level of experience, and risk appetite. The possibility exists that you could sustain a loss of some or all of your initial investment and therefore you should not invest money that you cannot afford to lose. You should be aware of all the risks associated with foreign exchange trading, and seek advice from an independent financial advisor if you have any doubts.
+
+
+The purchase, sale or advice regarding a currency can only be performed by a licensed Broker/Dealer. Neither us, nor our affiliates or associates involved in the production and maintenance of these products or this site, is a registered Broker/Dealer or Investment Advisor in any State or Federally-sanctioned jurisdiction. All purchasers of products referenced at this site are encouraged to consult with a licensed representative of their choice regarding any particular trade or trading strategy. No representation is being made that any account will or is likely to achieve profits or losses similar to those discussed on this website. The past performance of any trading system or methodology is not necessarily indicative of future results.
+
+
+Clearly understand this: Information contained in this product are not an invitation to trade any specific investments. Trading requires risking money in pursuit of future gain. That is your decision. Do not risk any money you cannot afford to lose. This document does not take into account your own individual financial and personal circumstances. It is intended for educational purposes only and NOT as individual investment advice. Do not act on this without advice from your investment professional, who will verify what is suitable for your particular needs & circumstances. Failure to seek detailed professional personally tailored advice prior to acting could lead to you acting contrary to your own best interests & could lead to losses of capital.
+
+
+*CFTC RULE 4.41 – HYPOTHETICAL OR SIMULATED PERFORMANCE RESULTS HAVE CERTAIN LIMITATIONS. UNLIKE AN ACTUAL PERFORMANCE RECORD, SIMULATED RESULTS DO NOT REPRESENT ACTUAL TRADING. ALSO, SINCE THE TRADES HAVE NOT BEEN EXECUTED, THE RESULTS MAY HAVE UNDER-OR-OVER COMPENSATED FOR THE IMPACT, IF ANY, OF CERTAIN MARKET FACTORS, SUCH AS LACK OF LIQUIDITY. SIMULATED TRADING PROGRAMS IN GENERAL ARE ALSO SUBJECT TO THE FACT THAT THEY ARE DESIGNED WITH THE BENEFIT OF HINDSIGHT. NO REPRESENTATION IS BEING MADE THAT ANY ACCOUNT WILL OR IS LIKELY TO ACHIEVE PROFIT OR LOSSES SIMILAR TO THOSE SHOWN.
+
+
+
+
+Forex Trading Risk Disclaimer
+Trading foreign exchange (Forex) on margin carries a high level of risk and may not be suitable for all investors. Before deciding to trade Forex, you should carefully consider your investment objectives, level of experience, and risk appetite. There is a possibility that you may sustain a loss of some or all of your initial investment, and therefore, you should not invest money that you cannot afford to lose. Be aware of all the risks associated with Forex trading, and seek advice from an independent financial advisor if you have any doubts.
+
+
+Risk of Loss
+Trading in Forex involves significant risk, and you should be aware that past performance and preloaded settings do not guarantee future results. There is no claim being made that you will achieve similar profits or incur the same losses as others. All trading strategies carry the potential for both profit and loss.
+
+
+Educational Purposes Only
+The information provided through this software, including all data, analysis, and trade settings, is for educational purposes only. It is not intended as financial advice, nor does it take into account your individual financial circumstances. You should always consider whether the advice, strategies, or settings provided suit your personal circumstances before acting upon them.
+
+
+Acceptance of Responsibility
+By using this software, you accept full responsibility for all trading decisions and outcomes, including any losses you may incur. You understand and agree that trading is inherently speculative, and no assurances of profits are provided. You further agree to hold the developers and distributors of this software free from any and all liability for any losses or adverse trading outcomes that may result from your use of this software.

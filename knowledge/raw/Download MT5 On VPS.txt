@@ -1,0 +1,28 @@
+﻿In this guide, we'll show you how to download and install MetaTrader 5, also known as MT5, onto your Virtual Private Server, or VPS. Let's get your trading platform up and running."
+
+
+Step 1: Download MT5
+"Start by navigating to your broker's website. For this example, we'll use eightcap.com, but remember, the process is similar across most brokers. Look for the MetaTrader 4 download section on the website."
+
+
+Step 2: Install on Your Computer
+"Once you've found the download button, click it to download the MT5 software onto your computer. After the download is complete, locate the software in your downloads folder. Right-click the file and select 'Copy'."
+
+
+Step 3: Access Your VPS
+"Now, it's time to move to your VPS. Open your Microsoft Remote Desktop app and sign into your VPS."
+
+
+Step 4: Transfer MT5 Installer to Your VPS
+"Right-click on the desktop of your VPS and choose 'Paste'. This action will transfer the MT4 installation file to your VPS."
+
+
+Step 5: Install MT5 on Your VPS
+"Double-click the MT5 installation icon on your VPS desktop. Follow the installation prompts by clicking 'Next'. The installation process will begin, and MT5 will be installed on your VPS desktop."
+
+
+Step 6: Open MT5 and Sign In
+"After installation, you can open the MT5 terminal from your VPS desktop. Sign into your MT5 Trading Account with the credentials provided by your broker."
+
+
+Sweet, You've successfully installed MetaTrader 5 on your VPS! If you encounter any issues or have questions, our support team is here to help. Please reach out to support@kazpa.io for assistance.

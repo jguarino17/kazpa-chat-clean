@@ -1,0 +1,86 @@
+﻿Forex Trading For Beginners
+
+
+What is Forex?
+* It's the largest market in the world
+* On an avg day, the market trades 5 trillion dollars
+What are you trading?
+* You are trading a currency pair
+   * Nothing more than the exchange rate between currencies
+   * If you travel to Europe, you will exchange USD for EUR
+      * The rate of exchange is what you will get back
+      * EXAMPLE:
+         * The EURO DOLLAR EXCHANGE RATE: EUR/USD = 1.0878
+            * This means if you wanted 1 EUR you would have to give them 1.0878 USD to get that 1 EUR
+            * In this example, 1 EURO is worth 1.0878 USD
+How do we make money in the Forex Market?
+* We are trading based on the exchange rate between 2 different currencies
+   * The way you actually make money is when this exchange rate rises and falls
+   * The exchange rates fluctuate depending on the strength and valuation of each of these currencies
+      * So if the EUR rises in value, it will cost more USD to get 1 EUR
+      * If the USD goes up in value, it is the same thing
+      * The opposite is true if the opposite happens
+         * If EUR drops then your going to need less USD inorder to get 1 EURO
+         * If the USD rises in value, you're going to need less dollars to get 1 EUR
+      * EXAMPLE:
+         * EUR/USD = 1.0878
+            * Place a BUY ORDER
+            * Exchange rate goes to 1.0978
+               * You make the difference
+What is a Currency Pair?
+* Top 5 Major Currency Pairs: EURUSD - GBPUSD - USDJPY - AUDUSD - USDCHF
+* Each of these is made up of separate currencies.
+* Each 3 letter symbol represents a certain currency.
+* 1 currencies value against other currencies value which gives us a better interpretation of the value of a certain currency.
+   * EXAMPLE:
+      * EUR/USD - Consists of 2 Currencies
+         * The Base / The Quote
+            * EUR/USD has a value of 1.0792
+            * Every BASE PAIR always has a value equal to 1.
+               * EUR = 1 EUR
+               * You're always exchanging 1 of that first pair for whatever the quote pair is.
+               * BASE [EUR] = 1 / QUOTE [USD] = 1.0792
+      * USD/JPY = 
+         * 1st Pair = USD = Base Currency = 1
+         * 2nd Pair = JPY = Quote Currency = 110.90
+         * If you have 1 USD it is equal to 110.90 JPY & vice versa
+   * These are currencies pairs
+   * The 1st currency is always the base pair with a value of 1
+   * The 2nd currency is always the quote pair which is a quote. It’s the value of the 2nd currency compared to the 1st currency.
+What is a Pip? [Non JPY*]
+* A Pip is how the forex market moves. It is the smallest amount a currency moves that we care about as traders
+* A pip is the smallest number that moves in a currency pair
+* A Pip is how we take profit or get stopped out depending on how the trade goes.
+   * It’s the 4th place away from the decimal point
+   * EXAMPLE:
+      * EUR/USD = 1.0787
+         * 7 is a Pip
+         * What if the price dropped to 1.0786?
+            * We dropped 1 Pip
+         * 1. | 0 | 7 | 8 | 7
+         *  -  |  - |100 | 10 | 1
+            * So if the price moved to 1.0796 then The EUR/USD went up 10 Pips
+      * AUD/NZD = 1.0248 
+         * Goes to 1.0348
+            * That is 100 Pips
+What is a Pip [With JPY]
+* USD/JPY = 110.90
+   * Only go 2 decimal places instead of 4
+   * 1  | 1 | 0. | 9 | 0
+   *  -  |  - |100 | 10 | 1
+      * If price went to 110.06 that means we went up 6 pips
+      * If price goes to 112.90 that means we went up 200 pips
+* GBP/JPY = 130.70
+   * Again we only move 2 places from the decimal
+
+
+
+
+
+
+
+
+What is the value of a Pip?
+Depends highly on the amount of currency you are trading.
+You are trading a set of units.
+These units come in 4 major lot lizes.

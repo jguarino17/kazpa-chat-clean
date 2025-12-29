@@ -1,0 +1,118 @@
+﻿✅ kazpa Done-For-You Setup Checklist - this is optional but an extra fee.
+This checklist explains exactly what happens after purchase and what you must complete before we can finish your Done-For-You setup.
+Please follow each step in order.
+________________
+
+
+🔗 Important kazpa Links
+* Home: https://www.kazpa.io
+* Member Dashboard: https://kazpa.io/member-dashboard
+* Sign In: https://kazpa.io/sign-in
+* Sign Up: https://kazpa.io/sign-up
+* Support: https://kazpa.io/support
+* Contact: https://kazpa.io/contact
+________________
+
+
+STEP 1 — Complete Your Purchase & Create Your Account
+After completing your Stripe purchase, you will automatically be redirected to:
+👉 https://kazpa.io/welcome?src=stripe
+On this page, you must complete both actions:
+* Create your kazpa Member Dashboard account
+* Join the private kazpa Telegram channel
+Once finished:
+* You can log in anytime via https://kazpa.io/sign-in
+* Use the same credentials you created during sign-up
+📌 Use an email you actively check — this is how we communicate setup updates.
+________________
+
+
+STEP 2 — Review Documentation (Required)
+After logging into the Member Dashboard:
+👉 https://kazpa.io/member-dashboard
+You will initially see limited access. This is expected.
+Before moving forward, you must:
+* Go through the kazpa Documentation
+* Learn how to:
+   * Open a broker account
+   * Set up a trading account correctly
+   * Prepare for VPS installation
+⚠️ You cannot submit the License Activation Form yet — the next steps must be completed first.
+________________
+
+
+STEP 3 — Create a Broker Account & Trading Account
+You must now create a broker account, then open a trading account once verified.
+Your trading account must meet these requirements:
+* Leverage: 1:500
+* Account Type: Pro or RAW
+* Platform: MT5 compatible
+Save all login details — you will need them later.
+________________
+
+
+STEP 4 — Purchase a VPS (Virtual Private Server)
+Once your broker account is active, purchase a VPS.
+You may use:
+* ForexVPS
+* or any reputable VPS provider
+After purchasing:
+* Download Microsoft Remote Desktop
+   * Desktop / Laptop
+   * Mobile device (recommended)
+Keep your VPS credentials handy.
+________________
+
+
+STEP 5 — Create & Verify a Coinbase Account (Funding)
+Create a Coinbase account to fund your broker account using crypto.
+Why this is required:
+* Faster funding
+* Instant withdrawals
+* No banking delays
+What to expect:
+* Identity verification required
+* Deposit your funds
+* New users may experience a 5–7 day clearing period
+⚠️ Funding must be completed before setup can begin.
+________________
+
+
+STEP 6 — Submit the License Activation Form (Final Step)
+Once all previous steps are completed, return to the Member Dashboard and submit the License Activation Form.
+👉 https://kazpa.io/member-dashboard
+Make sure all information is accurate and complete.
+Once submitted:
+* Our team reviews your details
+* We complete the Done-For-You setup
+* You’ll be notified when everything is ready
+📌 If you need help understanding the software:
+* We can provide a live screen-recorded walkthrough
+________________
+
+
+📝 REQUIRED INFORMATION (Have This Ready)
+Please gather the following before submitting the License Activation Form:
+________________
+
+
+BROKER DETAILS
+* Broker:
+* Broker Server:
+* Trading Account Number:
+* Trading Account Password:
+________________
+
+
+VPS DETAILS
+* VPS Username:
+* VPS Password:
+* VPS Server / IP Address:
+________________
+
+
+✅ Once This Checklist Is Complete
+* Your Done-For-You setup begins
+* kazpa installs, configures, and verifies everything
+* You’ll be ready to begin using the software
+________________

@@ -1,0 +1,147 @@
+﻿Broker Guide
+________________
+
+
+In the financial markets, particularly in forex trading, a broker serves as the intermediary between traders and the global market. For forex, a broker provides individual traders and institutional investors with access to the foreign exchange market.
+To trade in Forex, you will need to select a broker in order to deposit money and trade with any algorithms. A broker acts like a bank for trading funds, much like brokers you might have used for your 401k, trading in the Stock Exchange, or investing in mutual funds, etc. 
+Brokers facilitate your trades by:
+* Providing trading platforms
+* Executing buy and sell orders
+* Offering market analysis tools
+* Managing various aspects of trading accounts
+It is up to you to choose the correct broker for your needs. You will need a broker with 1:500  leverage (as low as 1:200 is ok). Only brokers foreign to the US offer this leverage, as US brokers only offer 1:50 leverage due to regulations. If you have questions about what leverage is, check out this article here. 
+This guide gives some options of brokers you can select. There are far more brokers available than those in this guide, and these brokers are not necessarily our recommendations. 
+⚠️ Important Notice
+kazpa does not provide support for signing up with brokers or managing broker accounts. Please conduct independent research and choose a broker that aligns with your specific needs. In addition to the information below, we recommend you do your own research before selecting a broker
+________________
+
+
+Broker Options
+Here are some options for commonly used foreign brokers, as well as associated information for them.
+1. OX Securities - Ox Securities
+* Leverage - 1:500 up to $300,000 USD account size. 1:300 leverage for $300,000-$500,000 account size. 1:200 for $500,000 account size
+* Deposit Methods - Bank Transfer, Crypto Transfer, Visa/Mastercard Processing
+* Accepts US Clients
+* Benefits - Accepts US clients, low commissions ($3.5 per lot), good customer service (chat and phone)
+________________
+
+
+2. Plexytrade - PlexyTrade
+* Leverage - 1:500
+* Deposit Methods - Crypto Transfer, (Bank Transfer coming soon)
+* Accepts US Clients
+   * (Select “other” when choosing country)
+* Benefits - Accepts US clients, different account options, good customer service
+* Higher swap fees
+________________
+
+
+3. IC Markets - IC Markets
+* Leverage - 1:1000
+* Deposit Methods - Bank Transfer, Crypto Transfer, Visa/Mastercard Processing
+* Does not accept clients from the USA
+* Benefits - long standing, reputable, tight spreads, one of the largest Forex brokers in the market
+________________
+
+
+Broker Login
+Most brokers offer an online portal where you can manage your trading account. This portal allows access to account details, deposits, withdrawals, and trading settings. Remember that your MetaTrader credentials may differ from those you use on the broker's website.
+Here are the steps you need to take with your broker in order to begin trading:
+1. Select a broker
+2. Complete the sign-up process, including any verification necessary
+3. Deposit funds into your account
+
+
+Once you have access to your account via your account number and password, and funds are in your account, we can help you set up your algorithm in order to begin trading.
+________________
+
+
+MetaTrader Login
+Your broker will give you your MetaTrader login info via your account number and password. MetaTrader enables you to carry out various trading operations, such as placing market orders, modifying trades, and utilizing advanced charting tools. Your broker will provide separate credentials specifically for MetaTrader access.
+Credentials typically include:
+* MT4/5 account number (usually 6-12 digits)
+* MT4/5 account password (a randomly generated password)
+Example Credentials:
+* Login: 100827473
+* Password: (hidden for security)
+* Server: kazpa-Demo
+⚠️ Warning
+We will never ask for your MT4/5 account password. Keep this information private.
+
+
+If you have not yet done so, please review our VPS Guide to select a VPS and install MetaTrader 4 or 5. You will need this in order to download the software to trade with our algorithms. 
+
+
+Check out our MetaTrader Guide here to setup MetaTrader 4 or 5
+
+
+Here are some additional things to consider when selecting a broker:
+
+
+Spread and Commission:
+Brokers offer different spreads and commission structures, directly impacting trading costs. Lower spreads and commissions, like those offered by some brokers, can enhance performance, while wider spreads reduce profitability.
+
+
+Execution Speed:
+The speed at which brokers execute trades matters, especially for algorithms. Fast execution prevents price slippage, which can affect overall results.
+
+
+Liquidity Providers:
+Brokers with better liquidity providers deliver more stable prices and reduce slippage, which helps maintain consistency in EA performance.
+
+
+Server Reliability:
+A broker's server reliability is crucial. Poor server uptime can cause missed trades or mismanagement of open positions, harming the algorithm's results.
+
+
+Account Performance Tracking
+MyFxBook and FxBlue provide comprehensive account and performance tracking services for forex traders, including real-time monitoring, detailed analytics, community features, and tools for performance optimization. Users can select between these platforms based on their specific needs and preferences.
+MyFxBook Setup
+To set up MyFxBook, follow the instructional video:
+* MyFxBook Setup Video
+________________
+
+
+FxBlue Setup
+To set up FxBlue, follow the instructional video:
+* FxBlue Setup Video
+
+
+DISCLAIMERS
+
+
+U.S. Government Required Disclaimer – Trading foreign exchange on margin carries a high level of risk, and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to invest in foreign exchange you should carefully consider your investment objectives, level of experience, and risk appetite. The possibility exists that you could sustain a loss of some or all of your initial investment and therefore you should not invest money that you cannot afford to lose. You should be aware of all the risks associated with foreign exchange trading, and seek advice from an independent financial advisor if you have any doubts.
+
+
+The purchase, sale or advice regarding a currency can only be performed by a licensed Broker/Dealer. Neither us, nor our affiliates or associates involved in the production and maintenance of these products or this site, is a registered Broker/Dealer or Investment Advisor in any State or Federally-sanctioned jurisdiction. All purchasers of products referenced at this site are encouraged to consult with a licensed representative of their choice regarding any particular trade or trading strategy. No representation is being made that any account will or is likely to achieve profits or losses similar to those discussed on this website. The past performance of any trading system or methodology is not necessarily indicative of future results.
+
+
+Clearly understand this: Information contained in this product are not an invitation to trade any specific investments. Trading requires risking money in pursuit of future gain. That is your decision. Do not risk any money you cannot afford to lose. This document does not take into account your own individual financial and personal circumstances. It is intended for educational purposes only and NOT as individual investment advice. Do not act on this without advice from your investment professional, who will verify what is suitable for your particular needs & circumstances. Failure to seek detailed professional personally tailored advice prior to acting could lead to you acting contrary to your own best interests & could lead to losses of capital.
+
+
+*CFTC RULE 4.41 – HYPOTHETICAL OR SIMULATED PERFORMANCE RESULTS HAVE CERTAIN LIMITATIONS. UNLIKE AN ACTUAL PERFORMANCE RECORD, SIMULATED RESULTS DO NOT REPRESENT ACTUAL TRADING. ALSO, SINCE THE TRADES HAVE NOT BEEN EXECUTED, THE RESULTS MAY HAVE UNDER-OR-OVER COMPENSATED FOR THE IMPACT, IF ANY, OF CERTAIN MARKET FACTORS, SUCH AS LACK OF LIQUIDITY. SIMULATED TRADING PROGRAMS IN GENERAL ARE ALSO SUBJECT TO THE FACT THAT THEY ARE DESIGNED WITH THE BENEFIT OF HINDSIGHT. NO REPRESENTATION IS BEING MADE THAT ANY ACCOUNT WILL OR IS LIKELY TO ACHIEVE PROFIT OR LOSSES SIMILAR TO THOSE SHOWN.
+
+
+
+
+
+
+Forex Trading Risk Disclaimer
+Trading foreign exchange (Forex) on margin carries a high level of risk and may not be suitable for all investors. Before deciding to trade Forex, you should carefully consider your investment objectives, level of experience, and risk appetite. There is a possibility that you may sustain a loss of some or all of your initial investment, and therefore, you should not invest money that you cannot afford to lose. Be aware of all the risks associated with Forex trading, and seek advice from an independent financial advisor if you have any doubts.
+
+
+Risk of Loss
+Trading in Forex involves significant risk, and you should be aware that past performance and preloaded settings do not guarantee future results.
+There is no claim being made that you will achieve similar profits or incur the same losses as others. All trading strategies carry the potential for both profit and loss.
+
+
+Educational Purposes Only
+The information provided through this software, including all data, analysis, and trade settings, is for educational purposes only. It is not intended as financial advice, nor does it take into account your individual financial circumstances. You should always consider whether the advice, strategies, or settings provided suit your personal circumstances before acting upon them.
+
+
+Acceptance of Responsibility
+By using this software, you accept full responsibility for all trading decisions and outcomes, including any losses you may incur. You understand
+
+
+and agree that trading is inherently speculative, and no assurances of profits are provided. You further agree to hold the developers and distribu-
+tors of this software free from any and all liability for any losses or adverse trading outcomes that may result from your use of this software.

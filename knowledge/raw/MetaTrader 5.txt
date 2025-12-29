@@ -1,0 +1,72 @@
+﻿MetaTrader 5 
+Desktop App Setup Guide
+________________
+
+
+MetaTrader is a popular electronic trading platform primarily designed for retail forex trading, though it also supports other asset classes like stocks and commodities. It equips traders with a comprehensive toolkit for analyzing financial markets, executing trades, and managing positions. Thanks to its user-friendly interface and extensive features, MetaTrader is the preferred choice of both beginner and experienced traders around the world.
+In order to trade in the Forex market, you will need to download and setup MetaTrader 4 or 5. This is where you will load your kazpa algorithms to trade for you.
+Versions
+MetaTrader offers two main versions:
+* MetaTrader 4 (MT4)
+* MetaTrader 5 (MT5)
+Each version comes with unique features and capabilities, providing traders access to a wide range of technical indicators, charting tools, and automated trading systems, known as Expert Advisors (EAs), to enhance their trading strategies.
+You will download the version based off the kazpa algorithm you are running
+________________
+
+
+
+
+Download MetaTrader 4 or 5
+
+
+First, log into your VPS. That is where you will download MetaTrader. You will need to download the MetaTrader 4 or 5  desktop application from your broker to begin trading. (depending on which algorithm you are using, you will download Metatrader 4 or 5. If you are unsure, contact your kazpa Support Manager or the Customer Support Team at support@kazpa.ai) 
+
+
+1. Download the MT4/5 Platform
+* Log into your VPS 
+* Visit your broker’s website to download the MT4/5 platform.
+* Look for the "Download" section, usually found on the homepage or under the "Trading Platforms" tab.
+* Download the MT4/5 setup file (often named mt4setup.exe or something similar).
+
+
+2. Run the MT4/5 Installer
+* After downloading, locate the setup file in your computer's "Downloads" folder or wherever you saved it
+* Double-click the .exe file to launch the installation process. You may be prompted by a User Account Control (UAC) window asking for permission to make changes to your computer. Click Yes to proceed.
+
+
+3. Follow the Installation Wizard
+* The MT4/5 Setup Wizard will open. Review the End User License Agreement (EULA) and click Next or Agree to accept the terms and continue the installation.
+* The installer will ask where you want to install MT4/5. The default directory is usually fine, but you can choose a custom location if preferred.
+* Click Next to begin the installation.
+
+
+4. Complete the Installation
+* The installer will begin copying files to your system, which should only take a few minutes.
+* Once the process is finished, you will be prompted to launch MT4/5 immediately or exit the installer. Make sure the option to
+* "Launch MetaTrader 4/5" is checked, and click Finish.
+
+
+5. Open MT4/5 and Log In
+* When MT4/5 opens for the first time, you will be prompted to either: 
+   * Open a New Demo Account (for practice trading)
+   * Log In to an Existing Account (if you have a live or demo account with your broker).
+* Select the appropriate option and enter the login credentials provided by your broker (account number, password, and server).
+
+
+Verify Account Login
+To confirm your login:
+* In the Navigator section, ensure that your account is displayed.
+* In the Terminal section, select the Trade tab to view your balance.
+
+
+Account Performance Tracking
+MyFxBook and FxBlue provide comprehensive account and performance tracking services for forex traders, including real-time monitoring, detailed analytics, community features, and tools for performance optimization. Users can select between these platforms based on their specific needs and preferences.
+MyFxBook Setup
+To set up MyFxBook, follow the instructional video:
+* MyFxBook Setup Video
+________________
+
+
+FxBlue Setup
+To set up FxBlue, follow the instructional video:
+* FxBlue Setup Video
