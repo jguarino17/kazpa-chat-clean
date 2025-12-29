@@ -1,0 +1,12 @@
+﻿How To Create A MT5 Demo Account
+1. Open MetaTrader 5: Launch the MT5 platform on your desktop or VPS.
+2. Navigate to File: In the top left corner, click on "File."
+3. Open an Account: Select "Open an Account" from the dropdown menu.
+4. Choose MetaQuotes Server: In the window that appears, type “MetaQuotes” in the search bar and select "MetaQuotes-Demo." OR SEARCH WHAT EVER BROKER YOU ARE USING!
+5. Click Next: Press “Next” after selecting the server.
+6. Select Demo Account: Choose "New Demo Account" and click "Next."
+7. Fill in Your Details: Input your name, phone number, email, and desired deposit amount. Select your leverage.
+8. Agree to Terms: Check the box agreeing to the terms, then click “Next.”
+9. Finish Account Setup: A new demo account number, password, and investor password will be generated. Save these details, as you’ll need them to log in.
+10. Log In: You’re now logged into the MetaQuotes Demo server with your MT5 demo account.
+Your demo account is now ready for trading.

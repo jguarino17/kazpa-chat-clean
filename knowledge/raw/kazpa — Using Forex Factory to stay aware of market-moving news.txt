@@ -1,0 +1,156 @@
+﻿kazpa — Using Forex Factory to stay aware of market-moving news
+Purpose of this document
+This guide explains how to use Forex Factory’s economic calendar to stay aware of high-impact economic news events that can affect market behavior, volatility, and execution conditions.
+kazpa provides trading software and education only. Users are responsible for monitoring risk, market conditions, and when the software runs.
+________________
+
+
+What is Forex Factory?
+Forex Factory is a widely used public website that provides:
+* an economic calendar
+
+* scheduled news releases
+
+* global market event tracking
+
+The economic calendar shows when major economic data is released and how impactful it is expected to be.
+________________
+
+
+Understanding the “red folder” system
+Forex Factory categorizes news by impact level using colored icons.
+Red folder events (high impact)
+Red folder events indicate high-impact economic releases that often cause:
+   * sudden volatility
+
+   * sharp price movements
+
+   * widened spreads
+
+   * slippage
+
+   * erratic execution
+
+Examples of red folder events include:
+      * central bank interest rate decisions
+
+      * inflation data (CPI)
+
+      * employment data (such as jobs reports)
+
+      * speeches from central bank officials
+
+These events can significantly change market conditions in a very short period of time.
+________________
+
+
+Why red folder news matters for kazpa users
+kazpa software executes trades based on market conditions.
+During red folder events:
+         * price movement can become unstable
+
+         * spreads can widen unexpectedly
+
+         * execution quality can degrade
+
+         * risk profiles can change rapidly
+
+For this reason, many users avoid running automation during high-impact news.
+________________
+
+
+How to use Forex Factory correctly
+Step 1: Set your time zone
+            * Visit the Forex Factory calendar
+
+            * Set the calendar time zone to match:
+
+               * your local time, or
+
+               * your VPS time (recommended)
+
+This prevents confusion about when events occur.
+________________
+
+
+Step 2: Filter for red folder events
+                  * Use the calendar filters
+
+                  * Enable high-impact (red) events
+
+                  * Optionally hide low-impact events to reduce noise
+
+This allows you to focus only on events that may meaningfully affect the market.
+________________
+
+
+Step 3: Check affected currencies
+Each event lists the currency it impacts.
+Examples:
+                     * USD news → affects USD pairs and correlated markets
+
+                     * EUR news → affects EUR pairs
+
+                     * XAUUSD (gold) is often sensitive to:
+
+                        * USD news
+
+                        * interest rate decisions
+
+                        * inflation data
+
+Understanding which instruments may be affected helps with decision-making.
+________________
+
+
+How kazpa users typically respond to red folder news
+This is not advice — it is common risk-management behavior.
+Many users choose to:
+                           * turn AutoTrading OFF before red folder events
+
+                           * wait until volatility stabilizes
+
+                           * resume execution after the event has passed
+
+Turning AutoTrading OFF is a valid and responsible risk-control action.
+________________
+
+
+Timing considerations
+Market impact may occur:
+                              * before the scheduled release (anticipation)
+
+                              * at the release (volatility spike)
+
+                              * after the release (follow-through or reversals)
+
+It’s not only the exact release minute that matters.
+________________
+
+
+What kazpa does NOT do
+kazpa software:
+                                 * does not predict news outcomes
+
+                                 * does not read news feeds
+
+                                 * does not know when events are scheduled
+
+That responsibility remains with the user.
+________________
+
+
+Common mistakes to avoid
+                                    * Ignoring high-impact news entirely
+
+                                    * Assuming “the software will handle it”
+
+                                    * Leaving automation on during known volatility spikes
+
+                                    * Forgetting to re-enable AutoTrading after news passes
+
+________________
+
+
+Simple rule of thumb
+If you wouldn’t manually trade during a red folder event, it’s usually not a good time to run automation.

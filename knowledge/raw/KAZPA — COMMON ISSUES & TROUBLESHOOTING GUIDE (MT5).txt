@@ -1,0 +1,318 @@
+﻿KAZPA — COMMON ISSUES & TROUBLESHOOTING GUIDE (MT5)
+This guide covers the most common reasons kazpa software does not behave as expected and how to fix them.
+________________
+
+
+1. Software added to chart but no trades occur
+Cause: AutoTrading is OFF
+Fix:
+* In MT5, ensure the AutoTrading button is ON (green) in the top toolbar.
+
+* If it’s red, the software cannot execute trades.
+
+* After turning it ON, wait for valid market conditions.
+
+________________
+
+
+2. Software loads but shows a sad face / warning icon
+Cause: AutoTrading disabled or permissions not granted
+Fix:
+   * Right-click the chart → Expert Advisor → Properties
+
+   * Under Common tab:
+
+      * Allow Algo Trading ✅
+
+      * Allow DLL imports (if required by the software) ✅
+
+         * Confirm AutoTrading is ON (green)
+
+________________
+
+
+3. Software attached to the wrong trading symbol
+Cause: Chart symbol does not match account’s pricing type
+Example:
+            * Using EURUSD instead of EURUSD.pro or EURUSD.raw
+
+Fix:
+               * Check your broker’s symbol naming:
+
+                  * .raw, .pro, .ecn, etc.
+
+                     * Remove the software
+
+                     * Open the correct symbol chart
+
+                     * Re-attach the software
+
+⚠️ If the symbol does not match your account type, kazpa software will not trade.
+________________
+
+
+4. Software added to the wrong timeframe
+Cause: Chart timeframe does not match software design
+Fix:
+                        * VistaONE → M15 only
+
+                        * VistaX → M5 only
+
+                        * Remove the software
+
+                        * Change the chart timeframe
+
+                        * Re-attach the software
+
+________________
+
+
+5. Software does not appear in Navigator
+Cause: Files placed in the wrong MT5 folder
+Fix:
+Files must be placed in:
+
+MQL5 → Experts → Advisors
+                           *                            * NOT in:
+
+                              * Indicators
+
+                              * Scripts
+
+                              * Experts root
+
+                                 * Restart MT5 after copying files
+
+________________
+
+
+6. Software does not trade after installation
+Cause: MT5 was not restarted
+Fix:
+                                    * Fully close MT5
+
+                                    * Reopen MT5
+
+                                    * Re-attach the software to the chart
+
+MT5 does not always refresh new software without a restart.
+________________
+
+
+7. Software shows no errors but still doesn’t trade
+Possible causes:
+                                       * Market conditions not met
+
+                                       * Trading session restrictions
+
+                                       * User-defined time filters
+
+                                       * Risk limits reached
+
+Fix:
+                                          * Check the Experts and Journal tabs for messages
+
+                                          * Confirm you are within an allowed trading window
+
+                                          * Confirm risk settings are not blocking execution
+
+________________
+
+
+8. Using too low leverage on broker account
+Cause: Account leverage below required range
+Fix:
+                                             * kazpa software is designed for 1:200–1:500 leverage
+
+                                             * Leverage is set at the account level, not per trade
+
+                                             * If leverage is too low, margin requirements may block trades
+
+⚠️ Lower leverage may prevent proper execution.
+________________
+
+
+9. Using a US-regulated broker
+Cause: US brokers typically limit leverage to 1:50
+Fix:
+                                                * US brokers generally cannot support kazpa’s leverage requirements
+
+                                                * Broker selection is the user’s responsibility
+
+                                                * kazpa does not recommend or manage brokers
+
+________________
+
+
+10. Software was added before account was fully set up
+Cause: Software attached before:
+                                                   * Broker account funded
+
+                                                   * Market open
+
+                                                   * Proper symbol available
+
+Fix:
+                                                      * Ensure the account is active and tradable
+
+                                                      * Ensure spreads are live
+
+                                                      * Re-attach the software after setup is complete
+
+________________
+
+
+11. Software removed and re-added without resetting inputs
+Cause: Old or incompatible settings loaded
+Fix:
+                                                         * Remove the software
+
+                                                         * Re-attach it
+
+                                                         * Confirm correct input settings
+
+                                                         * Click OK to re-initialize
+
+________________
+
+
+12. Software stopped trading after changes were made
+Cause: Changes made while AutoTrading was ON
+Fix:
+                                                            * Turn AutoTrading OFF
+
+                                                            * Make changes (inputs, symbol, timeframe)
+
+                                                            * Turn AutoTrading ON again
+
+This forces a clean restart of execution logic.
+________________
+
+
+13. Trading during major news or low-liquidity periods
+Cause: User forgot to disable AutoTrading
+Fix:
+                                                               * AutoTrading should be turned OFF during:
+
+                                                                  * Major news events
+
+                                                                  * Holidays
+
+                                                                  * Low-liquidity sessions
+
+                                                                     * This is normal risk control behavior
+
+________________
+
+
+14. VPS connection dropped or MT5 closed
+Cause: VPS interruption
+Fix:
+                                                                        * Reconnect to VPS
+
+                                                                        * Confirm MT5 is open
+
+                                                                        * Confirm AutoTrading is ON
+
+                                                                        * Check charts and software status
+
+________________
+
+
+15. Expecting trades immediately after attaching software
+Cause: Misunderstanding of how execution works
+Fix:
+                                                                           * kazpa software trades only when conditions are met
+
+                                                                           * No trades ≠ broken software
+
+                                                                           * Patience and discipline are required
+
+________________
+
+
+16. Software compiled for MT5 but user installed MT4
+Cause: Wrong platform
+Fix:
+                                                                              * kazpa is MT5 only
+
+                                                                              * MT4 is not supported
+
+                                                                              * Install MetaTrader 5 from your broker
+
+________________
+
+
+17. Multiple softwares attached to the same chart
+Cause: Conflicting execution logic
+Fix:
+                                                                                 * Use one kazpa software per chart
+
+                                                                                 * Do not stack multiple EAs on the same symbol/chart
+
+________________
+
+
+18. Expecting kazpa to manage trades automatically without oversight
+Cause: Incorrect expectations
+Fix:
+                                                                                    * kazpa provides execution software, not managed accounts
+
+                                                                                    * User remains responsible for:
+
+                                                                                       * Monitoring
+
+                                                                                       * Risk
+
+                                                                                       * When software runs
+
+________________
+
+
+19. Platform updates reset settings
+Cause: MT5 update or broker update
+Fix:
+                                                                                          * Re-check:
+
+                                                                                             * AutoTrading
+
+                                                                                             * Permissions
+
+                                                                                             * Chart timeframe
+
+                                                                                             * Symbol
+
+                                                                                                * Re-attach software if needed
+
+________________
+
+
+20. Still not working after all checks
+Next steps:
+                                                                                                   * Review documentation carefully
+
+                                                                                                   * Check Experts / Journal logs
+
+                                                                                                   * Contact official kazpa support with:
+
+                                                                                                      * MT5 version
+
+                                                                                                      * Broker symbol name
+
+                                                                                                      * Screenshot of chart + Navigator
+
+
+
+
+Sometimes with the vistaX, when you turn on auto trading it will enter a trade right away! You can either close it out or let it run. I recommending closing when back in profit to get out of that. 
+
+
+
+Sometimes when you edit the input parameters too, and click ok, itll add another trade, you can close it out and then let the software do its thing. 
+
+________________
+
+
+Final reminder
+Most issues are setup-related, not software failures.
+Follow steps carefully, do not rush, and treat kazpa as a professional trading tool.

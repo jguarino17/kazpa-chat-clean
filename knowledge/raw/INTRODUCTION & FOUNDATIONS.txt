@@ -1,0 +1,340 @@
+﻿1. What Is Kazpa? (Overview + Disclaimers)
+Talking Points:
+* What kazpa is: licensed automated trading software
+
+* What kazpa is NOT: not a fund, not account management, not financial advice
+
+* User is always in control of their account
+
+* Trading involves risk and drawdowns are normal
+
+* Past performance ≠ future results
+
+* Who kazpa is designed for disciplined, patient users
+
+* Who kazpa is NOT for get-rich-quick mindset
+
+   * You are fully responsible for your trading decisions.
+
+________________
+
+
+2. Understanding Automated Trading (Big Picture)
+Talking Points:
+      * What automated trading really means
+
+      * Why rules matter more than emotions
+
+      * Why turning software OFF is part of strategy
+
+      * Automation ≠ passive income
+
+      * Why patience is mandatory
+
+________________
+
+
+📘 GOOGLE DOC 2 — MEMBER DASHBOARD & ECOSYSTEM
+3. Navigating the Kazpa Member Dashboard
+Talking Points:
+         * Home overview
+
+         * Documentation section
+
+         * Downloads
+
+         * License activation
+
+         * Risk tools
+
+         * Support & Telegram access
+
+         * Where to always check first before asking for help
+
+________________
+
+
+4. Understanding the Full Kazpa Setup Flow
+Talking Points:
+            * Purchase → Welcome → Member Dashboard
+
+            * Reading documentation before doing anything
+
+            * Broker → VPS → MT5 → Software
+
+            * Why skipping steps causes problems
+
+            * Expected setup time (not instant)
+
+________________
+
+
+📘 GOOGLE DOC 3 — VPS & MT5 ENVIRONMENT
+5. What Is a VPS & Why Kazpa Requires It
+Talking Points:
+               * What a VPS is
+
+               * Why laptops/desktops are unreliable
+
+               * 24/7 uptime
+
+               * Latency and execution
+
+               * Why this protects the user
+
+________________
+
+
+6. Accessing & Using Your VPS
+Talking Points:
+                  * Logging into VPS
+
+                  * Basic Windows behavior
+
+                  * Do not browse randomly
+
+                  * Do not install unnecessary software
+
+                  * Keep VPS clean and focused
+
+________________
+
+
+7. Installing MetaTrader 5 (MT5) on VPS
+Talking Points:
+                     * Downloading MT5
+
+                     * Correct MT5 icon (blue cap)
+
+                     * First launch
+
+                     * Why multiple MT5 installs may be needed later
+
+________________
+
+
+📘 GOOGLE DOC 4 — BROKERS & ACCOUNTS
+8. Understanding Brokers (What Kazpa Requires)
+Talking Points:
+                        * Broker vs kazpa relationship (none)
+
+                        * Account types
+
+                        * Spread & execution importance
+
+                        * Leverage basics
+
+                        * Why some brokers won’t work well
+
+________________
+
+
+9. Creating a Demo Account
+Talking Points:
+                           * Why demo is strongly recommended
+
+                           * Matching demo to live conditions
+
+                           * Treating demo seriously
+
+                           * What demo testing actually proves
+
+________________
+
+
+10. Funding Your Broker Account
+Talking Points:
+                              * Funding methods
+
+                              * Minimum balances
+
+                              * Avoid overfunding
+
+                              * Starting smaller = smarter
+
+________________
+
+
+📘 GOOGLE DOC 5 — INSTALLATION & LICENSE
+11. Installing VistaX & VistaONE Softwares
+Talking Points:
+                                 * Correct folder path:
+
+                                    * MQL5 → Experts → Advisors
+
+                                       * Restarting MT5
+
+                                       * Verifying software appears correctly
+
+                                       * Common install mistakes
+
+________________
+
+
+12. Activating Your Kazpa License
+Talking Points:
+                                          * License activation form
+
+                                          * What info is required
+
+                                          * License delivery timeline
+
+                                          * Confirming successful activation
+
+                                          * Blue cap icon confirmation
+
+________________
+
+
+13. Running Multiple MT5 Terminals
+Talking Points:
+                                             * Why one MT5 per account
+
+                                             * VistaX and VistaONE separation
+
+                                             * How to install second MT5
+
+                                             * Avoiding cross-contamination
+
+________________
+
+
+📘 GOOGLE DOC 6 — AUTOTRADING & EXECUTION RULES
+14. Understanding AutoTrading (ON / OFF Rules)
+Talking Points:
+                                                * When to turn AutoTrading ON
+
+                                                * When to turn it OFF
+
+                                                * Holidays
+
+                                                * Low volume periods
+
+                                                * Protecting capital > trading daily
+
+________________
+
+
+15. Using ForexFactory (RED Folder News)
+Talking Points:
+                                                   * What ForexFactory is
+
+                                                   * Filtering by red news
+
+                                                   * Which news matters most
+
+                                                   * How far before news to stop trading
+
+                                                   * When to resume trading
+
+________________
+
+
+📘 GOOGLE DOC 7 — RISK MANAGEMENT (CORE)
+16. Kazpa Risk Philosophy
+Talking Points:
+                                                      * Survival mindset
+
+                                                      * Long-term thinking
+
+                                                      * Why drawdown is part of trading
+
+                                                      * Avoiding emotional reactions
+
+________________
+
+
+17. Managing Risk With VistaX
+Talking Points:
+                                                         * Grid behavior explanation
+
+                                                         * Why lot size matters
+
+                                                         * Expected drawdown ranges
+
+                                                         * When to manually stop VistaX
+
+                                                         * What settings NOT to touch
+
+________________
+
+
+18. Managing Risk With VistaONE
+Talking Points:
+                                                            * Multi-pair exposure
+
+                                                            * Trade frequency
+
+                                                            * Conservative usage
+
+                                                            * Portfolio mindset
+
+________________
+
+
+📘 GOOGLE DOC 8 — PERFORMANCE TRACKING
+19. MyFXBook Setup
+Talking Points:
+                                                               * Why tracking matters
+
+                                                               * Connecting MT5 to MyFXBook
+
+                                                               * Privacy settings
+
+                                                               * Metrics that actually matter
+
+                                                               * Metrics to ignore
+
+________________
+
+
+📘 GOOGLE DOC 9 — MAINTENANCE & SUPPORT
+20. Uninstalling Kazpa Softwares
+Talking Points:
+                                                                  * Proper removal steps
+
+                                                                  * Cleaning MT5
+
+                                                                  * When reinstalling is necessary
+
+                                                                  * Avoiding corrupted setups
+
+________________
+
+
+21. Common Issues & FAQs
+Talking Points:
+                                                                     * Software not trading
+
+                                                                     * License issues
+
+                                                                     * VPS disconnects
+
+                                                                     * MT5 freezing
+
+                                                                     * Where to get help
+
+________________
+
+
+EDUCATION & EXPERIENCE
+22. Technical Analysis (Optional Knowledge)
+Talking Points:
+                                                                        * Why kazpa doesn’t rely on predictions
+
+                                                                        * Market structure basics
+
+                                                                        * Why less analysis is better for automation
+
+________________
+
+
+23. Lessons From Past Experiences (Real Talk)
+Talking Points:
+                                                                           * Mistakes you’ve personally made
+
+                                                                           * What caused drawdowns
+
+                                                                           * What actually worked long-term
+
+                                                                           * Advice you’d give new users

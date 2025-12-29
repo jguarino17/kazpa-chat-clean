@@ -1,0 +1,544 @@
+﻿⚠️ IMPORTANT NOTICE (Disclaimer)
+This material is for educational purposes only. kazpa provides trading software, not financial advice, managed accounts, or guaranteed outcomes.
+You are solely responsible for:
+* Your broker account
+
+* Your risk settings
+
+* Your trading decisions
+
+* Any profits or losses incurred
+
+Algorithmic trading involves substantial risk and is not suitable for all investors. Past performance does not guarantee future results.
+
+
+——————————————————————————————————————————
+
+
+SECTION 1 — Welcome to kazpa
+Welcome
+Welcome to kazpa.
+You now have access to the VistaSUITE, a professional-grade algorithmic trading software suite designed to help traders execute structured strategies with discipline and consistency.
+Before using any algorithm live, it is critical that you understand:
+   * What kazpa does
+
+   * What kazpa does not do
+
+   * How responsibility is shared (and where it is not)
+
+This course exists to make sure you deploy the VistaSUITE correctly, safely, and intentionally.
+
+What kazpa Is — and Is Not
+kazpa IS:
+      * A provider of algorithmic trading software
+
+      * A framework for rule-based execution
+
+      * A system that requires user oversight and risk management
+
+kazpa IS NOT:
+         * A managed trading service
+
+         * A financial advisor
+
+         * A guarantee of profits
+
+         * A replacement for risk management
+
+At no point does kazpa:
+            * Access your funds
+
+            * Place trades without your platform running
+
+            * Control your broker account
+
+You remain in full control at all times.
+
+Your Role as a kazpa User
+Using algorithmic software does not remove responsibility — it increases it.
+Your responsibilities include:
+               * Choosing appropriate account size
+
+               * Selecting proper risk settings
+
+               * Monitoring margin level
+
+               * Knowing when not to trade
+
+               * Turning the software off when conditions are unfavorable
+
+The VistaSUITE is a tool — not a promise.
+
+How to Use This Course
+This course is structured to be completed in order.
+You should:
+                  1. Read each section carefully
+
+                  2. Watch the corresponding videos
+
+                  3. Complete all quizzes before moving forward
+
+                  4. Avoid skipping setup steps
+
+Rushing setup is the #1 cause of poor outcomes.
+
+
+——————————————————————————————————————————
+SECTION 2 — Algorithmic Trading Fundamentals
+Introduction to the VistaSUITE
+The VistaSUITE is kazpa’s algorithmic trading software package.
+It includes:
+                     * VistaONE – a multi-pair algorithm designed for structured market behavior
+
+                     * VistaX – a volatility-based algorithm designed specifically for XAUUSD (Gold)
+
+Each algorithm serves a different purpose and must be treated accordingly.
+Using the wrong algorithm in the wrong environment increases risk.
+________________
+
+
+VistaONE Overview
+VistaONE is designed to:
+                        * Trade across multiple currency pairs
+
+                        * Operate within structured market conditions
+
+                        * Emphasize controlled exposure over aggressive growth
+
+VistaONE works best when:
+                           * Markets are orderly
+
+                           * Volatility is moderate
+
+                           * Risk settings are conservative
+
+VistaONE is not designed for:
+                              * High-impact news trading
+
+                              * Aggressive lot scaling
+
+                              * Emotional interference
+
+________________
+
+
+VistaX Overview
+VistaX is designed specifically for:
+                                 * XAUUSD (Gold - M5)
+
+                                 * Volatility-based price behavior
+
+                                 * Short-term execution windows
+
+VistaX requires:
+                                    * Strict risk controls
+
+                                    * Attention to margin level
+
+                                    * Awareness of trading sessions
+
+VistaX carries higher risk than VistaONE when misused.
+________________
+
+
+The Trading Platform (MetaTrader 5)
+kazpa software operates inside MetaTrader 5 (MT5).
+MT5 is the environment where:
+                                       * Charts are loaded
+
+                                       * Algorithms are attached
+
+                                       * Orders are executed
+
+                                       * Risk metrics are monitored
+
+Key areas you must understand:
+                                          * Market Watch
+
+                                          * Charts
+
+                                          * Terminal (Trade, Exposure, History)
+
+                                          * AutoTrading button
+
+If you do not understand what a button does — do not click it.
+________________
+
+
+Balance vs Equity (Critical Concept)
+Balance
+                                             * Your account after trades are closed
+
+Equity
+                                                * Your balance plus or minus open trades
+
+Equity is what matters for risk control.
+Algorithms respond to equity, not emotion.
+________________
+
+
+Margin, Margin Used & Margin Level %
+Margin Used
+                                                   * Capital currently tied up in open trades
+
+Free Margin
+                                                      * Capital still available to trade
+
+Margin Level %
+                                                         * One of the most important numbers you must monitor
+
+If Margin Level drops too low:
+                                                            * Brokers may close trades automatically
+
+                                                            * Losses can accelerate rapidly
+
+Low margin is not a strategy.
+________________
+
+
+Why Margin Level Matters More Than Profit
+Many traders focus on profit and ignore margin.
+This is backwards.
+You can:
+                                                               * Be profitable and still blow an account
+
+                                                               * Lose control even while “up”
+
+Healthy margin levels allow algorithms to function as designed.
+________________
+
+
+Lot Size Fundamentals
+Lot size determines exposure, not intelligence.
+Common mistakes:
+                                                                  * Increasing lot size too early
+
+                                                                  * Scaling based on emotion
+
+                                                                  * Matching lot size to account balance without understanding margin impact
+
+Bigger accounts do not mean:
+                                                                     * Bigger trades
+
+                                                                     * Faster results
+
+                                                                     * Less risk
+
+Lot size must match:
+                                                                        * Account size
+
+                                                                        * Algorithm type
+
+                                                                        * Market conditions
+
+________________
+
+
+AutoTrading: What It Really Does
+The AutoTrading button allows algorithms to:
+                                                                           * Open new trades
+
+                                                                           * Manage existing positions
+
+Turning AutoTrading OFF:
+                                                                              * Prevents new trades
+
+                                                                              * Does not delete software
+
+                                                                              * Does not close existing positions automatically
+
+You should turn AutoTrading OFF when:
+                                                                                 * Major news events occur
+
+                                                                                 * Market behavior changes unexpectedly
+
+                                                                                 * Risk limits are reached
+
+                                                                                 * You are unsure what is happening
+
+________________
+
+
+When Not Trading Is the Correct Decision
+Professional trading includes:
+                                                                                    * Pausing execution
+
+                                                                                    * Preserving capital
+
+                                                                                    * Waiting for clarity
+
+There is no penalty for not trading.
+There is a penalty for ignoring risk.
+
+
+✅ End of Section 2
+At this point, users should:
+                                                                                       * Understand what VistaSUITE is
+
+                                                                                       * Know the difference between VistaONE and VistaX
+
+                                                                                       * Understand margin, equity, and exposure
+
+                                                                                       * Respect the importance of risk controls
+
+
+——————————————————————————————————————————
+SECTION 3 — Onboarding & VPS Setup
+Introduction
+Before any algorithm is installed or activated, your trading environment must be set up correctly.
+Most problems users experience with algorithmic trading do not come from the software itself — they come from:
+                                                                                          * Poor infrastructure
+
+                                                                                          * Rushed onboarding
+
+                                                                                          * Incomplete setup
+
+                                                                                          * Misunderstanding third-party tools
+
+This section walks you through the non-negotiable foundations required to run the VistaSUITE properly.
+________________
+
+
+Why Infrastructure Matters in Algorithmic Trading
+Algorithmic trading software requires:
+                                                                                             * Consistent uptime
+
+                                                                                             * Stable internet connectivity
+
+                                                                                             * Low latency
+
+                                                                                             * A controlled environment
+
+Running algorithms on an unreliable computer or unstable connection introduces unnecessary risk.
+That is why kazpa requires the use of a Virtual Private Server (VPS).
+________________
+
+
+What Is a VPS?
+A Virtual Private Server (VPS) is a remote computer that:
+                                                                                                * Runs 24 hours a day
+
+                                                                                                * Is hosted in a professional data center
+
+                                                                                                * Stays online even when your personal device is off
+
+Your VPS becomes the “home” of:
+                                                                                                   * MetaTrader 5
+
+                                                                                                   * VistaONE
+
+                                                                                                   * VistaX
+
+                                                                                                   * Your live or demo trading environment
+
+Think of it as a dedicated trading machine.
+________________
+
+
+Why a VPS Is Required for VistaSUITE
+Running VistaSUITE on a VPS ensures:
+                                                                                                      * No missed trades due to internet drops
+
+                                                                                                      * No interruptions from sleep mode or shutdowns
+
+                                                                                                      * Consistent execution during trading sessions
+
+                                                                                                      * Reduced latency between broker and platform
+
+Without a VPS:
+                                                                                                         * Algorithms may stop unexpectedly
+
+                                                                                                         * Trades may fail to open or close
+
+                                                                                                         * Risk controls may not trigger correctly
+
+These risks are avoidable.
+________________
+
+
+VPS Responsibilities (Important)
+A VPS does not:
+                                                                                                            * Trade for you
+
+                                                                                                            * Manage risk automatically
+
+                                                                                                            * Guarantee execution quality
+
+You are still responsible for:
+                                                                                                               * Logging in periodically
+
+                                                                                                               * Monitoring performance
+
+                                                                                                               * Ensuring MetaTrader remains open
+
+                                                                                                               * Turning AutoTrading on or off when needed
+
+The VPS is infrastructure — not intelligence.
+________________
+
+
+Logging Into Your VPS
+Access to your VPS is done using Microsoft Remote Desktop.
+You will receive:
+                                                                                                                  * An IP address
+
+                                                                                                                  * A username
+
+                                                                                                                  * A password
+
+Steps to log in:
+                                                                                                                     1. Open Microsoft Remote Desktop
+
+                                                                                                                     2. Enter the VPS IP address
+
+                                                                                                                     3. Enter your login credentials
+
+                                                                                                                     4. Connect
+
+Once connected, you will see a Windows desktop, just like a normal computer.
+________________
+
+
+Inside Your VPS Environment
+Your VPS should be used only for trading-related activities.
+Recommended use:
+                                                                                                                        * MetaTrader 5
+
+                                                                                                                        * Broker platform tools
+
+                                                                                                                        * Myfxbook (optional tracking)
+
+Avoid:
+                                                                                                                           * Web browsing
+
+                                                                                                                           * Downloads unrelated to trading
+
+                                                                                                                           * Streaming or heavy background apps
+
+The goal is stability, not convenience.
+________________
+
+
+Broker Accounts: Your Responsibility
+kazpa does not:
+                                                                                                                              * Open broker accounts for you
+
+                                                                                                                              * Handle funding
+
+                                                                                                                              * Recommend brokers as financial advice
+
+You must:
+                                                                                                                                 * Choose a broker that supports MT5
+
+                                                                                                                                 * Ensure sufficient leverage
+
+                                                                                                                                 * Understand spreads and commissions
+
+                                                                                                                                 * Confirm the broker allows algorithmic trading
+
+Always start with a demo account.
+________________
+
+
+Demo vs Live Accounts
+Demo Accounts
+                                                                                                                                    * Simulated funds
+
+                                                                                                                                    * Real market prices
+
+                                                                                                                                    * No financial risk
+
+Demo accounts are used to:
+                                                                                                                                       * Test installation
+
+                                                                                                                                       * Confirm settings
+
+                                                                                                                                       * Observe behavior
+
+                                                                                                                                       * Learn risk mechanics
+
+Live Accounts
+                                                                                                                                          * Real capital
+
+                                                                                                                                          * Real risk
+
+                                                                                                                                          * Emotional impact
+
+You should never move to live trading until:
+                                                                                                                                             * You fully understand the software
+
+                                                                                                                                             * You are comfortable with drawdown behavior
+
+                                                                                                                                             * You have verified risk controls work as expected
+
+________________
+
+
+Funding Your Broker Account (Live Trading)
+When you choose to fund a live account:
+                                                                                                                                                * Start with capital you can afford to lose
+
+                                                                                                                                                * Do not “max out” your intended allocation
+
+                                                                                                                                                * Expect variability and drawdowns
+
+Algorithmic trading is not linear.
+Scaling should happen over time, not immediately.
+________________
+
+
+Licensing the VistaSUITE
+Licensing is the final step before live deployment.
+You should request licensing only when:
+                                                                                                                                                   * VPS is fully set up
+
+                                                                                                                                                   * Broker account is created
+
+                                                                                                                                                   * MetaTrader 5 is installed
+
+                                                                                                                                                   * You understand the fundamentals
+
+Each license:
+                                                                                                                                                      * Is environment-specific
+
+                                                                                                                                                      * Is tied to your setup
+
+                                                                                                                                                      * Cannot be rushed or reused improperly
+
+Licensing too early causes delays and confusion.
+________________
+
+
+Common Onboarding Mistakes to Avoid
+                                                                                                                                                         * Skipping demo testing
+
+                                                                                                                                                         * Installing software before understanding risk
+
+                                                                                                                                                         * Running algorithms on personal laptops
+
+                                                                                                                                                         * Increasing lot size prematurely
+
+                                                                                                                                                         * Ignoring margin level
+
+                                                                                                                                                         * Treating the VPS as “set and forget”
+
+The VistaSUITE performs best when:
+                                                                                                                                                            * Setup is deliberate
+
+                                                                                                                                                            * Risk is respected
+
+                                                                                                                                                            * Expectations are realistic
+
+
+✅ End of Section 3
+At this stage, users are now prepared to:
+                                                                                                                                                               * Set up their trading environment correctly
+
+                                                                                                                                                               * Avoid common infrastructure mistakes
+
+                                                                                                                                                               * Move confidently into software installation
+
+
+
+
+——————————————————————————————————————————

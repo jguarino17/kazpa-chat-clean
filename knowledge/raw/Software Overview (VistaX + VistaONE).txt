@@ -1,0 +1,128 @@
+﻿SECTION 2 — VistaX + VistaONE: Software Overview
+This section explains exactly what each software is, how it operates, how they differ, and which type of trader benefits most from each system.
+________________
+
+
+Overview of the kazpa Software Suite
+kazpa currently includes two proprietary automated trading softwares:
+Software
+	Primary Chart
+	Pair Behavior
+	Style
+	VistaX
+	XAUUSD (Gold), M5
+	Single-pair
+	Fast, aggressive, high volatility
+	VistaONE
+	EURUSD, M15
+	Multi-pair execution depending on setfile
+	Controlled, diversified, structured
+	These are not bots — they are intelligent trading softwares designed to operate autonomously under defined logic, rules, and dynamic market conditions.
+Both softwares can produce strong results, but they are built for different risk appetites, different market profiles, and different personalities.
+Understanding that difference = long-term success.
+________________
+
+
+VistaONE — Multipair Engine (Runs on EURUSD Chart)
+VistaONE anchors on the EURUSD M15 chart, but it is not limited to EURUSD trading.
+The currency pairs traded are controlled by the setfile selected: Setfile Example Behavior
+Setfile
+	Risk Profile
+	Pair Behavior
+	Conservative
+	Lowest volatility exposure
+	Trades selected low/medium-volatility FX pairs
+	Moderate
+	Balanced volatility + opportunity
+	Trades additional pairs for more trade flow
+	Aggressive
+	Higher exposure + faster growth potential
+	Expands into higher-momentum pairs
+	Meaning:
+You run it on EURUSD M15, but the software can execute on multiple FX pairs in the background based on the configuration profile you choose. This makes VistaONE a diversified engine, not a single-pair setup. No gold, no indices, just FX pairs — optimized, steady, controlled flow.
+________________
+
+
+VistaONE Personality
+* Most stable software in the kazpa suite
+
+* More consistent day-to-day behavior
+
+* Lower average drawdown compared to gold-based systems
+
+* Designed for structured, methodical account growth
+
+* Ideal for traders who want less psychological pressure
+
+________________
+
+
+VistaX — Gold Momentum Engine (Single-Pair)
+VistaX is built exclusively for XAUUSD (Gold) and runs on the M5 timeframe.
+Gold is violent. Gold is explosive. Gold trends until it doesn’t — then it snaps.
+VistaX is engineered to operate inside that chaos.
+Personality Traits
+   * Higher momentum potential
+
+   * Faster equity swings
+
+   * Drawdowns can be deeper
+
+   * Best when managed with proper margin
+
+VistaX is for people who can handle heat, expect volatility, and want velocity.
+Not for risk-sensitive traders — VistaONE is better for that profile.
+________________
+
+
+VistaX vs VistaONE: Identity Summary
+Trait
+	VistaX
+	VistaONE
+	Instrument Type
+	Gold
+	Multi-pair FX
+	Chart Timeframe
+	M5
+	M15 (EURUSD host chart)
+	Volatility
+	High
+	Moderate
+	Drawdown Behavior
+	Sharper swings
+	More controlled
+	Ideal For
+	Traders who want upside punch
+	Traders who want stability & diversification
+	Not better vs worse — just different engines for different objectives.
+________________
+
+
+Who Should Use Which Software?
+VistaX
+Best for users who:
+✔ Want high-momentum potential
+✔ Can handle deeper drawdowns
+✔ Understand gold’s volatility and accept it
+Not ideal for:
+✖ Low-tolerance risk psychology
+✖ Underfunded accounts
+✖ People who panic during DD cycles
+________________
+
+
+VistaONE
+Best for users who:
+✔ Prefer smoother algorithmic behavior
+✔ Want diversified FX trade flow
+✔ Value stability over aggression
+Not ideal for:
+✖ Traders expecting explosive flips
+✖ People unwilling to follow set guidelines
+________________
+
+
+One-Sentence Summary
+VistaX = Aggressive Gold Engine
+VistaONE = Multipair FX Stability Engine
+Both = Powerful when used correctly & with appropriate risk

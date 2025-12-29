@@ -1,0 +1,10 @@
+﻿In this example i will use oxsecurities. 
+
+Step 1: create an account: Create an account with the broker you chose. Fillout all of the required detailed to complete your account. This will include your personal information, address, email, phone, etcetera. 
+
+Step 2: Wait for an email: After you sign up and submit the form, check your email. You should receive an email with an account activation button. Click this link or button and then sign into your brand new broker account.
+
+Step 3: Complete KYC (know your customer): short Explain KYC: You must complete this inorder for your broker to gather your information and all you to withdraw and transfer your funds. Its just a verification system where you input your information, upload a picture of your ID and then your all set. 
+
+
+Once user is logged in explain the user interface. : Explain this is where you will deposit, transfer and withdraw your funds. You are in complete control of this. You can also create new trading accounts from this dashboard as well.

@@ -1,0 +1,85 @@
+﻿kazpa Fundamentals Quiz
+Algo Trading – Core Knowledge Check
+You must complete this quiz to unlock the next section of the kazpa Member Dashboard.
+________________
+
+
+Question 1
+If you want to limit your overall account drawdown to 20%, which setting should you adjust in the algorithm, and what must you do to activate it?
+⬜ Enable “Unlimited Mode” so the software can recover faster
+⬜ Hope the market reverses before losses get too large
+⬜ Adjust the Basket Stop Loss and set a high dollar amount
+✅ Enable the Equity Stop and set Total Equity Risk to 20%
+✔ Correct Answer Explanation:
+ The Equity Stop limits total account drawdown based on equity. You must enable it and set the desired percentage (e.g., 20%) for it to function.
+________________
+
+
+Question 2
+I understand that kazpa provides trading software only and does not manage my funds. I am fully responsible for monitoring risk and potential losses on my account.
+✅ True
+⬜ False
+✔ Correct Answer Explanation:
+ kazpa is not a financial advisor and does not manage or control your account. All trading decisions and risk management remain your responsibility.
+________________
+
+
+Question 3
+If you want to limit losses on a specific pair (or basket of trades) to a maximum of $500, which option should you adjust?
+⬜ Disable the algorithm during drawdown
+⬜ Reduce leverage with the broker
+⬜ Adjust lot size only
+✅ Enable Basket Stop Loss and set it to $500
+✔ Correct Answer Explanation:
+ The Basket Stop Loss caps total loss for a group of trades on a symbol or strategy.
+________________
+
+
+Question 4
+Where should you stay up to date with important market news that may impact algorithm performance?
+⬜ Social media headlines
+⬜ Old news articles
+⬜ Astrology or market predictions
+✅ The kazpa community announcements and official updates
+✔ Correct Answer Explanation:
+ kazpa provides important market notices, trading pauses, and risk updates through official community channels.
+________________
+
+
+Question 5
+Which metric should you monitor regularly to manage risk effectively while running algorithmic trading software?
+⬜ Total profit only
+⬜ Nothing — the software handles everything
+⬜ Market sentiment on social media
+✅ Margin Level %
+✔ Correct Answer Explanation:
+ Margin Level % is one of the most important risk indicators. Low margin levels increase the risk of forced liquidation.
+________________
+
+
+Question 6
+How do you properly stop the algorithm from placing new trades in MetaTrader?
+⬜ Shut down your VPS
+⬜ Contact support to disable trading
+⬜ Close random charts
+✅ Turn off the “AutoTrading” button in MetaTrader
+✔ Correct Answer Explanation:
+ Disabling AutoTrading immediately prevents the software from opening new positions.
+________________
+
+
+Question 7
+What application is used to log into your VPS?
+⬜ Myfxbook
+⬜ Broker trading portal
+⬜ kazpa dashboard
+✅ Microsoft Remote Desktop
+✔ Correct Answer Explanation:
+ VPS access is handled through Microsoft Remote Desktop, allowing you to manage MetaTrader remotely.
+________________
+
+
+Completion Message (Highly Recommended)
+✅ Quiz Complete
+ You’ve demonstrated a basic understanding of algorithmic trading risk, responsibility, and platform controls.
+You may now proceed to the next section of the kazpa Member Dashboard.

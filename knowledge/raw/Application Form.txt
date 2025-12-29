@@ -1,0 +1,81 @@
+﻿📋 Application Form
+Request Access to kazpa.io
+Our software is invite-only. Complete this application to be considered for approval.
+________________
+
+
+Section 1: Basic Information
+* Full Name
+
+* Email Address
+
+* Phone Number
+
+* Location (Country & Time Zone)
+
+________________
+
+
+Section 2: Trading / Investment Background
+   * Have you traded before? (Yes / No)
+
+   * If yes, how many years of experience?
+
+   * What platforms have you used? (MT5, MT4, TradingView, Other)
+
+   * Have you used automated systems before? (Yes / No)
+
+   * Do you currently work with a broker? If yes, which one?
+
+________________
+
+
+Section 3: Capital & Goals
+      * Approximate account size you plan to start with:
+
+         * $5k–$10k
+
+         * $10k–$25k
+
+         * $25k–$50k
+
+         * $50k+
+
+            * What is your primary goal with kazpa?
+
+               * Diversify portfolio with passive automation
+
+               * Hands-on growth (flipping accounts with VistaX)
+
+               * Both
+
+                  * How would you describe your risk tolerance?
+
+                     * Conservative (protect capital, steady growth)
+
+                     * Moderate (balanced growth with risk)
+
+                     * Aggressive (higher risk/reward, account flips)
+
+________________
+
+
+Section 4: Fit & Commitment
+                        * Why do you think you’re a good fit for kazpa?
+
+                        * Are you willing to join a private consultation to review your application? (Yes / No)
+
+                        * Are you comfortable using MT5 and a VPS? (Yes / No, but willing to learn)
+
+________________
+
+
+Section 5: Disclaimer (Checkboxes)
+By submitting this application, you acknowledge that:
+                           * I understand kazpa provides software only and does not manage funds.
+
+                           * I understand trading carries risk and past performance does not guarantee future results.
+
+                           * I understand kazpa is invite-only and approval is not guaranteed.
+
+                           * I agree to kazpa’s Terms & Conditions and Privacy Policy.

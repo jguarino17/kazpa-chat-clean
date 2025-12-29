@@ -1,0 +1,272 @@
+﻿kazpa — Complete onboarding & funding flow
+(From payment → ready to run)
+Purpose of this document
+This guide explains the entire kazpa onboarding journey, including how users are routed between crypto funding and bank funding, depending on speed, location, and broker capabilities.
+kazpa provides trading software and education only. Users control broker selection, funding method, risk, and when software runs.
+________________
+
+
+STAGE 1 — Payment completed (kazpa license)
+Once payment is completed:
+* You receive access to:
+
+   * kazpa documentation
+
+   * setup guides
+
+   * downloads
+
+   * support resources
+
+      * You are not live yet
+
+      * No trading occurs at this stage
+
+Your next objective is to prepare your trading environment.
+________________
+
+
+STAGE 2 — Choose account type: demo or live
+Before funding anything, decide:
+Option A: Demo account (recommended first)
+         * No real capital
+
+         * Ideal for:
+
+            * learning MT5
+
+            * confirming installation
+
+            * understanding software behavior
+
+               * Funding step is skipped
+
+Option B: Live account
+                  * Real capital
+
+                  * Requires broker account + funding
+
+                  * Funding method matters (bank vs crypto)
+
+kazpa works the same on demo and live. Risk is the only difference.
+________________
+
+
+STAGE 3 — Broker account setup (before funding)
+Regardless of funding method, your broker account must meet these requirements:
+                     * MT5 only
+
+                     * Tight spreads / low trading costs
+ (often called RAW / ECN / PRO-style depending on broker)
+
+                     * Leverage support: 1:200–1:500
+
+                        * Exact leverage choice is yours
+
+                           * Correct symbol naming for your account type
+(example: .raw, .pro, .ecn)
+
+kazpa does not recommend brokers. Broker selection is your responsibility.
+________________
+
+
+STAGE 4 — Funding method decision (routing logic)
+At this point, users are routed based on priority and constraints.
+kazpaGPT should route users using this logic:
+________________
+
+
+ROUTE A — Crypto funding (fastest & most flexible)
+Best for users who:
+                              * Want fast access to funds
+
+                              * Need weekend or after-hours funding
+
+                              * Are using non-US brokers
+
+                              * Are comfortable with crypto basics
+
+Key characteristics:
+                                 * Available 24/7
+
+                                 * Often credited in minutes
+
+                                 * Lower friction than bank wires
+
+                                 * Not limited by banking hours
+
+Typical flow:
+                                    1. Buy or hold crypto (commonly USDT)
+
+                                    2. Send crypto to broker’s deposit address
+
+                                    3. Broker credits account
+
+                                    4. User is ready to continue setup
+
+Important notes:
+                                       * Exchanges may place withdrawal holds on newly purchased crypto
+
+                                       * Network selection must match (example: USDT ERC-20)
+
+                                       * Crypto transactions are irreversible
+
+Crypto is often the fastest way to move from “paid” → “ready to trade”.
+________________
+
+
+ROUTE B — Bank funding (slower but familiar)
+Best for users who:
+                                          * Prefer traditional banking
+
+                                          * Are funding during business days
+
+                                          * Are comfortable waiting longer
+
+                                          * Are using brokers that support local bank rails
+
+Key characteristics:
+                                             * Processing time: 2–3 business days or more
+
+                                             * No weekend or holiday processing
+
+                                             * Possible intermediary bank delays
+
+                                             * May require additional verification
+
+Typical flow:
+                                                1. Initiate bank transfer (wire or ACH)
+
+                                                2. Wait for processing
+
+                                                3. Broker credits account
+
+                                                4. User continues setup
+
+Bank funding is reliable but slower.
+________________
+
+
+STAGE 5 — Funding completed (checkpoint)
+Once funds are visible in your broker account:
+                                                   * Confirm balance is correct
+
+                                                   * Confirm leverage is set correctly
+
+                                                   * Confirm correct account type
+
+                                                   * Confirm correct symbols are available in MT5
+
+Do not install software yet if these are not confirmed.
+________________
+
+
+STAGE 6 — VPS setup (recommended)
+For consistent execution:
+                                                      * Use a VPS
+
+                                                      * Install MT5 on the VPS
+
+                                                      * Log into your broker account inside MT5
+
+                                                      * Keep MT5 running continuously
+
+This step is optional but strongly recommended for live accounts.
+________________
+
+
+STAGE 7 — Software installation
+Now you install kazpa software:
+Copy files into:
+
+MQL5 → Experts → Advisors
+                                                         1.                                                          2. Restart MT5
+
+                                                         3. Open the correct symbol chart
+
+                                                         4. Set correct timeframe:
+
+                                                            * VistaONE → M15
+
+                                                            * VistaX → M5
+
+                                                               5. Attach the software
+
+________________
+
+
+STAGE 8 — License activation
+                                                                  * Complete the license activation process
+
+                                                                  * Confirm software loads without errors
+
+                                                                  * Verify AutoTrading is ON (green)
+
+At this point, the software is installed but not necessarily trading yet.
+________________
+
+
+STAGE 9 — First run expectations
+Important mindset:
+                                                                     * No trades immediately is normal
+
+                                                                     * Trades only occur when conditions are met
+
+                                                                     * Drawdown is part of trading
+
+                                                                     * You control when AutoTrading is ON or OFF
+
+Do not rush this stage.
+________________
+
+
+STAGE 10 — Live operation & monitoring
+Once running:
+                                                                        * Monitor execution
+
+                                                                        * Disable AutoTrading during:
+
+                                                                           * major news
+
+                                                                           * low-liquidity periods
+
+                                                                           * platform updates
+
+                                                                              * Review logs if anything looks unusual
+
+kazpa is a tool — you are the operator.
+________________
+
+
+Summary: routing logic (simple)
+                                                                                 * Need speed / weekend funding? → Crypto
+
+                                                                                 * Okay with delays / weekdays only? → Bank
+
+                                                                                 * Unsure? → Demo first, then decide
+
+kazpaGPT should always:
+                                                                                    * explain both paths
+
+                                                                                    * let the user choose
+
+                                                                                    * never push one as mandatory
+
+                                                                                    * never provide financial advice
+
+________________
+
+
+Final reminder
+kazpa licenses trading software only.
+You choose the broker.
+You choose the funding method.
+You control risk and execution.
+If you want, kazpaGPT can now:
+                                                                                       * walk you through your exact next step
+
+                                                                                       * check which stage you’re on
+
+                                                                                       * or switch you between crypto vs bank flows dynamically
+
+Just say where you are in the process.

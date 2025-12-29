@@ -1,0 +1,888 @@
+﻿1) welcome
+1) welcome
+1.1 Welcome to the kazpa member portal
+What this page is:
+This is your step-by-step guide to getting up and running with kazpa trading softwares (VistaONE and VistaX). It shows you what each software does, how to prepare your environment, how to install correctly, how to run safely, and where to get help.
+What you’ll learn here:
+* The big picture: what kazpa is and how our softwares fit into your trading workflow
+
+* What you need before installing (VPS, broker account, MT5)
+
+* How to activate your license and install the softwares correctly
+
+* How to avoid common mistakes and track results
+
+* Where to find FAQs, updates, and support
+
+How long this takes:
+ Most members complete the initial setup in 40–60 minutes once they have a VPS, broker account, and MT5 ready. Gathering those prerequisites can vary by person.
+How to use this guide:
+ Read the section, complete the checklist, then move to the next section. When you see a screenshot marker, that’s exactly what we’ll show in the final web version.
+[screenshot: member dashboard home — showing “Licenses”, “Downloads”, “Support” links]
+________________
+
+
+1.2 What kazpa is / is not
+kazpa is:
+   * A provider of licensed trading softwares (VistaONE and VistaX) that you run on your own MetaTrader 5 (MT5) platform.
+
+   * A member portal with documentation, updates, and support resources.
+
+   * Tools and education designed to help you operate your own trading.
+
+kazpa is not:
+      * We do not manage funds or trade on your behalf.
+
+      * We do not provide financial, investment, or broker/VPS recommendations.
+
+      * We do not guarantee profits or outcomes.
+
+Your control:
+ You choose your broker, VPS, and account size. You install and run the softwares. You can pause/stop at any time. You remain fully in control of your account.
+[screenshot: license key view in member dashboard — status “Active”]
+________________
+
+
+1.3 Quick start checklist (5 steps)
+Follow these in order. Each item has a deeper section later in the guide.
+         1. VPS ready
+
+            * A Windows VPS (so MT5 can run 24/5).
+
+            * Stable internet, always on.
+
+            * Remote Desktop access confirmed.
+[screenshot: RDP window connected to a clean Windows VPS]
+
+               2. Broker account ready
+
+                  * Open a live or demo MT5 account with a broker you researched and selected.
+
+                  * Make sure the account supports 1:500 leverage (required by our softwares).
+
+                  * Keep your server name, login (account number), and password handy.
+[screenshot: broker email showing MT5 server + login (blurred)]
+
+                     3. MT5 installed on your VPS
+
+                        * Download and install MetaTrader 5 on the VPS.
+
+                        * Log in using your broker server + account credentials.
+
+                        * Confirm you can see live quotes and charts.
+[screenshot: MT5 open with “Navigator” + “Market Watch” visible]
+
+                           4. License activated in the kazpa member dashboard
+
+                              * Fill out the License Activation form with your MT5 account number.
+
+                              * Wait for status Active in your dashboard.
+
+                              * If you change brokers or account numbers later, you’ll need to update this.
+[screenshot: license activation form (fields blurred) → status “Active” badge]
+
+                                 5. Install the software
+
+                                    * Download the VistaONE / VistaX files from the member dashboard.
+
+                                    * Copy to the correct MT5 folders, attach to the correct chart/timeframe, enable Algo Trading.
+
+                                    * Verify the Experts and Journal tabs show no errors.
+[screenshot: MT5 → “File → Open Data Folder” and “Experts” panel with no errors]
+
+When all 5 are complete, you’re ready to continue into Fundamentals (Section 2) and Install the softwares (Section 4).
+________________
+
+
+1.4 Important notices
+                                       * High risk: Trading Forex/CFDs involves significant risk of loss. Only trade with capital you can afford to lose. Past performance does not guarantee future results.
+
+                                       * Educational use only: All content is for education and software operation guidance. It is not financial advice and not an offer to buy/sell any instrument.
+
+                                       * No recommendations: kazpa does not recommend or endorse any broker, VPS, or third-party provider. Do your own research and choose providers that meet your requirements.
+
+                                       * Your responsibility: You operate your own account. You choose when to run, pause, or stop the softwares. You’re responsible for all trading outcomes.
+
+                                       * Licensing: Your license is personal and tied to your MT5 account number. Changing accounts or brokers requires re-licensing via the member dashboard.
+
+
+2) fundamentals
+2) fundamentals
+2.1 The kazpa softwares (VistaONE & VistaX)
+Purpose:
+ Understand what each software is built for and how they fit together inside your account.
+VistaONE — Precision & Stability
+                                          * Designed for steady, lower-risk growth.
+
+                                          * Trades fewer sequences per day but focuses on high-probability structures.
+
+                                          * Best suited for users who value smoother equity curves and tighter drawdowns.
+
+VistaX — Aggressive Compounding
+                                             * Built for capital acceleration.
+
+                                             * Trades more frequently, uses controlled sequencing logic, and compounds faster.
+
+                                             * Designed for members who understand higher drawdown tolerance.
+
+How they work together:
+ Running both creates the full VistaSuite experience — VistaONE stabilizes growth, while VistaX scales it. Both use the same risk-control foundation and licensing system.
+[screenshot: dashboard → “Downloads” section showing VistaONE and VistaX files]
+________________
+
+
+2.2 Mastering Lot Sizes (Simple Guide)
+Why this matters:
+ Lot size controls how much of your account is exposed per trade. Too high = faster gains but higher risk. Too low = slower growth.
+Lot logic used in kazpa softwares:
+                                                * Each software uses a capped-lot system based on your account equity.
+
+                                                * Example (cap values vary per update):
+
+Account Size
+	Typical Lot Cap
+	Approx Daily Goal
+	$10 000
+	0.10
+	1 – 1.5 %
+	$25 000
+	0.25
+	1 %
+	$50 000
+	0.50
+	0.8 %
+	$100 000
+	1.00
+	0.6 %
+	                                                   * 
+                                                   * The cap adjusts automatically with equity changes.
+
+                                                   * Avoid manually overriding unless you fully understand the math.
+
+                                                   * Always think “preserve first → compound later.”
+
+[screenshot: MT5 “Inputs” tab showing lot size parameter]
+________________
+
+
+2.3 Autotrading Basics (When to Turn On / Off)
+Autotrading = automation enabled in MT5.
+ When the icon 🟢 is on, the software executes trades automatically.
+General best practice:
+                                                      * Keep it on only when you’re fully set up and connected.
+
+                                                      * Pause before major news events (NFP, FOMC, CPI releases).
+
+                                                      * Don’t turn it on/off mid-trade sequence.
+
+                                                      * Disable on weekends when markets close.
+
+Check this before turning ON:
+                                                         * VPS connected / stable internet
+
+                                                         * License status = Active
+
+                                                         * Correct symbol and timeframe loaded
+
+                                                         * No errors in “Experts” tab
+
+[screenshot: MT5 toolbar with “Algo Trading” button green vs red]
+________________
+
+
+2.4 Risk Management with Softwares
+Goal: Protect capital first — profit comes from consistency.
+Core principles built into kazpa softwares:
+                                                            1. Daily profit target → Once reached, stop trading manually.
+
+                                                            2. Max drawdown limit → If reached, stop the day and review.
+
+                                                            3. Auto-lot logic → Adjusts exposure relative to equity.
+
+                                                            4. Equity protection → Software avoids entering new trades if conditions are unfavorable.
+
+Manual rules for members:
+                                                               * Never increase lot sizes after a loss sequence to “make it back.”
+
+                                                               * Withdraw periodically — profit means nothing until secured.
+
+                                                               * Review your MyFXBook data weekly.
+
+[screenshot: example drawdown chart with notes on cut-loss zones]
+________________
+
+
+2.5 Accessing Your Softwares
+                                                                  1. Log in to your kazpa member dashboard.
+
+                                                                  2. Go to “Downloads.”
+
+                                                                  3. You’ll see links for VistaONE and VistaX files and your license status.
+
+                                                                  4. If your license shows Inactive, complete the License Activation Form first.
+
+                                                                  5. Once Active, download the files and save them to your VPS.
+
+[screenshot: dashboard downloads list showing VistaONE.ex5 / VistaX.ex5]
+________________
+
+
+2.6 Algorithmic Trading 101 (Plain English)
+What it is:
+ Algorithmic trading (“algo trading”) means using pre-programmed logic to analyze market data and place trades automatically.
+How kazpa softwares operate:
+                                                                     * Each software scans price structures and market patterns 24/5.
+
+                                                                     * When specific conditions are met, it executes based on its parameters and risk logic.
+
+                                                                     * It removes emotion and guesswork — but you must still manage environment and risk.
+
+What it is not:
+                                                                        * Not a get-rich-quick button.
+
+                                                                        * Not hands-free — you still monitor performance and VPS connection.
+
+Mindset:
+ Think of the software as a “driver.” You set the destination (risk and account size); it drives by rules you understand.
+[screenshot: MT5 chart with software attached and “smiley face” icon active]
+________________
+
+
+2.7 Navigating the Member Dashboard
+Main areas:
+                                                                           * Home: Your account summary and active licenses
+
+                                                                           * Downloads: VistaONE / VistaX files and change logs
+
+                                                                           * License Activation: Form to bind your MT5 account number
+
+                                                                           * Support: Submit tickets or watch video tutorials
+
+                                                                           * Billing: Manage subscriptions and renewals
+
+[screenshot: dashboard sidebar with sections highlighted]
+________________
+
+
+2.8 Common Mistakes to Avoid
+                                                                              1. Installing the files in the wrong MT5 folder.
+
+                                                                              2. Forgetting to enable “Algo Trading.”
+
+                                                                              3. VPS sleep mode causing software to stop.
+
+                                                                              4. Changing brokers without updating your license.
+
+                                                                              5. Opening charts on the wrong timeframe.
+
+                                                                              6. Expecting identical results to someone else (different broker feeds = different ticks).
+
+                                                                              7. Ignoring the Experts tab errors — always check for messages after installation.
+
+[screenshot: MT5 Experts tab showing “no errors detected”]
+
+
+3) setting up third-party accounts
+3) setting up third-party accounts
+(These external tools keep your softwares running. kazpa does not recommend specific providers—use this information only as a guide while doing your own research.)
+________________
+
+
+3.1 Virtual Private Server (VPS)
+Purpose
+ A VPS is a Windows-based remote computer that stays online 24 / 5 so your MetaTrader 5 and kazpa softwares can run even when your personal device is off.
+What you need to know
+                                                                                 * Choose a VPS with solid uptime (99 % +) and a server location close to your broker’s trading server for low latency.
+
+                                                                                 * Minimum spec: 2 CPU cores, 4 GB RAM, 20 GB storage, Windows Server 2019 or newer.
+
+                                                                                 * You’ll access it through Remote Desktop Connection (RDP).
+
+Checklist before continuing
+ ☑ Windows Server installed
+☑ Internet speed stable
+☑ RDP login confirmed
+☑ MT5 installation allowed (you can download files)
+[screenshot: Remote Desktop window connected to VPS desktop]
+________________
+
+
+3.2 Brokers
+Purpose
+ Your broker executes trades from your kazpa softwares on the live market.
+Educational notes
+                                                                                    * A broker provides the trading server, spreads, and leverage.
+
+                                                                                    * kazpa softwares require a 1 : 500 leverage account to operate as designed.
+
+                                                                                    * Compare brokers by regulation, spreads, execution speed, funding methods, and customer service.
+
+                                                                                    * Always open an MT5 account (not MT4).
+
+What to collect
+                                                                                       * Broker name + server address (e.g. Broker-Live2)
+
+                                                                                       * Account number and password
+
+                                                                                       * Leverage setting (verify 1 : 500)
+
+                                                                                       * Deposit method you plan to use
+
+[screenshot: example broker email showing MT5 server + login blurred]
+________________
+
+
+3.3 Funding Your Broker Account
+Purpose
+ You need funded capital (or demo balance) before installation.
+Guidelines
+                                                                                          * Only fund what you can afford to risk.
+
+                                                                                          * Use the broker’s secure portal; kazpa never handles deposits or withdrawals.
+
+                                                                                          * Keep proof of deposit for your records.
+
+                                                                                          * Wait until funds show as available equity in MT5 before activating the softwares.
+
+[screenshot: MT5 “Trade” tab showing balance + equity fields]
+________________
+
+
+3.4 Licensing Your kazpa Softwares
+Purpose
+ Bind your personal MT5 account number to your kazpa license so the software can authenticate on startup.
+Steps
+                                                                                             1. Log into the kazpa member dashboard.
+
+                                                                                             2. Open License Activation.
+
+                                                                                             3. Enter your MT5 account number exactly as shown in MT5 (6-8 digits).
+
+                                                                                             4. Submit the form → wait for status Active.
+
+                                                                                             5. Once Active, you can download VistaONE and VistaX files.
+
+If you change brokers or account numbers later, repeat this form to update your license.
+[screenshot: license activation form → status “Active” badge]
+________________
+
+
+3.5 MetaTrader 5 (MT5) Setup
+Purpose
+ MT5 is the platform that runs your kazpa softwares.
+Steps
+                                                                                                1. Download MetaTrader 5 from your broker or the official MetaQuotes site.
+
+                                                                                                2. Install on your VPS (Windows installer .exe).
+
+                                                                                                3. Launch MT5 → Login to Trade Account.
+
+                                                                                                4. Enter server + account + password → select “Save password.”
+
+                                                                                                5. Check you see live quotes and charts updating.
+
+MT5 basics you’ll use:
+                                                                                                   * Navigator → shows Accounts and Experts
+
+                                                                                                   * Market Watch → symbols/prices
+
+                                                                                                   * Terminal → Trades, Journal, Experts
+
+                                                                                                   * File → Open Data Folder (for installation in Section 4)
+
+[screenshot: MT5 main window with Navigator + Market Watch open]
+________________
+
+
+3.6 Readiness Checklist
+Before installing VistaONE or VistaX, confirm all green checks below:
+Item
+	Status
+	VPS connected and stable
+	☑
+	Broker account open and funded (or demo)
+	☑
+	MT5 installed and logged in
+	☑
+	kazpa license shows Active
+	☑
+	Download files saved on VPS desktop
+	☑
+	When all are checked, you’re ready to move to Section 4 → Install the Softwares.
+[screenshot: dashboard home showing license Active + downloads visible]
+
+
+4) install the softwares (manual only)
+4) install the softwares (manual only)
+kazpa softwares are installed manually inside MetaTrader 5 (MT5). Follow each step carefully — once it’s done right the first time, you’ll rarely have to touch it again.
+________________
+
+
+4.1 Install Methods (Manual Only)
+Before you begin
+                                                                                                      * Make sure your VPS is connected, MT5 is open, and your license status = Active.
+
+                                                                                                      * Confirm that you’ve downloaded your files (VistaONE.ex5 and VistaX.ex5) from your kazpa dashboard.
+
+                                                                                                      * Do not rename the files.
+
+________________
+
+
+Step-by-step manual installation
+                                                                                                         1. Open MT5 → File → Open Data Folder
+ This opens the root folder where MT5 stores its system files.
+[screenshot: MT5 “File → Open Data Folder” menu]
+
+                                                                                                         2. Open the “MQL5 → Experts” folder
+ Drag or paste the .ex5 files (VistaONE and/or VistaX) into this folder.
+[screenshot: Windows Explorer showing MQL5/Experts folder with files pasted]
+
+                                                                                                         3. Restart MT5 completely
+ Close and reopen MT5 so it loads the new softwares.
+[screenshot: MT5 restarting with loading screen]
+
+                                                                                                         4. Open the Navigator panel (Ctrl+N)
+You’ll now see VistaONE and VistaX listed under “Experts.”
+[screenshot: MT5 Navigator showing VistaONE and VistaX under Experts]
+
+                                                                                                         5. Attach the software to a chart
+
+                                                                                                            * Open one chart per software.
+
+                                                                                                            * Drag the software onto the chart.
+
+                                                                                                            * Click “Allow Algo Trading” and “Allow DLL imports.”
+
+                                                                                                            * Press OK.
+[screenshot: Expert Advisor settings window with permissions checked]
+
+                                                                                                               6. Enable Algo Trading globally
+ Click the green “Algo Trading” button at the top of MT5.
+[screenshot: MT5 toolbar showing Algo Trading button ON]
+
+You’ll know it’s working if:
+                                                                                                                  * A smiley face 🙂 appears in the chart’s top-right corner.
+
+                                                                                                                  * The “Experts” tab in the Terminal shows messages like “VistaONE initialized successfully.”
+
+                                                                                                                  * No red error text appears in the “Experts” or “Journal” tabs.
+
+[screenshot: MT5 chart with smiley + Experts tab showing “initialized successfully”]
+________________
+
+
+4.2 VistaONE — Setup
+Purpose
+ VistaONE focuses on stability and precision. It’s engineered for consistent performance with controlled exposure.
+Attaching to a chart
+                                                                                                                     * Use XAUUSD (Gold) or major forex pairs only.
+
+                                                                                                                     * Recommended timeframe: 5-minute (M5) or 15-minute (M15).
+
+                                                                                                                     * Open one clean chart → apply VistaONE.
+
+Settings overview
+ Inside “Inputs” you’ll see fields such as:
+                                                                                                                        * Max Lot – the capped lot the system will never exceed.
+
+                                                                                                                        * Daily Target – (if included) use default unless you fully understand risk.
+
+                                                                                                                        * Magic Number – identifies this software’s trades (keep default).
+
+                                                                                                                        * AutoLot – automatically adjusts lot size with equity.
+
+Tips
+                                                                                                                           * Keep defaults during initial setup.
+
+                                                                                                                           * Let the software run uninterrupted for at least a full trading session before making changes.
+
+                                                                                                                           * Always test changes on a demo account first.
+
+[screenshot: Inputs tab of VistaONE showing default parameters]
+________________
+
+
+4.3 VistaX — Setup
+Purpose
+ VistaX focuses on calculated compounding. It trades more frequently and uses intelligent sequencing to grow equity faster while maintaining protective logic.
+Attaching to a chart
+                                                                                                                              * Works best on XAUUSD (Gold).
+
+                                                                                                                              * Timeframe: M5 recommended.
+
+                                                                                                                              * Use on a separate chart from VistaONE.
+
+Settings overview
+                                                                                                                                 * Lot Cap – sets the max lot allowed per sequence.
+
+                                                                                                                                 * Sequence Limit – controls how many positions the logic can open at once.
+
+                                                                                                                                 * Auto-risk logic – adjusts exposure as equity changes.
+
+                                                                                                                                 * Max Drawdown Stop – built-in protective threshold.
+
+Best practices
+                                                                                                                                    * Do not interfere mid-sequence. Let the software complete its cycle.
+
+                                                                                                                                    * Review trade history weekly.
+
+                                                                                                                                    * If you change account balance significantly (deposit/withdraw), recheck your risk plan.
+
+[screenshot: Inputs tab of VistaX showing lot and risk parameters]
+________________
+
+
+4.4 Running Multiple Terminals / Instances
+If you plan to run VistaONE and VistaX simultaneously, use two separate MT5 terminals on your VPS.
+Each terminal = one software = one chart.
+Steps
+                                                                                                                                       1. Copy your MT5 installation folder (e.g. MetaTrader 5 – Copy).
+
+                                                                                                                                       2. Launch both terminals separately.
+
+                                                                                                                                       3. Log each terminal into the same or different broker accounts as needed.
+
+                                                                                                                                       4. Attach VistaONE to one terminal, VistaX to the other.
+
+Why this matters
+                                                                                                                                          * Prevents software overlap and chart conflicts.
+
+                                                                                                                                          * Improves VPS stability.
+
+                                                                                                                                          * Keeps trade journaling clean and separated.
+
+[screenshot: VPS desktop with two MT5 windows side by side]
+________________
+
+
+4.5 Uninstall / Update
+Uninstalling
+                                                                                                                                             1. Open MT5 → “File → Open Data Folder.”
+
+                                                                                                                                             2. Delete the .ex5 files from MQL5/Experts.
+
+                                                                                                                                             3. Restart MT5.
+
+Updating
+                                                                                                                                                * When new versions are released, download from your kazpa dashboard.
+
+                                                                                                                                                * Replace the old .ex5 files in the same folder.
+
+                                                                                                                                                * Restart MT5 — you’ll see the updated build in the “Experts” list.
+
+[screenshot: Windows Explorer showing replacement of old .ex5 files]
+________________
+
+
+4.6 Post-Install Quick Check
+After everything is installed and attached:
+Check
+	Result
+	Smile icon visible on chart
+	✅
+	Experts tab shows “initialized successfully”
+	✅
+	Algo Trading button is green
+	✅
+	License active
+	✅
+	No red error messages
+	✅
+	If any box is unchecked → stop and review the previous steps or visit the Support section.
+[screenshot: MT5 Experts tab with “initialized successfully” line highlighted]
+________________
+
+
+Once you’ve passed this checklist, you’re officially set up to operate your kazpa softwares.
+Next, we’ll move into Section 5: Tracking, Troubleshooting, FAQs & Policies — where you’ll learn how to monitor performance, fix issues quickly, and understand all terms and responsibilities.
+
+
+5) tracking, troubleshooting, faqs & policies
+5) tracking, troubleshooting, faqs & policies
+This section teaches you how to monitor your account performance, solve common issues, and understand kazpa’s key policies and disclaimers.
+Everything here is about keeping your softwares running smoothly, safely, and compliantly.
+________________
+
+
+5.1 Tracking Performance (MyFXBook)
+Purpose
+ To verify and analyze your trading data — not just profits, but drawdowns, win rate, and equity growth over time.
+What is MyFXBook?
+ MyFXBook is a free performance-tracking tool that connects directly to your MT5 account. It displays verified trade history, live charts, and metrics.
+Setup steps
+                                                                                                                                                   1. Go to myfxbook.com.
+
+                                                                                                                                                   2. Create an account → “Add Account.”
+
+                                                                                                                                                   3. Choose MetaTrader 5 Auto Update (or manual if required).
+
+                                                                                                                                                   4. Enter your MT5 login and server (read-only connection — no trade permission).
+
+                                                                                                                                                   5. Wait for the sync confirmation.
+
+What to review once connected
+                                                                                                                                                      * Balance vs. Equity Curve → shows growth consistency.
+
+                                                                                                                                                      * Drawdown % → shows the deepest dips your account experienced.
+
+                                                                                                                                                      * Profit Factor & Win Rate → measures performance efficiency.
+
+                                                                                                                                                      * Daily / Monthly Returns → helps spot patterns over time.
+
+Tip: Check your MyFXBook once a week. Use data to make informed decisions, not emotions.
+[screenshot: MyFXBook dashboard with equity curve highlighted]
+________________
+
+
+5.2 Troubleshooting (Fast Fixes)
+If something isn’t working, start here. These cover 90% of common issues.
+🧩 Software not trading
+Cause: Algo Trading is off or chart timeframes are incorrect.
+Fix:
+                                                                                                                                                         * Confirm the green “Algo Trading” button is ON.
+
+                                                                                                                                                         * Confirm your chart is on the correct timeframe (usually M5 or M15).
+
+                                                                                                                                                         * Check “Experts” tab → if red text appears, read the message.
+
+[screenshot: MT5 with Algo Trading button on]
+________________
+
+
+⚡ VPS disconnected or rebooted
+Cause: Your VPS provider restarted or timed out.
+Fix:
+                                                                                                                                                            * Reconnect via Remote Desktop.
+
+                                                                                                                                                            * Check if MT5 is still running — if not, reopen it.
+
+                                                                                                                                                            * Re-enable “Algo Trading.”
+
+                                                                                                                                                            * Make sure your VPS power settings are set to Always On.
+
+[screenshot: Windows power settings on VPS set to never sleep]
+________________
+
+
+🧾 MT5 build mismatch or update
+Cause: MetaTrader updated automatically and temporarily disabled custom softwares.
+Fix:
+                                                                                                                                                               * Restart MT5.
+
+                                                                                                                                                               * If problem persists, re-copy your .ex5 files into MQL5/Experts.
+
+                                                                                                                                                               * Reattach to chart and check license status.
+
+[screenshot: MT5 loading screen with build version visible]
+________________
+
+
+🔑 License not attaching / account number changed
+Cause: You changed brokers or account numbers.
+Fix:
+                                                                                                                                                                  * Log into your kazpa dashboard → License Activation.
+
+                                                                                                                                                                  * Submit your new MT5 account number.
+
+                                                                                                                                                                  * Wait until status shows Active again.
+
+[screenshot: dashboard showing license “Pending → Active”]
+________________
+
+
+💻 Two softwares on one VPS
+Cause: Both softwares running inside the same terminal.
+Fix:
+                                                                                                                                                                     * Use separate MT5 terminals for VistaONE and VistaX.
+
+                                                                                                                                                                     * Keep each on its own chart and workspace.
+
+[screenshot: two MT5 windows labeled VistaONE / VistaX]
+________________
+
+
+⚙️ Experts tab errors
+Cause: Configuration or symbol mismatch.
+Fix:
+                                                                                                                                                                        * Open “Experts” tab at the bottom of MT5.
+
+                                                                                                                                                                        * If you see red text → double-click the error to open the log.
+
+                                                                                                                                                                        * Fix the specific issue (missing file, wrong symbol, invalid license, etc.).
+
+[screenshot: Experts tab showing red vs. green messages]
+________________
+
+
+5.3 Frequently Asked Questions
+Q: Can I use demo and live accounts?
+ A: Yes. Each license is tied to one MT5 account number. You can request a switch anytime through the activation form.
+Q: What if I change brokers?
+ A: Submit your new account number under License Activation and wait for re-approval before reinstalling.
+Q: What if I lose internet or VPS disconnects mid-trade?
+ A: When MT5 reconnects, the software automatically continues managing open trades. Always confirm it reconnected properly.
+Q: Can I install both VistaONE and VistaX on the same account?
+ A: Yes, but they must be in separate terminals. Running both on the same chart or terminal can cause conflicts.
+Q: How often should I update the software?
+ A: Only when kazpa releases new builds. Updates are announced inside your member dashboard.
+Q: Do I need to change any default settings?
+ A: No. Default settings are optimized. Only change settings if you fully understand the risk implications.
+________________
+
+
+5.4 Policies & Disclaimers
+Software License Terms
+ Your kazpa license is personal and non-transferable. It is valid only for the MT5 account number submitted during activation. Unauthorized distribution or resale violates our license agreement.
+Risk Disclosure
+ Trading Forex, CFDs, or commodities carries a high level of risk and may not be suitable for all investors. Never trade money you cannot afford to lose. Performance from past results does not guarantee future outcomes.
+No Recommendations
+ kazpa does not recommend or endorse any broker, VPS provider, or specific financial instrument. You must conduct your own research and make independent decisions.
+Refund & Billing Policy
+ All purchases and subscriptions are subject to the terms listed at checkout. Refund requests are reviewed per case, only under the conditions outlined in our Terms of Use.
+Privacy Policy
+ We collect limited personal information necessary for licensing and support. kazpa never shares, sells, or manages trading data from your broker accounts.
+Educational Use Only
+ All material within this portal is for education and operational guidance only — not financial or investment advice.
+Member Responsibility
+ Each member maintains full control of their trading account, settings, and trading decisions. By using kazpa softwares, you agree that you assume all associated trading risks.
+________________
+
+
+[screenshot: disclaimer section footer from dashboard page mockup]
+________________
+
+
+You’ve now completed the full kazpa setup and operation guide.
+From here, members can go to the Resources section (Section 6) for downloads, video walkthroughs, version updates, and direct support links.
+
+
+6) resources
+6) resources
+This section gives you quick access to everything else you may need — downloads, tutorials, updates, and support. Keep it bookmarked; it’s where new content and software versions will appear.
+________________
+
+
+6.1 Downloads & Presets
+Where to find:
+ All current and future files are hosted inside your kazpa member dashboard → Downloads page.
+Included Files:
+                                                                                                                                                                           * VistaONE.ex5
+
+                                                                                                                                                                           * VistaX.ex5
+
+                                                                                                                                                                           * Change logs (version notes and build info)
+
+                                                                                                                                                                           * PDF setup guides (when available)
+
+Notes:
+                                                                                                                                                                              * Always download directly from the dashboard (not from old folders).
+
+                                                                                                                                                                              * Verify file names before installation.
+
+                                                                                                                                                                              * Never modify .ex5 files manually — it will break the signature and cause a license error.
+
+[screenshot: downloads page showing VistaONE.ex5 and VistaX.ex5]
+________________
+
+
+6.2 Loom / Video Library
+Purpose:
+ Quick visual walkthroughs for every stage of setup.
+Available categories:
+                                                                                                                                                                                 * Installation & Setup – step-by-step videos for VistaONE, VistaX, and MT5 configuration.
+
+                                                                                                                                                                                 * VPS & Broker Setup – how to connect and run 24/5.
+
+                                                                                                                                                                                 * License Activation – how to submit and verify your MT5 account.
+
+                                                                                                                                                                                 * Common Fixes – videos covering frequent errors and reconnect steps.
+
+Each video is under 5 minutes — simple, straight to the point.
+[screenshot: member dashboard video list preview]
+________________
+
+
+6.3 Change Log / Version Notes
+Purpose:
+ Stay updated on any improvements, patches, or parameter adjustments.
+How it works:
+                                                                                                                                                                                    * New versions are announced in the Dashboard → Downloads section.
+
+                                                                                                                                                                                    * Each update includes:
+
+                                                                                                                                                                                       * Version number (e.g., VistaONE v2.4.1)
+
+                                                                                                                                                                                       * Release date
+
+                                                                                                                                                                                       * Summary of changes (performance logic, visuals, bug fixes)
+
+                                                                                                                                                                                       * Instructions if manual reinstallation is required.
+
+Tip:
+ Bookmark the downloads page — that’s where you’ll always find the most up-to-date builds.
+[screenshot: dashboard changelog with version table]
+________________
+
+
+6.4 Support
+Before contacting support, check:
+ ☑ Your license status = Active
+☑ Algo Trading is ON
+☑ VPS connection is stable
+☑ MT5 “Experts” tab shows no red errors
+If you still need help:
+                                                                                                                                                                                          * Go to kazpa.io/support
+
+                                                                                                                                                                                          * Include the following in your ticket:
+
+                                                                                                                                                                                             1. Your MT5 account number
+
+                                                                                                                                                                                             2. VPS provider
+
+                                                                                                                                                                                             3. MT5 build number
+
+                                                                                                                                                                                             4. Screenshot of the “Experts” tab
+
+                                                                                                                                                                                             5. A short summary of the issue
+
+Response time: within 24–48 hours during business days.
+________________
+
+
+quick reference summary
+Category
+	Link
+	Description
+	Dashboard
+	access.kazpa.io
+	Manage licenses, downloads, updates
+	License Form
+	kazpa.io/license-activation
+	Submit or update MT5 account number
+	Support
+	kazpa.io/support
+	Create a ticket for technical help
+	MyFXBook
+	myfxbook.com
+	Track account performance
+	VPS Access
+	Your chosen provider
+	Maintain 24/5 uptime
+	[screenshot: dashboard footer showing resource links]
+________________
+
+
+closing message
+You’ve now completed the full kazpa setup, operation, and support course.
+At this point, you understand:
+                                                                                                                                                                                                * What each software does
+
+                                                                                                                                                                                                * How to install and operate them
+
+                                                                                                                                                                                                * How to manage risk and track performance
+
+                                                                                                                                                                                                * Where to find updates, resources, and support
+
+You are fully in control of your account.
+ Operate confidently, stay disciplined, and remember — automation is a tool for consistent execution, not instant results.
