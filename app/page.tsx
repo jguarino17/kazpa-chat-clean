@@ -1,15 +1,104 @@
-export default function Home() {
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+type Msg = {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+};
+
+export default function Page() {
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState<Msg[]>([
+    {
+      id: "m1",
+      role: "assistant",
+      content: "Yo Joey — this is the clean chat baseline. Type a message below.",
+    },
+  ]);
+
+  const bottomRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages.length]);
+
+  function send() {
+    const text = input.trim();
+    if (!text) return;
+
+    const userMsg: Msg = { id: crypto.randomUUID(), role: "user", content: text };
+    const assistantMsg: Msg = {
+      id: crypto.randomUUID(),
+      role: "assistant",
+      content: `Got it: "${text}" (wire OpenAI next)`,
+    };
+
+    setMessages((prev) => [...prev, userMsg, assistantMsg]);
+    setInput("");
+  }
+
   return (
-    <main style={{ minHeight: "100vh", display: "grid", placeItems: "center" }}>
-      <div style={{ maxWidth: 720, padding: 24 }}>
-        <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 12 }}>
-          kazpa chat (clean)
-        </h1>
-        <p style={{ opacity: 0.8, lineHeight: 1.6 }}>
-          This is the fresh baseline. Next step: add the chat UI + OpenAI route
-          without any auth, database, or extra complexity.
-        </p>
-      </div>
+    <main className="min-h-screen bg-black text-white flex flex-col">
+      <header className="border-b border-white/10 px-4 py-3">
+        <div className="max-w-3xl mx-auto flex items-center justify-between">
+          <div className="font-semibold tracking-tight">kazpa chat (clean)</div>
+          <div className="text-xs text-white/50">no auth • no db • stable</div>
+        </div>
+      </header>
+
+      <section className="flex-1 px-4 py-6">
+        <div className="max-w-3xl mx-auto space-y-3">
+          {messages.map((m) => (
+            <div
+              key={m.id}
+              className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+            >
+              <div
+                className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed border ${
+                  m.role === "user"
+                    ? "bg-white/10 border-white/10"
+                    : "bg-white/[0.06] border-white/10"
+                }`}
+              >
+                <div className="text-[11px] uppercase tracking-wide text-white/50 mb-1">
+                  {m.role}
+                </div>
+                <div className="whitespace-pre-wrap">{m.content}</div>
+              </div>
+            </div>
+          ))}
+          <div ref={bottomRef} />
+        </div>
+      </section>
+
+      <footer className="border-t border-white/10 px-4 py-4">
+        <div className="max-w-3xl mx-auto flex gap-2">
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                send();
+              }
+            }}
+            placeholder="Type a message…"
+            className="flex-1 rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm outline-none focus:border-white/25"
+          />
+          <button
+            onClick={send}
+            className="rounded-xl bg-white text-black px-4 py-3 text-sm font-medium hover:opacity-90"
+          >
+            Send
+          </button>
+        </div>
+
+        <div className="max-w-3xl mx-auto mt-2 text-[11px] text-white/40">
+          Next step: connect to an API route (OpenAI) without adding auth/db.
+        </div>
+      </footer>
     </main>
   );
 }
