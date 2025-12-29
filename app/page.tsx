@@ -14,36 +14,81 @@ export default function Page() {
     {
       id: "m1",
       role: "assistant",
-      content: "Yo Joey — this is the clean chat baseline. Type a message below.",
+      content:
+        "Yo Joey — kazpaGPT is live. Ask me anything about kazpa setup, dashboard, VistaONE/VistaX, risk rules, etc.",
     },
   ]);
+  const [loading, setLoading] = useState(false);
 
   const bottomRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages.length]);
+  }, [messages.length, loading]);
 
-  function send() {
+  async function send() {
     const text = input.trim();
-    if (!text) return;
+    if (!text || loading) return;
 
     const userMsg: Msg = { id: crypto.randomUUID(), role: "user", content: text };
-    const assistantMsg: Msg = {
-      id: crypto.randomUUID(),
-      role: "assistant",
-      content: `Got it: "${text}" (wire OpenAI next)`,
-    };
-
-    setMessages((prev) => [...prev, userMsg, assistantMsg]);
+    setMessages((prev) => [...prev, userMsg]);
     setInput("");
+    setLoading(true);
+
+    try {
+      // Build chat history in the format your route.ts expects
+      const payload = {
+        messages: [...messages, userMsg].map((m) => ({
+          role: m.role,
+          content: m.content,
+        })),
+      };
+
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        const errText =
+          data?.error ||
+          `Request failed (${res.status}). Check Vercel env vars + redeploy.`;
+        setMessages((prev) => [
+          ...prev,
+          { id: crypto.randomUUID(), role: "assistant", content: `Error: ${errText}` },
+        ]);
+        return;
+      }
+
+      const assistantText =
+        (data?.text && String(data.text)) || "No response text returned.";
+
+      setMessages((prev) => [
+        ...prev,
+        { id: crypto.randomUUID(), role: "assistant", content: assistantText },
+      ]);
+    } catch (e: any) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: crypto.randomUUID(),
+          role: "assistant",
+          content: `Error: ${e?.message ?? "Unknown error"}`,
+        },
+      ]);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
     <main className="min-h-screen bg-black text-white flex flex-col">
       <header className="border-b border-white/10 px-4 py-3">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <div className="font-semibold tracking-tight">kazpa chat (clean)</div>
+          <div className="font-semibold tracking-tight">kazpaGPT</div>
           <div className="text-xs text-white/50">no auth • no db • stable</div>
         </div>
       </header>
@@ -69,6 +114,18 @@ export default function Page() {
               </div>
             </div>
           ))}
+
+          {loading && (
+            <div className="flex justify-start">
+              <div className="max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed border bg-white/[0.06] border-white/10">
+                <div className="text-[11px] uppercase tracking-wide text-white/50 mb-1">
+                  assistant
+                </div>
+                <div className="text-white/70">Thinking…</div>
+              </div>
+            </div>
+          )}
+
           <div ref={bottomRef} />
         </div>
       </section>
@@ -89,14 +146,15 @@ export default function Page() {
           />
           <button
             onClick={send}
-            className="rounded-xl bg-white text-black px-4 py-3 text-sm font-medium hover:opacity-90"
+            disabled={loading}
+            className="rounded-xl bg-white text-black px-4 py-3 text-sm font-medium hover:opacity-90 disabled:opacity-50"
           >
-            Send
+            {loading ? "..." : "Send"}
           </button>
         </div>
 
         <div className="max-w-3xl mx-auto mt-2 text-[11px] text-white/40">
-          Next step: connect to an API route (OpenAI) without adding auth/db.
+          If production errors, check Vercel env var OPENAI_API_KEY and redeploy.
         </div>
       </footer>
     </main>
