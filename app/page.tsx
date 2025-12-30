@@ -8,6 +8,8 @@ type Msg = {
   content: string;
 };
 
+type ApiSource = { file: string; chunkId: string };
+
 export default function Page() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Msg[]>([
@@ -15,7 +17,7 @@ export default function Page() {
       id: "m1",
       role: "assistant",
       content:
-        "Yo Joey — kazpaGPT is live. Ask me anything about kazpa setup, dashboard, VistaONE/VistaX, risk rules, etc.",
+        "Hello — kazpaGPT is live. Ask me anything about kazpa setup, dashboard, VistaONE/VistaX, risk rules, etc.",
     },
   ]);
   const [loading, setLoading] = useState(false);
@@ -30,13 +32,19 @@ export default function Page() {
     const text = input.trim();
     if (!text || loading) return;
 
-    const userMsg: Msg = { id: crypto.randomUUID(), role: "user", content: text };
+    const userMsg: Msg = {
+      id: crypto.randomUUID(),
+      role: "user",
+      content: text,
+    };
+
+    // Optimistic UI update
     setMessages((prev) => [...prev, userMsg]);
     setInput("");
     setLoading(true);
 
     try {
-      // Build chat history in the format your route.ts expects
+      // Build chat history for the API route
       const payload = {
         messages: [...messages, userMsg].map((m) => ({
           role: m.role,
@@ -50,21 +58,36 @@ export default function Page() {
         body: JSON.stringify(payload),
       });
 
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
 
       if (!res.ok) {
         const errText =
           data?.error ||
           `Request failed (${res.status}). Check Vercel env vars + redeploy.`;
+
         setMessages((prev) => [
           ...prev,
-          { id: crypto.randomUUID(), role: "assistant", content: `Error: ${errText}` },
+          {
+            id: crypto.randomUUID(),
+            role: "assistant",
+            content: `Error: ${errText}`,
+          },
         ]);
         return;
       }
 
-      const assistantText =
+      let assistantText =
         (data?.text && String(data.text)) || "No response text returned.";
+
+      // If API returns sources (RAG), show them (helps you verify it's using your docs)
+      const sources: ApiSource[] = Array.isArray(data?.sources) ? data.sources : [];
+      if (sources.length) {
+        const pretty = sources
+          .slice(0, 8)
+          .map((s) => `- ${s.file} • ${s.chunkId}`)
+          .join("\n");
+        assistantText += `\n\nSources:\n${pretty}`;
+      }
 
       setMessages((prev) => [
         ...prev,
