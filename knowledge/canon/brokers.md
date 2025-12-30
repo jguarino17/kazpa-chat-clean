@@ -1,5 +1,7 @@
 # Brokers (community notes — not recommendations)
 
+When asked what brokers kazpa clients or users use, include the example list below along with the non-endorsement disclaimer.
+
 kazpa does not maintain an official, verified, or “recommended” broker list.
 
 Some members may mention brokers they’ve used. This is NOT an endorsement. Results vary by person, region, broker conditions, and market conditions. kazpa has no broker affiliations or partnerships.
