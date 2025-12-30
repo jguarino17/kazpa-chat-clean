@@ -1,9 +1,8 @@
 import OpenAI from "openai";
-import fs from "fs";
+import fs from "fs/promises";
 import path from "path";
 
-export const runtime = "nodejs"; // Node runtime (Vercel serverless)
-export const dynamic = "force-dynamic"; // avoid caching
+export const runtime = "nodejs";
 
 const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -11,135 +10,167 @@ const client = new OpenAI({
 
 type Msg = { role: "user" | "assistant"; content: string };
 
+type Chunk = {
+  id: string;
+  source: string; // file path relative to /knowledge
+  text: string;
+};
+
 const KNOWLEDGE_DIR = path.join(process.cwd(), "knowledge");
 
-// ---- helpers ----
+// Keep it small & safe for token limits
+const MAX_FILES = 200; // hard cap so you don’t accidentally scan 10k files
+const MAX_CHUNKS_TO_USE = 6;
+const CHUNK_SIZE = 900; // characters
+const CHUNK_OVERLAP = 150; // characters
+const MAX_CONTEXT_CHARS = 9000; // injected into prompt
 
-function safeReadText(filePath: string) {
-  try {
-    return fs.readFileSync(filePath, "utf8");
-  } catch {
-    return "";
-  }
+function normalize(s: string) {
+  return s
+    .toLowerCase()
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
-function walkFiles(dir: string, out: string[] = []) {
-  if (!fs.existsSync(dir)) return out;
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-
-  for (const e of entries) {
-    // skip hidden + junk
-    if (e.name.startsWith(".")) continue;
-    const full = path.join(dir, e.name);
-
-    if (e.isDirectory()) {
-      // skip node_modules if it ever exists inside knowledge
-      if (e.name === "node_modules") continue;
-      walkFiles(full, out);
-    } else {
-      // only index text-like files
-      const ext = path.extname(e.name).toLowerCase();
-      if ([".md", ".txt", ".json"].includes(ext)) out.push(full);
-    }
-  }
-  return out;
-}
-
-function chunkText(text: string, chunkSize = 900, overlap = 120) {
-  const cleaned = text.replace(/\r/g, "");
-  const chunks: string[] = [];
+function chunkText(text: string, source: string): Chunk[] {
+  const chunks: Chunk[] = [];
+  const clean = text.replace(/\r\n/g, "\n");
   let i = 0;
+  let n = 0;
 
-  while (i < cleaned.length) {
-    const slice = cleaned.slice(i, i + chunkSize);
-    chunks.push(slice);
-    i += chunkSize - overlap;
-    if (chunks.length > 2000) break; // hard safety cap
+  while (i < clean.length) {
+    const slice = clean.slice(i, i + CHUNK_SIZE);
+    const trimmed = slice.trim();
+    if (trimmed.length > 0) {
+      chunks.push({
+        id: `${source}#${n++}`,
+        source,
+        text: trimmed,
+      });
+    }
+    i += CHUNK_SIZE - CHUNK_OVERLAP;
   }
   return chunks;
 }
 
-function tokenize(q: string) {
-  return q
-    .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, " ")
-    .split(/\s+/)
-    .filter((t) => t.length >= 3);
+async function listFilesRec(dir: string): Promise<string[]> {
+  const out: string[] = [];
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+
+  for (const e of entries) {
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) {
+      out.push(...(await listFilesRec(full)));
+    } else {
+      out.push(full);
+    }
+    if (out.length >= MAX_FILES) break;
+  }
+  return out;
 }
 
-function scoreChunk(chunk: string, terms: string[]) {
-  const hay = chunk.toLowerCase();
+function looksLikeTextFile(filePath: string) {
+  const ext = path.extname(filePath).toLowerCase();
+  return [".md", ".txt", ".json"].includes(ext);
+}
+
+// Very simple relevance: token overlap score
+function scoreChunk(queryTokens: string[], chunkText: string) {
+  const hay = normalize(chunkText);
   let score = 0;
 
-  for (const t of terms) {
-    // simple frequency count
-    const hits = hay.split(t).length - 1;
-    score += hits;
+  for (const t of queryTokens) {
+    if (!t) continue;
+    // Give slightly more weight to longer tokens (e.g., "vistax", "license", "drawdown")
+    const weight = t.length >= 6 ? 2 : 1;
+    if (hay.includes(t)) score += weight;
   }
-
-  // small bonus if the chunk contains key kazpa terms
-  const bonuses = ["vistax", "vistaone", "mt5", "vps", "license", "drawdown", "risk"];
-  for (const b of bonuses) {
-    if (hay.includes(b)) score += 1;
-  }
-
   return score;
 }
 
-function buildContext(query: string) {
-  // If knowledge folder isn't present, return empty context.
-  if (!fs.existsSync(KNOWLEDGE_DIR)) return "";
+let CACHE: { loadedAt: number; chunks: Chunk[] } | null = null;
+const CACHE_TTL_MS = 1000 * 60 * 10; // 10 minutes
 
-  const files = walkFiles(KNOWLEDGE_DIR);
-  if (!files.length) return "";
+async function loadKnowledgeChunks(): Promise<Chunk[]> {
+  const now = Date.now();
+  if (CACHE && now - CACHE.loadedAt < CACHE_TTL_MS) return CACHE.chunks;
 
-  const terms = tokenize(query);
-  if (!terms.length) return "";
+  try {
+    const files = await listFilesRec(KNOWLEDGE_DIR);
+    const textFiles = files.filter(looksLikeTextFile);
 
-  // Read + chunk + score
-  const scored: { score: number; file: string; chunk: string }[] = [];
-
-  for (const file of files) {
-    const text = safeReadText(file);
-    if (!text) continue;
-
-    // Keep huge files under control
-    const chunks = chunkText(text, 900, 120);
-
-    for (const ch of chunks) {
-      const s = scoreChunk(ch, terms);
-      if (s > 0) {
-        scored.push({ score: s, file, chunk: ch });
-      }
+    const chunks: Chunk[] = [];
+    for (const f of textFiles) {
+      const raw = await fs.readFile(f, "utf8");
+      const rel = path.relative(KNOWLEDGE_DIR, f).replace(/\\/g, "/");
+      chunks.push(...chunkText(raw, rel));
+      if (chunks.length > 5000) break; // keep memory sane
     }
+
+    CACHE = { loadedAt: now, chunks };
+    return chunks;
+  } catch (e) {
+    // If knowledge folder missing in prod for some reason, fail gracefully
+    CACHE = { loadedAt: now, chunks: [] };
+    return [];
   }
-
-  if (!scored.length) return "";
-
-  scored.sort((a, b) => b.score - a.score);
-
-  // Take top N chunks, but cap total chars so prompt stays stable
-  const TOP = 8;
-  const MAX_CHARS = 6000;
-
-  let total = 0;
-  const picked: string[] = [];
-
-  for (const item of scored.slice(0, 200)) {
-    const relPath = path.relative(process.cwd(), item.file);
-    const block = `SOURCE: ${relPath}\n---\n${item.chunk.trim()}\n`;
-
-    if (total + block.length > MAX_CHARS) break;
-    picked.push(block);
-    total += block.length;
-
-    if (picked.length >= TOP) break;
-  }
-
-  return picked.join("\n");
 }
 
-// ---- handler ----
+function pickRelevantChunks(all: Chunk[], userQuestion: string) {
+  const q = normalize(userQuestion);
+  const tokens = Array.from(new Set(q.split(" "))).filter(Boolean);
+
+  // If user typed something extremely short, still try
+  const scored = all
+    .map((c) => ({ c, s: scoreChunk(tokens, c.text) }))
+    .filter((x) => x.s > 0)
+    .sort((a, b) => b.s - a.s)
+    .slice(0, MAX_CHUNKS_TO_USE)
+    .map((x) => x.c);
+
+  // Cap context size
+  let total = 0;
+  const picked: Chunk[] = [];
+  for (const c of scored) {
+    if (total + c.text.length > MAX_CONTEXT_CHARS) break;
+    picked.push(c);
+    total += c.text.length;
+  }
+  return picked;
+}
+
+function buildSystemPrompt(retrieved: Chunk[]) {
+  const base = `
+You are kazpaGPT for kazpa.io.
+
+Rules:
+- Be concise, practical, and specific.
+- If asked for trading advice: include a clear risk disclaimer and avoid guarantees.
+- If you don't know something about kazpa: say what info you need.
+- Prefer the provided "Knowledge" context. If the context doesn’t contain the answer, say so.
+- When you use knowledge, cite it like: (source: <file>).
+
+Tone:
+- Direct, helpful, no fluff.
+`.trim();
+
+  if (!retrieved.length) {
+    return base + "\n\nKnowledge: (none loaded)";
+  }
+
+  const knowledgeBlock =
+    "Knowledge (excerpts):\n" +
+    retrieved
+      .map(
+        (c, i) =>
+          `[#${i + 1}] (source: ${c.source})\n${c.text}\n`
+      )
+      .join("\n");
+
+  return `${base}\n\n${knowledgeBlock}`;
+}
 
 export async function POST(req: Request) {
   try {
@@ -148,26 +179,18 @@ export async function POST(req: Request) {
 
     if (!process.env.OPENAI_API_KEY) {
       return Response.json(
-        { error: "Missing OPENAI_API_KEY (set it in .env.local and on Vercel)" },
+        { error: "Missing OPENAI_API_KEY (set in Vercel + .env.local)" },
         { status: 500 }
       );
     }
 
-    const lastUser = [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
-    const context = lastUser ? buildContext(lastUser) : "";
+    // Get last user message to retrieve relevant docs
+    const lastUser = [...messages].reverse().find((m) => m.role === "user");
+    const userQuestion = lastUser?.content ?? "";
 
-    const system = `
-You are kazpaGPT for kazpa.io.
-
-Rules:
-- Be concise and practical.
-- Use ONLY the provided CONTEXT when it is relevant.
-- If the user asks about trading advice, include a risk disclaimer and never guarantee results.
-- If the answer is not in CONTEXT, say you don’t know and ask what info you need or where to find it.
-
-CONTEXT (kazpa knowledge excerpts):
-${context || "(no matching context found)"}
-    `.trim();
+    const allChunks = await loadKnowledgeChunks();
+    const retrieved = pickRelevantChunks(allChunks, userQuestion);
+    const system = buildSystemPrompt(retrieved);
 
     const completion = await client.chat.completions.create({
       model: "gpt-4.1-mini",
@@ -175,16 +198,28 @@ ${context || "(no matching context found)"}
         { role: "developer", content: system },
         ...messages.map((m) => ({ role: m.role, content: m.content })),
       ],
-      temperature: 0.2,
+      temperature: 0.3,
     });
 
     const text = completion.choices?.[0]?.message?.content ?? "";
-
-    return Response.json({ text, usedContext: Boolean(context) });
+    return Response.json({
+      text,
+      debug: {
+        usedKnowledgeChunks: retrieved.map((r) => r.source),
+      },
+    });
   } catch (err: any) {
     return Response.json(
       { error: err?.message ?? "Unknown server error" },
       { status: 500 }
     );
   }
+}
+
+// Optional: make GET helpful (so curl without -X POST doesn’t confuse you)
+export async function GET() {
+  return Response.json(
+    { ok: false, hint: "Use POST /api/chat with { messages: [...] }" },
+    { status: 405 }
+  );
 }
