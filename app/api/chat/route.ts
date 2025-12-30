@@ -21,7 +21,7 @@ const KNOWLEDGE_DIR = path.join(process.cwd(), "knowledge");
 
 // ✅ cannon constitution directory + fixed file order
 const CANON_DIR = path.join(KNOWLEDGE_DIR, "cannon");
-const CANON_FILES = ["identity.md", "language.md", "products.md", "risk.md"];
+const CANON_FILES = ["identity.md", "language.md", "products.md", "risk.md", "brokers.md"];
 
 // --- Simple helpers (keep it stable / fast) ---
 function safeReadFile(filePath: string) {
