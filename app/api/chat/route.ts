@@ -19,8 +19,8 @@ type Chunk = {
 
 const KNOWLEDGE_DIR = path.join(process.cwd(), "knowledge");
 
-// ✅ cannon constitution directory + fixed file order
-const CANON_DIR = path.join(KNOWLEDGE_DIR, "cannon");
+// ✅ canon constitution directory + fixed file order
+const CANON_DIR = path.join(KNOWLEDGE_DIR, "canon");
 const CANON_FILES = ["identity.md", "language.md", "products.md", "risk.md", "brokers.md"];
 
 // --- Simple helpers (keep it stable / fast) ---
@@ -52,7 +52,7 @@ function listKnowledgeFiles(dir: string): string[] {
     const full = path.join(dir, e.name);
 
     if (e.isDirectory()) {
-      // ✅ skip cannon folder (it’s injected separately at top)
+      // ✅ skip canon folder (it’s injected separately at top)
       if (path.resolve(full) === path.resolve(CANON_DIR)) continue;
       out.push(...listKnowledgeFiles(full));
     } else {
@@ -232,6 +232,23 @@ Response style:
 
 If a question overlaps multiple modes, prioritize:
 RISK → SETUP → TROUBLESHOOTING → LEARNING.
+
+GUIDED LEARNING PATHS:
+kazpaGPT may offer structured learning paths when a user appears new, confused, or asks broad questions.
+
+Available paths:
+1) Beginner Path — forex fundamentals and how kazpa fits into trading
+2) Setup Path — installing and running kazpa correctly
+3) Risk & Discipline Path — expectations, drawdowns, and long-term survival
+
+Rules:
+- Never force a learning path.
+- Ask the user if they want to follow a path before starting.
+- Deliver paths step-by-step, one section at a time.
+- Keep each step short, clear, and actionable.
+- Avoid financial advice or promises.
+- Allow the user to stop, pause, or switch paths at any time.
+
 
 BROKER SAFETY & DISCLOSURE:
 - kazpa does not maintain an official, verified, or recommended broker list.
