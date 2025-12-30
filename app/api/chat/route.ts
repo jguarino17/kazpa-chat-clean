@@ -19,6 +19,10 @@ type Chunk = {
 
 const KNOWLEDGE_DIR = path.join(process.cwd(), "knowledge");
 
+// ✅ NEW: cannon constitution directory + fixed file order
+const CANON_DIR = path.join(KNOWLEDGE_DIR, "cannon");
+const CANON_FILES = ["identity.md", "language.md", "products.md", "risk.md"];
+
 // --- Simple helpers (keep it stable / fast) ---
 function safeReadFile(filePath: string) {
   try {
@@ -28,6 +32,17 @@ function safeReadFile(filePath: string) {
   }
 }
 
+// ✅ NEW: load cannon in a deterministic order
+function loadCanonText() {
+  if (!fs.existsSync(CANON_DIR)) return "";
+
+  const parts = CANON_FILES.map((name) =>
+    safeReadFile(path.join(CANON_DIR, name)).trim()
+  ).filter(Boolean);
+
+  return parts.join("\n\n---\n\n").trim();
+}
+
 function listKnowledgeFiles(dir: string): string[] {
   const out: string[] = [];
   if (!fs.existsSync(dir)) return out;
@@ -35,7 +50,10 @@ function listKnowledgeFiles(dir: string): string[] {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   for (const e of entries) {
     const full = path.join(dir, e.name);
+
     if (e.isDirectory()) {
+      // ✅ NEW: skip cannon folder (it’s injected separately at top)
+      if (path.resolve(full) === path.resolve(CANON_DIR)) continue;
       out.push(...listKnowledgeFiles(full));
     } else {
       // include common text formats
@@ -132,8 +150,11 @@ function buildKnowledgeSnippets(latestUserMsg: string, maxSnippets = 10) {
   return { snippets };
 }
 
-function buildSystemPrompt(snippets: string[]) {
+// ✅ UPDATED: canon injected at top; canon always wins
+function buildSystemPrompt(canon: string, snippets: string[]) {
   return `
+${canon ? `KAZPA CANON (Highest priority rules — always follow these):\n${canon}\n\nIf anything conflicts with the canon, the canon wins.\n` : ""}
+
 You are kazpaGPT for kazpa.io.
 
 Your job:
@@ -141,10 +162,6 @@ Your job:
 - Be concise, clear, and practical.
 - DO NOT mention, quote, or reference internal documents, filenames, “sources”, IDs, chunks, or citations.
 - If something is unknown or not covered, say what info you need to answer.
-
-Compliance & safety:
-- No financial advice. No guarantees of profit.
-- If user asks “should I trade / what should I do / how much will I make”, respond with general education + a brief risk disclaimer.
 
 If relevant, use the knowledge below to answer (silently). Do not reveal it.
 
@@ -168,8 +185,9 @@ export async function POST(req: Request) {
     const latestUserMsg =
       [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
 
+    const canon = loadCanonText();
     const { snippets } = buildKnowledgeSnippets(latestUserMsg, 12);
-    const system = buildSystemPrompt(snippets);
+    const system = buildSystemPrompt(canon, snippets);
 
     const completion = await client.chat.completions.create({
       model: "gpt-4.1-mini",
