@@ -15,16 +15,56 @@ export default function Page() {
       id: "m1",
       role: "assistant",
       content:
-        "Hello — kazpaGPT (V1.4) is live. Ask me anything about kazpa setup, dashboard, VistaONE/VistaX, risk rules, VPS/MT5, troubleshooting, etc.",
+        "Hello — kazpaGPT (V1.5) is live. Ask me anything about kazpa setup, dashboard, VistaONE/VistaX, risk rules, VPS/MT5, troubleshooting, etc.",
     },
   ]);
   const [loading, setLoading] = useState(false);
 
   const bottomRef = useRef<HTMLDivElement | null>(null);
+  const scrollerRef = useRef<HTMLDivElement | null>(null);
 
+  // Keep latest messages in view (but don't fight the user if they scroll up)
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    const el = scrollerRef.current;
+    if (!el) return;
+
+    const nearBottom =
+      el.scrollHeight - el.scrollTop - el.clientHeight < 180;
+
+    if (nearBottom) {
+      bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
   }, [messages.length, loading]);
+
+  /**
+   * Mobile keyboard fix (iOS/Safari):
+   * - visualViewport changes when keyboard opens
+   * - we convert that to a CSS variable --vvh
+   * - and also a --kb offset so the footer stays visible
+   */
+  useEffect(() => {
+    const vv = window.visualViewport;
+    if (!vv) return;
+
+    const setVars = () => {
+      // viewport height excluding the browser UI + keyboard area
+      const height = vv.height;
+      document.documentElement.style.setProperty("--vvh", `${height}px`);
+
+      // how far the visual viewport is shifted up when keyboard opens
+      const kb = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+      document.documentElement.style.setProperty("--kb", `${kb}px`);
+    };
+
+    setVars();
+    vv.addEventListener("resize", setVars);
+    vv.addEventListener("scroll", setVars);
+
+    return () => {
+      vv.removeEventListener("resize", setVars);
+      vv.removeEventListener("scroll", setVars);
+    };
+  }, []);
 
   async function send() {
     const text = input.trim();
@@ -84,16 +124,38 @@ export default function Page() {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white flex flex-col">
+    <main
+      className="bg-black text-white flex flex-col"
+      // Use the visualViewport-driven height when available (mobile keyboard safe)
+      style={{ minHeight: "var(--vvh, 100svh)" as any }}
+    >
+      {/* Global helpers for iOS safe area + keyboard offset */}
+      <style jsx global>{`
+        :root {
+          --kb: 0px;
+          --vvh: 100svh;
+        }
+        html,
+        body {
+          height: 100%;
+          overscroll-behavior-y: none;
+          background: #000;
+        }
+      `}</style>
+
       <header className="border-b border-white/10 px-4 py-3">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <div className="font-semibold tracking-tight">kazpaGPT (V1.4)</div>
+          <div className="font-semibold tracking-tight">kazpaGPT (V1.5)</div>
           <div className="text-xs text-white/50">no auth • no db • stable</div>
         </div>
       </header>
 
-      <section className="flex-1 px-4 py-6">
-        <div className="max-w-3xl mx-auto space-y-3">
+      {/* SCROLLING MESSAGE AREA */}
+      <section className="flex-1 overflow-hidden px-4 py-4">
+        <div
+          ref={scrollerRef}
+          className="max-w-3xl mx-auto h-full overflow-y-auto space-y-3 pb-3"
+        >
           {messages.map((m) => (
             <div
               key={m.id}
@@ -129,31 +191,49 @@ export default function Page() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 px-4 py-4">
-        <div className="max-w-3xl mx-auto flex gap-2">
-          <input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault();
-                send();
-              }
-            }}
-            placeholder="Type a message…"
-            className="flex-1 rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm outline-none focus:border-white/25"
-          />
-          <button
-            onClick={send}
-            disabled={loading}
-            className="rounded-xl bg-white text-black px-4 py-3 text-sm font-medium hover:opacity-90 disabled:opacity-50"
-          >
-            {loading ? "..." : "Send"}
-          </button>
-        </div>
+      {/* STICKY INPUT (ALWAYS VISIBLE) */}
+      <footer
+        className="border-t border-white/10 bg-black/90 backdrop-blur supports-[backdrop-filter]:bg-black/70"
+        // lift footer when keyboard is open + respect iPhone safe area
+        style={{
+          transform: "translateY(calc(-1 * var(--kb, 0px)))",
+          paddingBottom: "calc(env(safe-area-inset-bottom) + 16px)",
+        }}
+      >
+        <div className="px-4 pt-4">
+          <div className="max-w-3xl mx-auto flex gap-2 items-center">
+            <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  send();
+                }
+              }}
+              placeholder="Type a message…"
+              // iOS zoom prevention + better mobile keyboard behavior
+              inputMode="text"
+              enterKeyHint="send"
+              autoCapitalize="sentences"
+              autoComplete="off"
+              autoCorrect="on"
+              className="flex-1 rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-white/25"
+              style={{ fontSize: 16 }} // critical for iOS to avoid zoom
+            />
 
-        <div className="max-w-3xl mx-auto mt-2 text-[11px] text-white/40">
-          If production errors, check Vercel env var OPENAI_API_KEY and redeploy.
+            <button
+              onClick={send}
+              disabled={loading}
+              className="rounded-xl bg-white text-black px-4 py-3 text-sm font-medium hover:opacity-90 disabled:opacity-50"
+            >
+              {loading ? "..." : "Send"}
+            </button>
+          </div>
+
+          <div className="max-w-3xl mx-auto mt-2 text-[11px] text-white/40">
+            If production errors, check Vercel env var OPENAI_API_KEY and redeploy.
+          </div>
         </div>
       </footer>
     </main>
