@@ -8,14 +8,27 @@ type Msg = {
   content: string;
 };
 
+/**
+ * Structured client context (local-only).
+ * This is NOT the transcript; it’s compact operational context.
+ */
+type ClientContext = {
+  activeProduct?: "VistaX" | "VistaONE" | "Both" | "Unknown";
+  stage?: "setup" | "troubleshoot" | "learning" | "general";
+  confirmedSteps?: string[]; // optional, we can start empty
+  lastIssue?: string; // short phrase like "no trades"
+  lastUpdated?: string; // ISO timestamp
+};
+
 const STORAGE_KEY = "kazpaGPT_v1_5_messages";
+const CONTEXT_KEY = "kazpaGPT_v1_6_context";
 
 const DEFAULT_MESSAGES: Msg[] = [
   {
     id: "m1",
     role: "assistant",
     content:
-      "Hello — kazpaGPT (V1.5) is live. Ask me anything about kazpa setup, dashboard, VistaONE/VistaX, risk rules, VPS/MT5, troubleshooting, etc.",
+      "Hello — kazpaGPT (V1.6) is live. Ask me anything about kazpa setup, dashboard, VistaONE/VistaX, risk rules, VPS/MT5, troubleshooting, etc.",
   },
 ];
 
@@ -42,19 +55,137 @@ function safeParseMessages(raw: string | null): Msg[] | null {
   }
 }
 
+function safeParseContext(raw: string | null): ClientContext | null {
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") return null;
+
+    const ctx: ClientContext = {};
+
+    if (
+      parsed.activeProduct === "VistaX" ||
+      parsed.activeProduct === "VistaONE" ||
+      parsed.activeProduct === "Both" ||
+      parsed.activeProduct === "Unknown"
+    ) {
+      ctx.activeProduct = parsed.activeProduct;
+    }
+
+    if (
+      parsed.stage === "setup" ||
+      parsed.stage === "troubleshoot" ||
+      parsed.stage === "learning" ||
+      parsed.stage === "general"
+    ) {
+      ctx.stage = parsed.stage;
+    }
+
+    if (Array.isArray(parsed.confirmedSteps)) {
+      ctx.confirmedSteps = parsed.confirmedSteps
+        .filter((x: any) => typeof x === "string")
+        .slice(0, 25);
+    }
+
+    if (typeof parsed.lastIssue === "string") {
+      ctx.lastIssue = parsed.lastIssue.slice(0, 120);
+    }
+
+    if (typeof parsed.lastUpdated === "string") {
+      ctx.lastUpdated = parsed.lastUpdated.slice(0, 40);
+    }
+
+    return ctx;
+  } catch {
+    return null;
+  }
+}
+
+function detectProductFromText(text: string): ClientContext["activeProduct"] | undefined {
+  const t = (text || "").toLowerCase();
+  const hasX = t.includes("vistax");
+  const hasOne = t.includes("vistaone") || t.includes("vista one");
+  if (hasX && hasOne) return "Both";
+  if (hasX) return "VistaX";
+  if (hasOne) return "VistaONE";
+  return undefined;
+}
+
+function detectStageFromText(text: string): ClientContext["stage"] {
+  const t = (text || "").toLowerCase();
+
+  // troubleshooting signals
+  if (
+    t.includes("not working") ||
+    t.includes("doesn't work") ||
+    t.includes("isn't working") ||
+    t.includes("no trades") ||
+    t.includes("not trading") ||
+    t.includes("error") ||
+    t.includes("journal") ||
+    t.includes("experts") ||
+    t.includes("license") ||
+    t.includes("won't") ||
+    t.includes("cant") ||
+    t.includes("can't") ||
+    t.includes("stuck") ||
+    t.includes("missing")
+  )
+    return "troubleshoot";
+
+  // setup signals
+  if (
+    t.includes("install") ||
+    t.includes("set up") ||
+    t.includes("setup") ||
+    t.includes("vps") ||
+    t.includes("mt5") ||
+    t.includes("metatrader") ||
+    t.includes("activate") ||
+    t.includes("mql5") ||
+    t.includes("advisors")
+  )
+    return "setup";
+
+  // learning signals
+  if (
+    t.includes("what is forex") ||
+    t.includes("i'm new") ||
+    t.includes("im new") ||
+    t.includes("beginner") ||
+    t.includes("explain") ||
+    t.includes("fundamentals") ||
+    t.includes("technicals")
+  )
+    return "learning";
+
+  return "general";
+}
+
 export default function Page() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Msg[]>(DEFAULT_MESSAGES);
   const [loading, setLoading] = useState(false);
 
+  // Structured context (local-only, compact)
+  const [clientContext, setClientContext] = useState<ClientContext>({});
+
   const bottomRef = useRef<HTMLDivElement | null>(null);
   const didHydrateRef = useRef(false);
+  const didHydrateContextRef = useRef(false);
 
   // 1) Load messages from localStorage ONCE
   useEffect(() => {
     const saved = safeParseMessages(localStorage.getItem(STORAGE_KEY));
     if (saved) setMessages(saved);
     didHydrateRef.current = true;
+  }, []);
+
+  // 1b) Load structured context from localStorage ONCE
+  useEffect(() => {
+    const savedCtx = safeParseContext(localStorage.getItem(CONTEXT_KEY));
+    if (savedCtx) setClientContext(savedCtx);
+    didHydrateContextRef.current = true;
   }, []);
 
   // 2) Persist messages to localStorage whenever they change (after initial load)
@@ -67,6 +198,16 @@ export default function Page() {
     }
   }, [messages]);
 
+  // 2b) Persist client context whenever it changes (after initial load)
+  useEffect(() => {
+    if (!didHydrateContextRef.current) return;
+    try {
+      localStorage.setItem(CONTEXT_KEY, JSON.stringify(clientContext));
+    } catch {
+      // Fail silently; context is optional
+    }
+  }, [clientContext]);
+
   // 3) Keep view pinned to bottom as messages arrive
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -76,8 +217,10 @@ export default function Page() {
     setLoading(false);
     setInput("");
     setMessages(DEFAULT_MESSAGES);
+    setClientContext({});
     try {
       localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(CONTEXT_KEY);
     } catch {}
   }
 
@@ -90,6 +233,25 @@ export default function Page() {
       role: "user",
       content: text,
     };
+
+    // vNext: update structured context (safe + lightweight)
+    setClientContext((prev) => {
+      const next: ClientContext = { ...(prev || {}) };
+
+      const p = detectProductFromText(text);
+      if (p) next.activeProduct = p;
+
+      next.stage = detectStageFromText(text);
+
+      if (next.stage === "troubleshoot") {
+        next.lastIssue = text.replace(/\s+/g, " ").slice(0, 120);
+      }
+
+      next.lastUpdated = new Date().toISOString();
+
+      // confirmedSteps is optional — we keep it as-is for now
+      return next;
+    });
 
     // Use a local nextMessages variable so we don't depend on stale state
     const nextMessages = [...messages, userMsg];
@@ -104,6 +266,7 @@ export default function Page() {
           role: m.role,
           content: m.content,
         })),
+        clientContext, // ✅ optional structured context; safe if server ignores it
       };
 
       const res = await fetch("/api/chat", {
@@ -155,10 +318,12 @@ export default function Page() {
     <main className="h-[100dvh] bg-black text-white flex flex-col overflow-hidden">
       <header className="border-b border-white/10 px-4 py-3">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <div className="font-semibold tracking-tight">kazpaGPT (V1.5)</div>
+          <div className="font-semibold tracking-tight">kazpaGPT (V1.6)</div>
 
           <div className="flex items-center gap-3">
-            <div className="text-xs text-white/50">no auth • no db • stable</div>
+            <div className="text-xs text-white/50">
+              kazpaOS • intelligence layer • Live
+            </div>
 
             <button
               onClick={clearChat}
@@ -235,7 +400,7 @@ export default function Page() {
         </div>
 
         <div className="max-w-3xl mx-auto mt-2 text-[11px] text-white/40">
-          If production errors, check Vercel env var OPENAI_API_KEY and redeploy.
+          Educational Software Only • Not Financial Advice • Leverage Trading Involves Risk
         </div>
       </footer>
     </main>
