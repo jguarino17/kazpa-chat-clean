@@ -2,13 +2,18 @@
 
 import { useEffect, useRef, useState } from "react";
 
+type Action = {
+  id: string;
+  label: string;
+  message: string;
+};
+
 type Msg = {
   id: string;
   role: "user" | "assistant";
   content: string;
+  actions?: Action[]; // ✅ NEW
 };
-
-type QuickReply = { label: string; send: string };
 
 /**
  * Structured client context (local-only).
@@ -17,7 +22,7 @@ type QuickReply = { label: string; send: string };
 type ClientContext = {
   activeProduct?: "VistaX" | "VistaONE" | "Both" | "Unknown";
   stage?: "setup" | "troubleshoot" | "learning" | "general";
-  confirmedSteps?: string[]; // optional
+  confirmedSteps?: string[];
   lastIssue?: string;
   lastUpdated?: string;
 };
@@ -48,7 +53,28 @@ function safeParseMessages(raw: string | null): Msg[] | null {
           (m.role === "user" || m.role === "assistant") &&
           typeof m.content === "string"
       )
-      .map((m: any) => ({ id: m.id, role: m.role, content: m.content }));
+      .map((m: any) => {
+        const msg: Msg = { id: m.id, role: m.role, content: m.content };
+
+        // ✅ Keep actions if they exist
+        if (Array.isArray(m.actions)) {
+          msg.actions = m.actions
+            .filter(
+              (a: any) =>
+                a &&
+                typeof a.label === "string" &&
+                typeof a.message === "string"
+            )
+            .slice(0, 8)
+            .map((a: any, i: number) => ({
+              id: typeof a.id === "string" ? a.id : `a${i + 1}`,
+              label: String(a.label).slice(0, 80),
+              message: String(a.message).slice(0, 400),
+            }));
+        }
+
+        return msg;
+      });
 
     return cleaned.length ? cleaned : null;
   } catch {
@@ -102,9 +128,7 @@ function safeParseContext(raw: string | null): ClientContext | null {
   }
 }
 
-function detectProductFromText(
-  text: string
-): ClientContext["activeProduct"] | undefined {
+function detectProductFromText(text: string): ClientContext["activeProduct"] | undefined {
   const t = (text || "").toLowerCase();
   const hasX = t.includes("vistax");
   const hasOne = t.includes("vistaone") || t.includes("vista one");
@@ -167,11 +191,7 @@ export default function Page() {
   const [messages, setMessages] = useState<Msg[]>(DEFAULT_MESSAGES);
   const [loading, setLoading] = useState(false);
 
-  // Structured context (local-only, compact)
   const [clientContext, setClientContext] = useState<ClientContext>({});
-
-  // ✅ Server-driven quick replies (buttons)
-  const [quickReplies, setQuickReplies] = useState<QuickReply[]>([]);
 
   const bottomRef = useRef<HTMLDivElement | null>(null);
   const didHydrateRef = useRef(false);
@@ -217,20 +237,15 @@ export default function Page() {
     setInput("");
     setMessages(DEFAULT_MESSAGES);
     setClientContext({});
-    setQuickReplies([]);
     try {
       localStorage.removeItem(STORAGE_KEY);
       localStorage.removeItem(CONTEXT_KEY);
     } catch {}
   }
 
-  async function send(overrideText?: string) {
-    const raw = typeof overrideText === "string" ? overrideText : input;
-    const text = raw.trim();
+  async function send(textOverride?: string) {
+    const text = (textOverride ?? input).trim();
     if (!text || loading) return;
-
-    // clear old quick replies as soon as user sends
-    setQuickReplies([]);
 
     const userMsg: Msg = {
       id: crypto.randomUUID(),
@@ -255,11 +270,14 @@ export default function Page() {
       return next;
     });
 
-    // Use a local nextMessages variable so we don't depend on stale state
-    const nextMessages = [...messages, userMsg];
+    // Clear input immediately if user typed it
+    if (!textOverride) setInput("");
+
+    // Clear any previous actions on the most recent assistant msg (prevents stale buttons)
+    const stripped = messages.map((m) => (m.role === "assistant" ? { ...m, actions: undefined } : m));
+    const nextMessages = [...stripped, userMsg];
 
     setMessages(nextMessages);
-    setInput("");
     setLoading(true);
 
     try {
@@ -268,7 +286,7 @@ export default function Page() {
           role: m.role,
           content: m.content,
         })),
-        clientContext, // optional
+        clientContext,
       };
 
       const res = await fetch("/api/chat", {
@@ -298,25 +316,30 @@ export default function Page() {
       const assistantText =
         (data?.text && String(data.text)) || "No response text returned.";
 
-      // ✅ read server-driven quick replies
-      const serverReplies = data?.ui?.quickReplies;
-      if (Array.isArray(serverReplies)) {
-        const cleaned: QuickReply[] = serverReplies
-          .filter(
-            (x: any) =>
-              x &&
-              typeof x.label === "string" &&
-              typeof x.send === "string"
-          )
-          .slice(0, 8);
-        setQuickReplies(cleaned);
-      } else {
-        setQuickReplies([]);
-      }
+      const actions: Action[] | undefined = Array.isArray(data?.actions)
+        ? data.actions
+            .filter(
+              (a: any) =>
+                a &&
+                typeof a.label === "string" &&
+                typeof a.message === "string"
+            )
+            .slice(0, 8)
+            .map((a: any, i: number) => ({
+              id: typeof a.id === "string" ? a.id : `a${i + 1}`,
+              label: String(a.label).slice(0, 80),
+              message: String(a.message).slice(0, 400),
+            }))
+        : undefined;
 
       setMessages((prev) => [
         ...prev,
-        { id: crypto.randomUUID(), role: "assistant", content: assistantText },
+        {
+          id: crypto.randomUUID(),
+          role: "assistant",
+          content: assistantText,
+          actions: actions?.length ? actions : undefined,
+        },
       ]);
     } catch (e: any) {
       setMessages((prev) => [
@@ -331,13 +354,6 @@ export default function Page() {
       setLoading(false);
     }
   }
-
-  function sendQuickReply(msg: string) {
-    // sends immediately without timing hacks
-    void send(msg);
-  }
-
-  const lastMessageId = messages[messages.length - 1]?.id;
 
   return (
     <main className="h-[100dvh] bg-black text-white flex flex-col overflow-hidden">
@@ -384,23 +400,21 @@ export default function Page() {
 
                 <div className="whitespace-pre-wrap">{m.content}</div>
 
-                {/* ✅ Server-driven quick replies ONLY under the latest assistant message */}
-                {m.role === "assistant" &&
-                  m.id === lastMessageId &&
-                  quickReplies.length > 0 && (
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {quickReplies.map((qr, idx) => (
-                        <button
-                          key={`${qr.label}-${idx}`}
-                          type="button"
-                          onClick={() => sendQuickReply(qr.send)}
-                          className="text-xs px-3 py-2 rounded-xl border border-white/15 bg-white/[0.04] hover:bg-white/[0.07] text-white/80"
-                        >
-                          {qr.label}
-                        </button>
-                      ))}
-                    </div>
-                  )}
+                {/* ✅ Action buttons only under assistant messages */}
+                {m.role === "assistant" && Array.isArray(m.actions) && m.actions.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {m.actions.map((a) => (
+                      <button
+                        key={a.id}
+                        type="button"
+                        onClick={() => send(a.message)}
+                        className="text-xs px-3 py-2 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-white/80 hover:text-white/95"
+                      >
+                        {a.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -428,14 +442,14 @@ export default function Page() {
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.shiftKey) {
                 e.preventDefault();
-                void send();
+                send();
               }
             }}
             placeholder="Type a message…"
             className="flex-1 rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-[16px] outline-none focus:border-white/25"
           />
           <button
-            onClick={() => void send()}
+            onClick={() => send()}
             disabled={loading}
             className="rounded-xl bg-white text-black px-4 py-3 text-sm font-medium hover:opacity-90 disabled:opacity-50"
           >
