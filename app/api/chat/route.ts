@@ -10,12 +10,6 @@ const client = new OpenAI({
 
 type Msg = { role: "user" | "assistant"; content: string };
 
-type Action = {
-  id: string;
-  label: string;
-  message: string;
-};
-
 type Chunk = {
   id: string;
   file: string;
@@ -23,11 +17,19 @@ type Chunk = {
   score: number;
 };
 
+type QuickReply = { label: string; send: string };
+
 const KNOWLEDGE_DIR = path.join(process.cwd(), "knowledge");
 
 // ✅ Canon directory + fixed file order (deterministic)
 const CANON_DIR = path.join(KNOWLEDGE_DIR, "canon");
-const CANON_FILES = ["identity.md", "language.md", "products.md", "risk.md", "brokers.md"];
+const CANON_FILES = [
+  "identity.md",
+  "language.md",
+  "products.md",
+  "risk.md",
+  "brokers.md",
+];
 
 // -----------------------
 // File helpers
@@ -175,11 +177,18 @@ function extractConfirmedSteps(messages: Msg[]) {
     const t = m.content.toLowerCase();
     if (!yesish(t)) continue;
 
-    if (t.includes("autotrading") || t.includes("algo trading")) confirmed.add("autotrading");
-    if (t.includes("attached") || t.includes("on the chart") || t.includes("added to chart"))
+    if (t.includes("autotrading") || t.includes("algo trading"))
+      confirmed.add("autotrading");
+    if (
+      t.includes("attached") ||
+      t.includes("on the chart") ||
+      t.includes("added to chart")
+    )
       confirmed.add("attached");
-    if (t.includes("xauusd") || t.includes("eurusd") || t.includes("symbol")) confirmed.add("symbol");
-    if (t.includes("m5") || t.includes("m15") || t.includes("timeframe")) confirmed.add("timeframe");
+    if (t.includes("xauusd") || t.includes("eurusd") || t.includes("symbol"))
+      confirmed.add("symbol");
+    if (t.includes("m5") || t.includes("m15") || t.includes("timeframe"))
+      confirmed.add("timeframe");
     if (t.includes("session") || t.includes("trading window") || t.includes("hours"))
       confirmed.add("session");
     if (
@@ -220,7 +229,9 @@ function detectIntent(latestUserMsg: string) {
     return "troubleshooting";
 
   if (
-    /(install|setup|set up|vps|mt5|metatrader|activation|license|download|where do i|how do i)/i.test(t)
+    /(install|setup|set up|vps|mt5|metatrader|activation|license|download|where do i|how do i)/i.test(
+      t
+    )
   )
     return "setup";
 
@@ -281,43 +292,77 @@ function didPivotTopic(messages: Msg[]) {
 }
 
 // -----------------------
-// v1.7 — Action buttons parsing
+// v1.6 — Quick Replies (server-driven buttons)
 // -----------------------
-function parseActionsFromAssistant(raw: string): { text: string; actions?: Action[] } {
-  const marker = "ACTIONS_JSON:";
-  const idx = raw.lastIndexOf(marker);
+function buildQuickReplies(params: {
+  intent: string;
+  topic: string;
+  confirmedSteps: string[];
+}) {
+  const { intent, topic, confirmedSteps } = params;
 
-  if (idx === -1) return { text: raw.trim() };
+  if (intent !== "troubleshooting") return [] as QuickReply[];
 
-  const before = raw.slice(0, idx).trim();
-  const after = raw.slice(idx + marker.length).trim();
+  // VistaX troubleshooting quick replies
+  if (topic === "vistax") {
+    const replies: QuickReply[] = [];
 
-  // Try to parse JSON array
-  try {
-    const parsed = JSON.parse(after);
-    if (!Array.isArray(parsed)) return { text: before || raw.trim() };
+    if (!confirmedSteps.includes("autotrading")) {
+      replies.push({
+        label: "✅ AutoTrading is ON",
+        send: "Confirmed: MT5 AutoTrading is ON (green) and Algo Trading is enabled in settings.",
+      });
+    }
 
-    const actions: Action[] = parsed
-      .filter(
-        (a: any) =>
-          a &&
-          typeof a.label === "string" &&
-          typeof a.message === "string"
-      )
-      .slice(0, 8)
-      .map((a: any, i: number) => ({
-        id: typeof a.id === "string" ? a.id.slice(0, 80) : `a${i + 1}`,
-        label: a.label.slice(0, 80),
-        message: a.message.slice(0, 400),
-      }));
+    if (!confirmedSteps.includes("attached")) {
+      replies.push({
+        label: "✅ Software attached + blue hat",
+        send: "Confirmed: VistaX is attached to XAUUSD on M5 and I see the blue hat icon on the chart.",
+      });
+    }
 
-    if (!actions.length) return { text: before || raw.trim() };
+    if (!confirmedSteps.includes("session")) {
+      replies.push({
+        label: "🌙 Market / session",
+        send: "Not sure if it's market/session related. What time is it for you right now and are you inside your VistaX session window?",
+      });
+    }
 
-    return { text: before || "", actions };
-  } catch {
-    // If parsing fails, just return the original content (don’t break responses)
-    return { text: raw.trim() };
+    if (!confirmedSteps.includes("permissions")) {
+      replies.push({
+        label: "🔐 Check permissions",
+        send: "I want to verify permissions: 'Allow Algo Trading' is enabled, and if required, DLL/WebRequest permissions are enabled.",
+      });
+    }
+
+    replies.push({
+      label: "🧾 I see an error",
+      send: "I checked the Experts/Journal tab. The latest error line says: (paste it here).",
+    });
+
+    replies.push({
+      label: "🔌 VPS / connection",
+      send: "Possible VPS/connection issue: my VPS is running, but MT5 connection might be unstable. What do you see in the bottom-right connection status?",
+    });
+
+    return replies.slice(0, 6);
   }
+
+  // Generic troubleshooting fallback
+  return [
+    {
+      label: "✅ AutoTrading is ON",
+      send: "Confirmed: MT5 AutoTrading is ON (green) and Algo Trading is enabled.",
+    },
+    {
+      label: "🧾 I see an error",
+      send: "Experts/Journal error says: (paste it here).",
+    },
+    {
+      label: "🔌 VPS / connection",
+      send: "My VPS/connection might be the issue. MT5 connection status shows: (describe).",
+    },
+  ] as QuickReply[];
 }
 
 // -----------------------
@@ -335,7 +380,11 @@ function buildSystemPrompt(
   }
 ) {
   return `
-${canon ? `KAZPA CANON (Highest priority rules — always follow these):\n${canon}\n\nIf anything conflicts with the canon, the canon wins.\n` : ""}
+${
+  canon
+    ? `KAZPA CANON (Highest priority rules — always follow these):\n${canon}\n\nIf anything conflicts with the canon, the canon wins.\n`
+    : ""
+}
 
 You are kazpaGPT for kazpa.io.
 
@@ -401,13 +450,17 @@ Step memory (troubleshooting):
 - Do NOT re-ask confirmed steps unless contradiction.
 - Ask only ONE next question at a time (unless user asks for full checklist).
 
-${confirmedSteps.length ? `
+${
+  confirmedSteps.length
+    ? `
 Confirmed troubleshooting steps so far:
 - ${confirmedSteps.join("\n- ")}
 
 Do NOT re-ask these unless something contradicts them.
 Proceed to the next unresolved check only.
-` : ""}
+`
+    : ""
+}
 
 TROUBLESHOOTING DECISION TREE — software not placing trades:
 1) Confirm MT5 AutoTrading is ON (green) and platform algo trading is enabled.
@@ -421,18 +474,6 @@ BROKER SAFETY & DISCLOSURE:
 - kazpa does not maintain an official, verified, or recommended broker list.
 - If broker names appear in internal knowledge, you may mention them ONLY as examples users have discussed/used.
 - Always state: NOT a recommendation, no affiliations, do your own due diligence.
-
-ACTION BUTTONS (optional UI upgrade):
-- ONLY when it would be helpful (usually troubleshooting intent), you MAY include 2–6 suggested next-step buttons.
-- If you include buttons, append them at the VERY END of your message in this exact format:
-
-ACTIONS_JSON: [{"id":"a1","label":"Button label","message":"Message to send"}]
-
-Rules for buttons:
-- Keep labels short (2–6 words).
-- Messages should be what the user would say when clicking.
-- Do NOT include any extra text after ACTIONS_JSON.
-- If not needed, do NOT include ACTIONS_JSON at all.
 
 Constraints:
 - No financial advice.
@@ -487,14 +528,12 @@ export async function POST(req: Request) {
       temperature: 0.3,
     });
 
-    const raw = completion.choices?.[0]?.message?.content ?? "";
-    const parsed = parseActionsFromAssistant(raw);
+    const text = completion.choices?.[0]?.message?.content ?? "";
 
-    // ✅ Return text + optional actions (UI buttons)
-    return Response.json({
-      text: parsed.text,
-      actions: parsed.actions,
-    });
+    // ✅ Server-driven buttons (deterministic)
+    const quickReplies = buildQuickReplies({ intent, topic, confirmedSteps });
+
+    return Response.json({ text, ui: { quickReplies } });
   } catch (err: any) {
     return Response.json(
       { error: err?.message ?? "Unknown server error" },
