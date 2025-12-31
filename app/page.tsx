@@ -152,7 +152,7 @@ export default function Page() {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white flex flex-col">
+    <main className="h-[100dvh] bg-black text-white flex flex-col overflow-hidden">
       <header className="border-b border-white/10 px-4 py-3">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
           <div className="font-semibold tracking-tight">kazpaGPT (V1.5)</div>
@@ -172,7 +172,7 @@ export default function Page() {
         </div>
       </header>
 
-      <section className="flex-1 px-4 py-6">
+      <section className="flex-1 px-4 py-6 overflow-y-auto overscroll-contain">
         <div className="max-w-3xl mx-auto space-y-3">
           {messages.map((m) => (
             <div
