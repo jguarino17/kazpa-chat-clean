@@ -17,19 +17,19 @@ type Chunk = {
   score: number;
 };
 
-type QuickReply = { label: string; send: string };
+type UIButton = { id: string; label: string; value: string };
+type UIBlock = {
+  type: "wizard";
+  title?: string;
+  step?: string;
+  buttons: UIButton[];
+};
 
 const KNOWLEDGE_DIR = path.join(process.cwd(), "knowledge");
 
 // ✅ Canon directory + fixed file order (deterministic)
 const CANON_DIR = path.join(KNOWLEDGE_DIR, "canon");
-const CANON_FILES = [
-  "identity.md",
-  "language.md",
-  "products.md",
-  "risk.md",
-  "brokers.md",
-];
+const CANON_FILES = ["identity.md", "language.md", "products.md", "risk.md", "brokers.md"];
 
 // -----------------------
 // File helpers
@@ -80,7 +80,6 @@ function chunkText(text: string, maxLen = 1200): string[] {
   if (!cleaned) return [];
   const parts: string[] = [];
 
-  // paragraph chunking
   const paras = cleaned.split(/\n\s*\n/g);
   let buf = "";
   for (const p of paras) {
@@ -94,7 +93,6 @@ function chunkText(text: string, maxLen = 1200): string[] {
   }
   if (buf) parts.push(buf);
 
-  // hard split any oversized
   const final: string[] = [];
   for (const c of parts) {
     if (c.length <= maxLen) final.push(c);
@@ -123,9 +121,7 @@ function scoreChunk(query: string, chunk: string) {
     if (c.includes(t)) score += 1;
   }
 
-  // bonus for exact phrase match
   if (q.length >= 6 && c.includes(q)) score += 3;
-
   return score;
 }
 
@@ -162,50 +158,70 @@ function buildKeywordSnippets(latestUserMsg: string, maxSnippets = 12) {
 }
 
 // -----------------------
-// v1.5 — Step memory (soft troubleshooting state)
+// Step memory (improved for button messages)
 // -----------------------
 function extractConfirmedSteps(messages: Msg[]) {
-  const confirmed = new Set<string>();
+  // last-mention-wins state
+  const state: Record<string, boolean> = {};
 
-  const yesish = (s: string) =>
-    /\b(yes|yeah|yep|yup|correct|confirmed|done|fixed|it is|it’s on|its on)\b/i.test(
-      s
-    );
+  const set = (k: string, v: boolean) => {
+    state[k] = v;
+  };
 
   for (const m of messages) {
     if (m.role !== "user") continue;
-    const t = m.content.toLowerCase();
-    if (!yesish(t)) continue;
+    const t = (m.content || "").toLowerCase();
 
-    if (t.includes("autotrading") || t.includes("algo trading"))
-      confirmed.add("autotrading");
-    if (
-      t.includes("attached") ||
-      t.includes("on the chart") ||
-      t.includes("added to chart")
-    )
-      confirmed.add("attached");
-    if (t.includes("xauusd") || t.includes("eurusd") || t.includes("symbol"))
-      confirmed.add("symbol");
-    if (t.includes("m5") || t.includes("m15") || t.includes("timeframe"))
-      confirmed.add("timeframe");
-    if (t.includes("session") || t.includes("trading window") || t.includes("hours"))
-      confirmed.add("session");
-    if (
-      t.includes("allow algo") ||
-      t.includes("allow algorithmic") ||
-      t.includes("permissions") ||
-      t.includes("dll") ||
-      t.includes("webrequest")
-    )
-      confirmed.add("permissions");
+    // AutoTrading
+    if (/(autotrading|algo trading|algorithmic trading)/i.test(t)) {
+      if (/\b(off|disabled|isn't on|isnt on|not on)\b/i.test(t)) set("autotrading", false);
+      if (/\b(on|enabled|green|turned on|is on)\b/i.test(t)) set("autotrading", true);
+    }
+
+    // Attached / blue hat
+    if (/(blue hat|hat icon|attached|on the chart|added to chart)/i.test(t)) {
+      if (/(no blue hat|not attached|isn't attached|isnt attached)/i.test(t)) set("attached", false);
+      if (/(blue hat|hat icon|attached|on the chart|added to chart|i see)/i.test(t))
+        set("attached", true);
+    }
+
+    // Symbol / timeframe hints
+    if (/\bxauusd\b/i.test(t) || /\beurusd\b/i.test(t) || /\bsymbol\b/i.test(t)) {
+      if (/(wrong|not sure|different)/i.test(t)) set("symbol", false);
+      else set("symbol", true);
+    }
+
+    if (/\bm1\b|\bm5\b|\bm15\b|\btimeframe\b/i.test(t)) {
+      if (/(wrong|not sure|different)/i.test(t)) set("timeframe", false);
+      else set("timeframe", true);
+    }
+
+    // Session / market open
+    if (/(market|session|hours|window)/i.test(t)) {
+      if (/(closed|outside|not sure|unsure)/i.test(t)) set("session", false);
+      if (/(open|within|in my session|during my session)/i.test(t)) set("session", true);
+    }
+
+    // Permissions
+    if (/(dll|webrequest|permissions|allow algo|allow algorithmic)/i.test(t)) {
+      if (/(off|disabled|not enabled|not sure|unsure)/i.test(t)) set("permissions", false);
+      if (/(enabled|on|allowed|granted)/i.test(t)) set("permissions", true);
+    }
+
+    // VPS / connection
+    if (/(vps|connection|no connection|data loading|disconnected|rdp)/i.test(t)) {
+      if (/(no|not|issue|problem|unstable|disconnected)/i.test(t)) set("vps", false);
+      if (/(stable|connected|running|uptime|ok)/i.test(t)) set("vps", true);
+    }
   }
 
-  return Array.from(confirmed);
+  return Object.entries(state)
+    .filter(([, v]) => v)
+    .map(([k]) => k);
 }
 
 // -----------------------
-// v1.6 — Intent / Topic / Pivot / MultiQ
+// v1.6 — Intent / Topic / Pivot / MultiQ (kept)
 // -----------------------
 function looksLikeMultiQuestion(text: string) {
   const t = (text || "").trim();
@@ -228,11 +244,7 @@ function detectIntent(latestUserMsg: string) {
   )
     return "troubleshooting";
 
-  if (
-    /(install|setup|set up|vps|mt5|metatrader|activation|license|download|where do i|how do i)/i.test(
-      t
-    )
-  )
+  if (/(install|setup|set up|vps|mt5|metatrader|activation|license|download|where do i|how do i)/i.test(t))
     return "setup";
 
   if (/(how much|profit|returns|safe|guarantee|leverage|risk|drawdown|should i)/i.test(t))
@@ -292,77 +304,178 @@ function didPivotTopic(messages: Msg[]) {
 }
 
 // -----------------------
-// v1.6 — Quick Replies (server-driven buttons)
+// v1.7 — Wizard UI (server-generated, deterministic)
 // -----------------------
-function buildQuickReplies(params: {
-  intent: string;
-  topic: string;
-  confirmedSteps: string[];
-}) {
-  const { intent, topic, confirmedSteps } = params;
+function buildWizardUI(intent: string, topic: string, confirmedSteps: string[]): UIBlock | null {
+  if (intent !== "troubleshooting") return null;
 
-  if (intent !== "troubleshooting") return [] as QuickReply[];
+  const has = (k: string) => confirmedSteps.includes(k);
 
-  // VistaX troubleshooting quick replies
-  if (topic === "vistax") {
-    const replies: QuickReply[] = [];
+  // Determine product-specific expectations (labels only)
+  const expected =
+    topic === "vistax"
+      ? { product: "VistaX", symbol: "XAUUSD", tf: "M5" }
+      : topic === "vistaone"
+      ? { product: "VistaONE", symbol: "EURUSD", tf: "M15" }
+      : { product: "your software", symbol: "the correct symbol", tf: "the correct timeframe" };
 
-    if (!confirmedSteps.includes("autotrading")) {
-      replies.push({
-        label: "✅ AutoTrading is ON",
-        send: "Confirmed: MT5 AutoTrading is ON (green) and Algo Trading is enabled in settings.",
-      });
-    }
+  // Pick next step in a strict, human flow
+  let step: UIBlock["step"] = "autotrading";
 
-    if (!confirmedSteps.includes("attached")) {
-      replies.push({
-        label: "✅ Software attached + blue hat",
-        send: "Confirmed: VistaX is attached to XAUUSD on M5 and I see the blue hat icon on the chart.",
-      });
-    }
+  if (!has("autotrading")) step = "autotrading";
+  else if (!has("attached")) step = "attached";
+  else if (!has("symbol") || !has("timeframe")) step = "chart";
+  else if (!has("session")) step = "session";
+  else if (!has("permissions")) step = "permissions";
+  else step = "errors"; // after core checks, ask for logs
 
-    if (!confirmedSteps.includes("session")) {
-      replies.push({
-        label: "🌙 Market / session",
-        send: "Not sure if it's market/session related. What time is it for you right now and are you inside your VistaX session window?",
-      });
-    }
+  const common = {
+    type: "wizard" as const,
+    step,
+  };
 
-    if (!confirmedSteps.includes("permissions")) {
-      replies.push({
-        label: "🔐 Check permissions",
-        send: "I want to verify permissions: 'Allow Algo Trading' is enabled, and if required, DLL/WebRequest permissions are enabled.",
-      });
-    }
-
-    replies.push({
-      label: "🧾 I see an error",
-      send: "I checked the Experts/Journal tab. The latest error line says: (paste it here).",
-    });
-
-    replies.push({
-      label: "🔌 VPS / connection",
-      send: "Possible VPS/connection issue: my VPS is running, but MT5 connection might be unstable. What do you see in the bottom-right connection status?",
-    });
-
-    return replies.slice(0, 6);
+  if (step === "autotrading") {
+    return {
+      ...common,
+      title: "Confirm AutoTrading",
+      buttons: [
+        {
+          id: "wiz-auto-yes",
+          label: "✅ AutoTrading is ON",
+          value: "MT5 AutoTrading is ON (green) and algorithmic trading is enabled.",
+        },
+        {
+          id: "wiz-auto-no",
+          label: "❌ It was OFF",
+          value: "AutoTrading was OFF. I turned it ON now.",
+        },
+        {
+          id: "wiz-auto-where",
+          label: "📍 Where is it?",
+          value: "Where do I find the AutoTrading button and algorithmic trading setting in MT5?",
+        },
+      ],
+    };
   }
 
-  // Generic troubleshooting fallback
-  return [
-    {
-      label: "✅ AutoTrading is ON",
-      send: "Confirmed: MT5 AutoTrading is ON (green) and Algo Trading is enabled.",
-    },
-    {
-      label: "🧾 I see an error",
-      send: "Experts/Journal error says: (paste it here).",
-    },
-    {
-      label: "🔌 VPS / connection",
-      send: "My VPS/connection might be the issue. MT5 connection status shows: (describe).",
-    },
-  ] as QuickReply[];
+  if (step === "attached") {
+    return {
+      ...common,
+      title: "Confirm software is attached",
+      buttons: [
+        {
+          id: "wiz-attached-yes",
+          label: "✅ Blue hat is showing",
+          value: `Yes — ${expected.product} is attached and I see the BLUE HAT ICON on the chart.`,
+        },
+        {
+          id: "wiz-attached-no",
+          label: "❌ No blue hat",
+          value: "I don’t see the blue hat icon / I’m not sure it’s attached correctly.",
+        },
+        {
+          id: "wiz-attached-how",
+          label: "📍 Show me how",
+          value: "Show me exactly how to attach the software in MT5 and confirm the blue hat icon.",
+        },
+      ],
+    };
+  }
+
+  if (step === "chart") {
+    return {
+      ...common,
+      title: "Confirm correct chart",
+      buttons: [
+        {
+          id: "wiz-chart-yes",
+          label: `✅ ${expected.symbol} • ${expected.tf}`,
+          value: `Confirmed — I am on ${expected.symbol} and timeframe ${expected.tf}.`,
+        },
+        {
+          id: "wiz-chart-no",
+          label: "❌ Different / unsure",
+          value: "I’m on a different symbol/timeframe or I’m not sure what it should be.",
+        },
+        {
+          id: "wiz-chart-how",
+          label: "📍 How do I switch?",
+          value: "How do I switch symbols/timeframes in MT5 and make sure the software is on the correct chart?",
+        },
+      ],
+    };
+  }
+
+  if (step === "session") {
+    return {
+      ...common,
+      title: "Market/session check",
+      buttons: [
+        {
+          id: "wiz-session-yes",
+          label: "✅ Market open",
+          value: "Confirmed — the market is open and I’m within my configured session window.",
+        },
+        {
+          id: "wiz-session-no",
+          label: "❌ Not sure",
+          value: "I’m not sure if the market is open or whether I’m in my session window.",
+        },
+        {
+          id: "wiz-session-what",
+          label: "🕒 Session rules?",
+          value: "What are the session/time rules I should use for this software?",
+        },
+      ],
+    };
+  }
+
+  if (step === "permissions") {
+    return {
+      ...common,
+      title: "Permissions",
+      buttons: [
+        {
+          id: "wiz-perm-yes",
+          label: "✅ Permissions enabled",
+          value: "Confirmed — Allow Algo Trading is enabled and any required DLL/WebRequest permissions are granted.",
+        },
+        {
+          id: "wiz-perm-no",
+          label: "❌ Not sure / disabled",
+          value: "I’m not sure if the permissions are enabled (DLL/WebRequest/etc).",
+        },
+        {
+          id: "wiz-perm-how",
+          label: "📍 Where to enable?",
+          value: "Show me where to enable Allow Algo Trading + DLL/WebRequest permissions in MT5.",
+        },
+      ],
+    };
+  }
+
+  // errors (final step)
+  return {
+    ...common,
+    title: "Logs (Experts/Journal)",
+    buttons: [
+      {
+        id: "wiz-err-yes",
+        label: "🧾 I see an error",
+        value: "I see an error in Experts/Journal. I will paste the exact most recent line here.",
+      },
+      {
+        id: "wiz-err-no",
+        label: "✅ No errors",
+        value: "I don’t see any errors in Experts or Journal.",
+      },
+      {
+        id: "wiz-err-where",
+        label: "📍 Where is that tab?",
+        value: "Where do I find the Experts and Journal tabs in MT5?",
+      },
+    ],
+  };
 }
 
 // -----------------------
@@ -380,11 +493,7 @@ function buildSystemPrompt(
   }
 ) {
   return `
-${
-  canon
-    ? `KAZPA CANON (Highest priority rules — always follow these):\n${canon}\n\nIf anything conflicts with the canon, the canon wins.\n`
-    : ""
-}
+${canon ? `KAZPA CANON (Highest priority rules — always follow these):\n${canon}\n\nIf anything conflicts with the canon, the canon wins.\n` : ""}
 
 You are kazpaGPT for kazpa.io.
 
@@ -392,7 +501,7 @@ Core language rules (mandatory):
 - Say "software" (not EA).
 - In MT5, the active software status is a BLUE HAT ICON (not a smiley).
 
-v1.6 Behavior context:
+v1.7 Behavior context:
 - Detected intent: ${v16.intent}
 - Detected topic: ${v16.topic}
 - Pivoted topic: ${v16.pivoted ? "yes" : "no"}
@@ -446,21 +555,17 @@ If currently troubleshooting and the user asks an unrelated question:
 If the user says they want to switch topics fully, drop troubleshooting and answer normally.
 
 Step memory (troubleshooting):
-- Treat user “yes/confirmed/done/fixed” as completing that step.
+- Treat user confirmations as completing that step.
 - Do NOT re-ask confirmed steps unless contradiction.
 - Ask only ONE next question at a time (unless user asks for full checklist).
 
-${
-  confirmedSteps.length
-    ? `
+${confirmedSteps.length ? `
 Confirmed troubleshooting steps so far:
 - ${confirmedSteps.join("\n- ")}
 
 Do NOT re-ask these unless something contradicts them.
 Proceed to the next unresolved check only.
-`
-    : ""
-}
+` : ""}
 
 TROUBLESHOOTING DECISION TREE — software not placing trades:
 1) Confirm MT5 AutoTrading is ON (green) and platform algo trading is enabled.
@@ -530,10 +635,10 @@ export async function POST(req: Request) {
 
     const text = completion.choices?.[0]?.message?.content ?? "";
 
-    // ✅ Server-driven buttons (deterministic)
-    const quickReplies = buildQuickReplies({ intent, topic, confirmedSteps });
+    // ✅ Deterministic UI: only wizard buttons, only when troubleshooting
+    const ui = buildWizardUI(intent, topic, confirmedSteps);
 
-    return Response.json({ text, ui: { quickReplies } });
+    return Response.json({ text, ui });
   } catch (err: any) {
     return Response.json(
       { error: err?.message ?? "Unknown server error" },
