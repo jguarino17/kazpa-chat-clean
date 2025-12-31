@@ -10,6 +10,12 @@ const client = new OpenAI({
 
 type Msg = { role: "user" | "assistant"; content: string };
 
+type Action = {
+  id: string;
+  label: string;
+  message: string;
+};
+
 type Chunk = {
   id: string;
   file: string;
@@ -160,7 +166,9 @@ function extractConfirmedSteps(messages: Msg[]) {
   const confirmed = new Set<string>();
 
   const yesish = (s: string) =>
-    /\b(yes|yeah|yep|yup|correct|confirmed|done|fixed|it is|it’s on|its on)\b/i.test(s);
+    /\b(yes|yeah|yep|yup|correct|confirmed|done|fixed|it is|it’s on|its on)\b/i.test(
+      s
+    );
 
   for (const m of messages) {
     if (m.role !== "user") continue;
@@ -195,9 +203,7 @@ function looksLikeMultiQuestion(text: string) {
   if (!t) return false;
   const qCount = (t.match(/\?/g) || []).length;
   if (qCount >= 2) return true;
-  // “and also”, “also”, “plus”, “another question”
   if (/\b(and also|also|plus|another question|one more thing)\b/i.test(t)) return true;
-  // multiple sentence asks
   const sentences = t.split(/[.!?]\s+/).filter(Boolean);
   if (sentences.length >= 3) return true;
   return false;
@@ -206,7 +212,6 @@ function looksLikeMultiQuestion(text: string) {
 function detectIntent(latestUserMsg: string) {
   const t = (latestUserMsg || "").toLowerCase();
 
-  // Troubleshooting signals
   if (
     /(not working|won't work|wont work|no trades|isn’t placing|isn't placing|error|issue|bug|stuck|missing|hat icon|blue hat|journal|experts|doesn't trade|doesnt trade)/i.test(
       t
@@ -214,18 +219,16 @@ function detectIntent(latestUserMsg: string) {
   )
     return "troubleshooting";
 
-  // Setup / onboarding
-  if (/(install|setup|set up|vps|mt5|metatrader|activation|license|download|where do i|how do i)/i.test(t))
+  if (
+    /(install|setup|set up|vps|mt5|metatrader|activation|license|download|where do i|how do i)/i.test(t)
+  )
     return "setup";
 
-  // Risk / expectations
   if (/(how much|profit|returns|safe|guarantee|leverage|risk|drawdown|should i)/i.test(t))
     return "risk";
 
-  // Product clarity
   if (/(difference|which one|vistaone|vistax|compare)/i.test(t)) return "product";
 
-  // Learning
   if (/(what is|explain|i’m new|im new|beginner|teach me)/i.test(t)) return "learning";
 
   return "general";
@@ -273,9 +276,48 @@ function didPivotTopic(messages: Msg[]) {
   const latestTopic = detectTopic(latest);
   const prevTopic = detectTopic(prev);
 
-  // if previous convo was troubleshooting a product, and user suddenly asks broker/random topic
   if (latestTopic !== prevTopic && latestTopic !== "general") return true;
   return false;
+}
+
+// -----------------------
+// v1.7 — Action buttons parsing
+// -----------------------
+function parseActionsFromAssistant(raw: string): { text: string; actions?: Action[] } {
+  const marker = "ACTIONS_JSON:";
+  const idx = raw.lastIndexOf(marker);
+
+  if (idx === -1) return { text: raw.trim() };
+
+  const before = raw.slice(0, idx).trim();
+  const after = raw.slice(idx + marker.length).trim();
+
+  // Try to parse JSON array
+  try {
+    const parsed = JSON.parse(after);
+    if (!Array.isArray(parsed)) return { text: before || raw.trim() };
+
+    const actions: Action[] = parsed
+      .filter(
+        (a: any) =>
+          a &&
+          typeof a.label === "string" &&
+          typeof a.message === "string"
+      )
+      .slice(0, 8)
+      .map((a: any, i: number) => ({
+        id: typeof a.id === "string" ? a.id.slice(0, 80) : `a${i + 1}`,
+        label: a.label.slice(0, 80),
+        message: a.message.slice(0, 400),
+      }));
+
+    if (!actions.length) return { text: before || raw.trim() };
+
+    return { text: before || "", actions };
+  } catch {
+    // If parsing fails, just return the original content (don’t break responses)
+    return { text: raw.trim() };
+  }
 }
 
 // -----------------------
@@ -380,6 +422,18 @@ BROKER SAFETY & DISCLOSURE:
 - If broker names appear in internal knowledge, you may mention them ONLY as examples users have discussed/used.
 - Always state: NOT a recommendation, no affiliations, do your own due diligence.
 
+ACTION BUTTONS (optional UI upgrade):
+- ONLY when it would be helpful (usually troubleshooting intent), you MAY include 2–6 suggested next-step buttons.
+- If you include buttons, append them at the VERY END of your message in this exact format:
+
+ACTIONS_JSON: [{"id":"a1","label":"Button label","message":"Message to send"}]
+
+Rules for buttons:
+- Keep labels short (2–6 words).
+- Messages should be what the user would say when clicking.
+- Do NOT include any extra text after ACTIONS_JSON.
+- If not needed, do NOT include ACTIONS_JSON at all.
+
 Constraints:
 - No financial advice.
 - Do not guess missing info; ask for the single detail needed.
@@ -433,8 +487,14 @@ export async function POST(req: Request) {
       temperature: 0.3,
     });
 
-    const text = completion.choices?.[0]?.message?.content ?? "";
-    return Response.json({ text });
+    const raw = completion.choices?.[0]?.message?.content ?? "";
+    const parsed = parseActionsFromAssistant(raw);
+
+    // ✅ Return text + optional actions (UI buttons)
+    return Response.json({
+      text: parsed.text,
+      actions: parsed.actions,
+    });
   } catch (err: any) {
     return Response.json(
       { error: err?.message ?? "Unknown server error" },
