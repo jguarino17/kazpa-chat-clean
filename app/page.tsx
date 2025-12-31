@@ -2,10 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 
+type Action = {
+  id: string;
+  label: string;
+  message: string;
+};
+
 type Msg = {
   id: string;
   role: "user" | "assistant";
   content: string;
+  actions?: Action[]; // ✅ NEW
 };
 
 /**
@@ -15,9 +22,9 @@ type Msg = {
 type ClientContext = {
   activeProduct?: "VistaX" | "VistaONE" | "Both" | "Unknown";
   stage?: "setup" | "troubleshoot" | "learning" | "general";
-  confirmedSteps?: string[]; // optional, we can start empty
-  lastIssue?: string; // short phrase like "no trades"
-  lastUpdated?: string; // ISO timestamp
+  confirmedSteps?: string[];
+  lastIssue?: string;
+  lastUpdated?: string;
 };
 
 const STORAGE_KEY = "kazpaGPT_v1_5_messages";
@@ -38,7 +45,6 @@ function safeParseMessages(raw: string | null): Msg[] | null {
     const parsed = JSON.parse(raw);
     if (!Array.isArray(parsed)) return null;
 
-    // Light validation so bad data doesn't crash the UI
     const cleaned: Msg[] = parsed
       .filter(
         (m: any) =>
@@ -47,7 +53,28 @@ function safeParseMessages(raw: string | null): Msg[] | null {
           (m.role === "user" || m.role === "assistant") &&
           typeof m.content === "string"
       )
-      .map((m: any) => ({ id: m.id, role: m.role, content: m.content }));
+      .map((m: any) => {
+        const msg: Msg = { id: m.id, role: m.role, content: m.content };
+
+        // ✅ Keep actions if they exist
+        if (Array.isArray(m.actions)) {
+          msg.actions = m.actions
+            .filter(
+              (a: any) =>
+                a &&
+                typeof a.label === "string" &&
+                typeof a.message === "string"
+            )
+            .slice(0, 8)
+            .map((a: any, i: number) => ({
+              id: typeof a.id === "string" ? a.id : `a${i + 1}`,
+              label: String(a.label).slice(0, 80),
+              message: String(a.message).slice(0, 400),
+            }));
+        }
+
+        return msg;
+      });
 
     return cleaned.length ? cleaned : null;
   } catch {
@@ -114,7 +141,6 @@ function detectProductFromText(text: string): ClientContext["activeProduct"] | u
 function detectStageFromText(text: string): ClientContext["stage"] {
   const t = (text || "").toLowerCase();
 
-  // troubleshooting signals
   if (
     t.includes("not working") ||
     t.includes("doesn't work") ||
@@ -133,7 +159,6 @@ function detectStageFromText(text: string): ClientContext["stage"] {
   )
     return "troubleshoot";
 
-  // setup signals
   if (
     t.includes("install") ||
     t.includes("set up") ||
@@ -147,7 +172,6 @@ function detectStageFromText(text: string): ClientContext["stage"] {
   )
     return "setup";
 
-  // learning signals
   if (
     t.includes("what is forex") ||
     t.includes("i'm new") ||
@@ -167,7 +191,6 @@ export default function Page() {
   const [messages, setMessages] = useState<Msg[]>(DEFAULT_MESSAGES);
   const [loading, setLoading] = useState(false);
 
-  // Structured context (local-only, compact)
   const [clientContext, setClientContext] = useState<ClientContext>({});
 
   const bottomRef = useRef<HTMLDivElement | null>(null);
@@ -193,9 +216,7 @@ export default function Page() {
     if (!didHydrateRef.current) return;
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
-    } catch {
-      // If storage is full/blocked, fail silently (don't break chat)
-    }
+    } catch {}
   }, [messages]);
 
   // 2b) Persist client context whenever it changes (after initial load)
@@ -203,9 +224,7 @@ export default function Page() {
     if (!didHydrateContextRef.current) return;
     try {
       localStorage.setItem(CONTEXT_KEY, JSON.stringify(clientContext));
-    } catch {
-      // Fail silently; context is optional
-    }
+    } catch {}
   }, [clientContext]);
 
   // 3) Keep view pinned to bottom as messages arrive
@@ -224,8 +243,8 @@ export default function Page() {
     } catch {}
   }
 
-  async function send() {
-    const text = input.trim();
+  async function send(textOverride?: string) {
+    const text = (textOverride ?? input).trim();
     if (!text || loading) return;
 
     const userMsg: Msg = {
@@ -248,16 +267,17 @@ export default function Page() {
       }
 
       next.lastUpdated = new Date().toISOString();
-
-      // confirmedSteps is optional — we keep it as-is for now
       return next;
     });
 
-    // Use a local nextMessages variable so we don't depend on stale state
-    const nextMessages = [...messages, userMsg];
+    // Clear input immediately if user typed it
+    if (!textOverride) setInput("");
+
+    // Clear any previous actions on the most recent assistant msg (prevents stale buttons)
+    const stripped = messages.map((m) => (m.role === "assistant" ? { ...m, actions: undefined } : m));
+    const nextMessages = [...stripped, userMsg];
 
     setMessages(nextMessages);
-    setInput("");
     setLoading(true);
 
     try {
@@ -266,7 +286,7 @@ export default function Page() {
           role: m.role,
           content: m.content,
         })),
-        clientContext, // ✅ optional structured context; safe if server ignores it
+        clientContext,
       };
 
       const res = await fetch("/api/chat", {
@@ -296,9 +316,30 @@ export default function Page() {
       const assistantText =
         (data?.text && String(data.text)) || "No response text returned.";
 
+      const actions: Action[] | undefined = Array.isArray(data?.actions)
+        ? data.actions
+            .filter(
+              (a: any) =>
+                a &&
+                typeof a.label === "string" &&
+                typeof a.message === "string"
+            )
+            .slice(0, 8)
+            .map((a: any, i: number) => ({
+              id: typeof a.id === "string" ? a.id : `a${i + 1}`,
+              label: String(a.label).slice(0, 80),
+              message: String(a.message).slice(0, 400),
+            }))
+        : undefined;
+
       setMessages((prev) => [
         ...prev,
-        { id: crypto.randomUUID(), role: "assistant", content: assistantText },
+        {
+          id: crypto.randomUUID(),
+          role: "assistant",
+          content: assistantText,
+          actions: actions?.length ? actions : undefined,
+        },
       ]);
     } catch (e: any) {
       setMessages((prev) => [
@@ -356,7 +397,24 @@ export default function Page() {
                 <div className="text-[11px] uppercase tracking-wide text-white/50 mb-1">
                   {m.role}
                 </div>
+
                 <div className="whitespace-pre-wrap">{m.content}</div>
+
+                {/* ✅ Action buttons only under assistant messages */}
+                {m.role === "assistant" && Array.isArray(m.actions) && m.actions.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {m.actions.map((a) => (
+                      <button
+                        key={a.id}
+                        type="button"
+                        onClick={() => send(a.message)}
+                        className="text-xs px-3 py-2 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-white/80 hover:text-white/95"
+                      >
+                        {a.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -391,7 +449,7 @@ export default function Page() {
             className="flex-1 rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-[16px] outline-none focus:border-white/25"
           />
           <button
-            onClick={send}
+            onClick={() => send()}
             disabled={loading}
             className="rounded-xl bg-white text-black px-4 py-3 text-sm font-medium hover:opacity-90 disabled:opacity-50"
           >
