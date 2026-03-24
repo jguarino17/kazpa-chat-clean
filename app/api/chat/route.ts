@@ -10,6 +10,14 @@ const client = new OpenAI({
 
 type Msg = { role: "user" | "assistant"; content: string };
 
+type ClientContext = {
+  activeProduct?: "VistaX" | "VistaONE" | "Both" | "Unknown";
+  stage?: "setup" | "troubleshoot" | "learning" | "general";
+  confirmedSteps?: string[];
+  lastIssue?: string;
+  lastUpdated?: string;
+};
+
 type Chunk = {
   id: string;
   file: string;
@@ -29,7 +37,7 @@ const KNOWLEDGE_DIR = path.join(process.cwd(), "knowledge");
 
 // ✅ Canon directory + fixed file order (deterministic)
 const CANON_DIR = path.join(KNOWLEDGE_DIR, "canon");
-const CANON_FILES = ["identity.md", "language.md", "products.md", "risk.md", "brokers.md"];
+const CANON_FILES = ["identity.md", "language.md", "products.md", "risk.md", "brokers.md", "troubleshooting.md", "dashboard.md", "vps.md"];
 
 // -----------------------
 // File helpers
@@ -490,8 +498,17 @@ function buildSystemPrompt(
     topic: string;
     pivoted: boolean;
     multiQ: boolean;
-  }
+  },
+  clientContext?: ClientContext
 ) {
+  const ctxBlock = clientContext ? `
+Client context (from their session — use silently):
+- Active product: ${clientContext.activeProduct || "unknown"}
+- Current stage: ${clientContext.stage || "unknown"}
+- Last issue: ${clientContext.lastIssue || "none"}
+${clientContext.confirmedSteps?.length ? `- Client confirmed steps: ${clientContext.confirmedSteps.join(", ")}` : ""}
+` : "";
+
   return `
 ${canon ? `KAZPA CANON (Highest priority rules — always follow these):\n${canon}\n\nIf anything conflicts with the canon, the canon wins.\n` : ""}
 
@@ -506,6 +523,7 @@ v1.7 Behavior context:
 - Detected topic: ${v16.topic}
 - Pivoted topic: ${v16.pivoted ? "yes" : "no"}
 - Multi-question: ${v16.multiQ ? "yes" : "no"}
+${ctxBlock}
 
 CRITICAL CONVERSATION QUALITY RULES:
 - Do NOT greet repeatedly (avoid "Hello again", avoid restarting).
@@ -596,6 +614,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const messages: Msg[] = body?.messages ?? [];
+    const clientContext: ClientContext | undefined = body?.clientContext ?? undefined;
 
     if (!process.env.OPENAI_API_KEY) {
       return Response.json(
@@ -622,10 +641,10 @@ export async function POST(req: Request) {
       topic,
       pivoted,
       multiQ,
-    });
+    }, clientContext);
 
     const completion = await client.chat.completions.create({
-      model: "gpt-4.1-mini",
+      model: "gpt-4.1",
       messages: [
         { role: "developer", content: system },
         ...messages.map((m) => ({ role: m.role, content: m.content })),
