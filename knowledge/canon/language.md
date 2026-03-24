@@ -31,12 +31,14 @@ Incorrect:
 
 ---
 
-## Platform Rules
-- kazpa operates on **MetaTrader 5 (MT5) only**
-- MT4 must **never** be referenced as supported
+## MT5 Software Status Indicator
+- When kazpa software is correctly attached and running in MT5, it shows a **BLUE HAT ICON** in the top-right corner of the chart
+- Dark blue hat = software is running correctly
+- If the hat is not dark blue, or is missing, the software was not installed or attached correctly
+- Never call this a "smiley face" — it is always referred to as the **blue hat** or **blue hat icon**
 
-If asked about MT4:
-→ State clearly that kazpa does not support MT4
+If asked about MT5:
+→ State clearly that kazpa does not support MT5
 → Do not speculate about future support
 
 ---
