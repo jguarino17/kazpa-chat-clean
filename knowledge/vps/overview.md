@@ -1,37 +1,94 @@
-# VPS Overview — What It Is, Why It’s Used, and When You Need One
+# VPS Overview — What It Is, Why It's Used, and How to Access It
 
-This page explains what a VPS is, why it’s commonly used with kazpa software, and when it is recommended.
+This page explains what a VPS is, why it is used with kazpa software, and how to connect to it correctly.
 
-A VPS is not mandatory, but it is strongly recommended for most users.
+A VPS is strongly recommended for most kazpa users.
 
 ---
 
 ## What a VPS Is
 
-A VPS (Virtual Private Server) is a remote computer that:
-- Runs continuously
-- Stays online 24/7
-- Can be accessed from anywhere
-- Is independent of your personal device
+A VPS (Virtual Private Server) is a remote Windows computer that:
+- Runs continuously, 24 hours a day, 7 days a week
+- Stays online regardless of what your personal device does
+- Can be accessed from anywhere using Microsoft App
+- Is independent of your personal computer, phone, or internet connection
 
-Think of a VPS as a dedicated Windows machine that lives online instead of on your desk.
+Think of a VPS as a dedicated Windows machine that lives online and never shuts off.
 
 ---
 
 ## Why a VPS Is Recommended for kazpa
 
-kazpa software runs inside **MetaTrader 5 (MT5)**.
+kazpa software runs inside MetaTrader 5 (MT5).
 
-Using a VPS helps ensure:
-- MT5 stays open continuously
-- Software can run without interruption
-- Execution is not affected by:
-  - your computer shutting down
-  - internet outages
-  - sleep mode
-  - local system updates
+Using a VPS ensures:
+- MT5 stays open continuously without interruption
+- Software executes without being affected by your local computer shutting down, sleeping, or losing internet
+- You can monitor and manage everything remotely from any device
 
-A VPS improves **consistency**, not performance guarantees.
+A VPS improves reliability and consistency. It does not improve strategy performance or remove trading risk.
+
+---
+
+## How to Access Your VPS — Microsoft App
+
+To connect to your VPS, you use Microsoft App.
+
+This is the official application used to access Windows-based VPS servers remotely.
+
+Download Microsoft App:
+- Windows: Search "Remote Desktop Connection" in the Start menu, or download "Microsoft App" from the Microsoft Store
+- Mac: Download "Microsoft App" from the Mac App Store
+- iPhone / iPad: Download "Microsoft App" from the App Store
+- Android: Download "Microsoft App" from the Google Play Store
+
+Connect to your VPS:
+1. Open Microsoft App
+2. Click the "+" or "Add PC" button
+3. Enter the IP address from your VPS provider email
+4. Enter your VPS username and password
+5. Click Connect
+6. If prompted about a certificate, click Continue
+
+You are now inside your VPS. Install MT5 here and set up kazpa software from this environment.
+
+---
+
+## Critical: How to Leave a VPS Session Correctly
+
+Do NOT log out of Windows on the VPS — this shuts down your active session and stops MT5.
+Do NOT click "Sign Out" inside the VPS Windows environment.
+
+Correct way to disconnect:
+- Simply close the Microsoft App window
+- The VPS continues running in the background with MT5 active
+
+Logging out vs disconnecting is the most common VPS mistake new users make.
+
+---
+
+## VPS Requirements
+
+For kazpa software to run correctly, the VPS must have:
+- Windows Server operating system
+- At least 2 CPU cores
+- At least 3 GB RAM
+- MetaTrader 5 installed (MT5 only — MT5 is not supported)
+- Stable internet connection
+
+---
+
+## After Any VPS Restart or Reconnect
+
+After connecting to your VPS following any restart or maintenance:
+1. Open MetaTrader 5
+2. Confirm the correct trading account is logged in
+3. Verify AutoTrading is ON (green button)
+4. Confirm charts are open and software is still attached
+5. Check the Experts and Journal tabs for any error messages
+
+AutoTrading does not automatically re-enable after a restart. This must be manually checked every time.
 
 ---
 
@@ -39,84 +96,41 @@ A VPS improves **consistency**, not performance guarantees.
 
 A VPS does not:
 - Remove trading risk
-- Improve strategy logic
+- Improve strategy performance
 - Guarantee better results
 - Eliminate drawdown
-- Replace monitoring
+- Replace the need to monitor execution
 
 A VPS is an infrastructure tool, not a trading advantage.
 
 ---
 
-## When a VPS Is Strongly Recommended
+## VPS Providers (Community Examples — Not Recommendations)
 
-A VPS is strongly recommended if:
-- You plan to run software continuously (e.g., VistaONE)
-- You do not want MT5 tied to your personal computer
-- You want execution to continue when your device is offline
-- You want stable uptime
+kazpa does not endorse specific VPS providers. The following have been mentioned by community members as examples for their own research:
+- ForexVPS (forexvps.net)
+- CNS (cnsvps.com)
+- Contabo
+- Vultr
 
-Most users running kazpa long-term use a VPS.
-
----
-
-## When a VPS Is Optional
-
-A VPS may be optional if:
-- You are testing on demo
-- You only run software during short sessions
-- You are able to keep MT5 open and monitored locally
-- You understand the risks of interruptions
-
-Even in these cases, many users still prefer a VPS for reliability.
-
----
-
-## VPS Responsibilities (User-Controlled)
-
-If you use a VPS, you are responsible for:
-- Choosing a VPS provider
-- Managing login credentials
-- Keeping the VPS secure
-- Installing MT5 correctly
-- Monitoring execution regularly
-
-kazpa does not manage VPS servers and is not affiliated with VPS providers.
+Always verify Windows support, uptime guarantees, pricing, and your region before purchasing.
+kazpa has no affiliations with any VPS provider.
 
 ---
 
 ## Common VPS Mistakes
 
-Users often run into problems when they:
-- Close the VPS window instead of disconnecting
-- Log out of Windows instead of disconnecting the session
-- Allow the VPS to auto-restart during trading
-- Forget to monitor MT5 after setup
-- Assume the VPS “handles everything”
-
-A VPS still requires oversight.
-
----
-
-## Monitoring Expectations
-
-Even with a VPS:
-- You should check MT5 regularly
-- You should confirm AutoTrading status
-- You should pause execution during major events
-- You should stop execution if behavior looks abnormal
-
-A VPS allows continuous operation, not unattended operation.
+- Logging out instead of disconnecting (stops MT5)
+- Forgetting to verify AutoTrading after reconnecting
+- Restarting the VPS during live trading without pausing AutoTrading first
+- Assuming the VPS monitors trading automatically
+- Not keeping VPS credentials secure
 
 ---
 
 ## Final Perspective
 
-A VPS is a **reliability tool**.
+A VPS is a reliability tool. It keeps MT5 running consistently but does not replace discipline, monitoring, or risk management.
 
-It helps keep MT5 running consistently, but it does not:
-- Remove risk
-- Replace discipline
-- Make trading passive
-
-For most kazpa users, a VPS provides peace of mind and stability when used responsibly.
+For most kazpa users running VistaONE continuously, a VPS is essential.
+For VistaX users running short sessions, a VPS is still strongly recommended for consistency.
