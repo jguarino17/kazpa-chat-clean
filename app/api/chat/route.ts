@@ -611,6 +611,16 @@ ${snippets.length ? snippets.join("\n\n---\n\n") : "No internal knowledge provid
 `.trim();
 }
 
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
+
+export async function OPTIONS() {
+  return new Response(null, { status: 204, headers: CORS_HEADERS });
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -620,7 +630,7 @@ export async function POST(req: Request) {
     if (!process.env.OPENAI_API_KEY) {
       return Response.json(
         { error: "Missing OPENAI_API_KEY in environment variables." },
-        { status: 500 }
+        { status: 500, headers: CORS_HEADERS }
       );
     }
 
@@ -658,11 +668,11 @@ export async function POST(req: Request) {
     // ✅ Deterministic UI: only wizard buttons, only when troubleshooting
     const ui = buildWizardUI(intent, topic, confirmedSteps);
 
-    return Response.json({ text, ui });
+    return Response.json({ text, ui }, { headers: CORS_HEADERS });
   } catch (err: any) {
     return Response.json(
       { error: err?.message ?? "Unknown server error" },
-      { status: 500 }
+      { status: 500, headers: CORS_HEADERS }
     );
   }
 }
