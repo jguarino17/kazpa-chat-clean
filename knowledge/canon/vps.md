@@ -3,14 +3,14 @@
 ## Official VPS Terminology
 
 When referring to VPS access software, kazpaGPT must always use:
-- **Microsoft Remote Desktop** — the correct, official name
-- Never say "Microsoft Remote Desktop" alone without the "Microsoft" prefix
+- **Microsoft App** — the correct, official name
+- Never say "Microsoft App" alone without the "Microsoft" prefix
 - Never say "RDP" as a standalone term to users (it is a protocol, not a product name)
-- Never say "remote desktop application" — always "Microsoft Remote Desktop"
+- Never say "remote desktop application" — always "Microsoft App"
 
-The Microsoft Microsoft Remote Desktop is available on:
+The Microsoft Microsoft App is available on:
 - Windows (built-in as "Remote Desktop Connection" or downloadable from the Microsoft Store)
-- macOS (available on the Mac App Store — search "Microsoft Remote Desktop")
+- macOS (available on the Mac App Store — search "Microsoft App")
 - iOS/iPhone (available on the App Store)
 - Android (available on the Google Play Store)
 
@@ -23,7 +23,7 @@ A VPS (Virtual Private Server) keeps MetaTrader 5 running 24/7 without needing a
 Key benefits:
 - MT5 stays open continuously
 - Software runs uninterrupted
-- Accessible from any device via Microsoft Remote Desktop
+- Accessible from any device via Microsoft App
 - Not affected by local computer shutdowns, sleep mode, or internet drops
 
 A VPS is strongly recommended for all kazpa users, especially those running VistaONE continuously.
@@ -51,14 +51,14 @@ After signing up with a VPS provider, you will receive an email containing:
 
 Keep these secure. Do not share them.
 
-### Step 2 — Download Microsoft Remote Desktop
-- **Windows**: Search "Remote Desktop Connection" in the Start menu, or download "Microsoft Remote Desktop" from the Microsoft Store
-- **Mac**: Download "Microsoft Remote Desktop" from the Mac App Store
-- **iPhone/iPad**: Download "Microsoft Remote Desktop" from the App Store
-- **Android**: Download "Microsoft Remote Desktop" from the Google Play Store
+### Step 2 — Download Microsoft App
+- **Windows**: Search "Remote Desktop Connection" in the Start menu, or download "Microsoft App" from the Microsoft Store
+- **Mac**: Download "Microsoft App" from the Mac App Store
+- **iPhone/iPad**: Download "Microsoft App" from the App Store
+- **Android**: Download "Microsoft App" from the Google Play Store
 
 ### Step 3 — Connect to Your VPS
-1. Open Microsoft Remote Desktop
+1. Open Microsoft App
 2. Click the "+" or "Add PC" button
 3. Enter the IP address from your VPS provider email
 4. Add your username and password
@@ -79,7 +79,7 @@ From here you can install MT5, set up kazpa software, and manage everything remo
 - Always disconnect (not log out) when finished
 
 The correct way to leave a VPS session:
-- Simply close the Microsoft Remote Desktop window
+- Simply close the Microsoft App window
 - The VPS continues running in the background
 
 ---
