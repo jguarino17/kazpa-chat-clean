@@ -26,12 +26,12 @@ Setting Up Your VPS - A Step-by-Step Guide:
 "Start by signing up with a VPS provider. After registration, you'll receive an email containing crucial details: your IP address, username, and password. Keep this information handy; you’ll need it for the next steps."
 
 
-2. Download Microsoft Remote Desktop
-"Next, download the Microsoft Remote Desktop application. It’s available for both Windows and Apple devices, including your cellphone, making it incredibly versatile. This app will be your gateway to accessing your VPS."
+2. Download Microsoft App
+"Next, download the Microsoft App. It’s available for both Windows and Apple devices, including your cellphone, making it incredibly versatile. This app will be your gateway to accessing your VPS."
 
 
 3. Connect to Your VPS
-"After installing Microsoft Remote Desktop, open the app and click the '+' sign to add a new connection. Refer back to the email from your VPS provider and input the IP address, username, and password provided. Once you’ve entered this information, sign in."
+"After installing Microsoft App, open the app and click the '+' sign to add a new connection. Refer back to the email from your VPS provider and input the IP address, username, and password provided. Once you’ve entered this information, sign in."
 
 
 4. All Set!

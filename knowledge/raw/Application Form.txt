@@ -21,7 +21,7 @@ Section 2: Trading / Investment Background
 
    * If yes, how many years of experience?
 
-   * What platforms have you used? (MT5, MT4, TradingView, Other)
+   * What platforms have you used? (MT5, MT5, TradingView, Other)
 
    * Have you used automated systems before? (Yes / No)
 

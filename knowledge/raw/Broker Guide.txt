@@ -59,20 +59,20 @@ ________________
 MetaTrader Login
 Your broker will give you your MetaTrader login info via your account number and password. MetaTrader enables you to carry out various trading operations, such as placing market orders, modifying trades, and utilizing advanced charting tools. Your broker will provide separate credentials specifically for MetaTrader access.
 Credentials typically include:
-* MT4/5 account number (usually 6-12 digits)
-* MT4/5 account password (a randomly generated password)
+* MT5/5 account number (usually 6-12 digits)
+* MT5/5 account password (a randomly generated password)
 Example Credentials:
 * Login: 100827473
 * Password: (hidden for security)
 * Server: kazpa-Demo
 ⚠️ Warning
-We will never ask for your MT4/5 account password. Keep this information private.
+We will never ask for your MT5/5 account password. Keep this information private.
 
 
-If you have not yet done so, please review our VPS Guide to select a VPS and install MetaTrader 4 or 5. You will need this in order to download the software to trade with our algorithms. 
+If you have not yet done so, please review our VPS Guide to select a VPS and install MetaTrader 5. You will need this in order to download the software to trade with our algorithms. 
 
 
-Check out our MetaTrader Guide here to setup MetaTrader 4 or 5
+Check out our MetaTrader Guide here to setup MetaTrader 5
 
 
 Here are some additional things to consider when selecting a broker:

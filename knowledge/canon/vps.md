@@ -3,16 +3,16 @@
 ## Official VPS Terminology
 
 When referring to VPS access software, kazpaGPT must always use:
-- **Microsoft App** — the correct, official name
-- Never say "Microsoft App" alone without the "Microsoft" prefix
+- **Microsoft App** — the correct, official name for the VPS remote access application
+- Never say "Microsoft Remote Desktop" — this is the old name, it has been rebranded
+- Never say "Remote Desktop app" or "remote desktop application"
 - Never say "RDP" as a standalone term to users (it is a protocol, not a product name)
-- Never say "remote desktop application" — always "Microsoft App"
 
-The Microsoft Microsoft App is available on:
-- Windows (built-in as "Remote Desktop Connection" or downloadable from the Microsoft Store)
+The Microsoft App is available on:
+- Windows (search "Microsoft App" in the Microsoft Store)
 - macOS (available on the Mac App Store — search "Microsoft App")
-- iOS/iPhone (available on the App Store)
-- Android (available on the Google Play Store)
+- iOS/iPhone (available on the App Store — search "Microsoft App")
+- Android (available on the Google Play Store — search "Microsoft App")
 
 ---
 
@@ -37,7 +37,7 @@ For kazpa software to run properly, the VPS must have:
 - At least 2 CPU cores
 - At least 3 GB RAM
 - Stable internet connection
-- MetaTrader 5 installed (not MT5)
+- MetaTrader 5 installed (not MT4)
 
 ---
 
@@ -52,7 +52,7 @@ After signing up with a VPS provider, you will receive an email containing:
 Keep these secure. Do not share them.
 
 ### Step 2 — Download Microsoft App
-- **Windows**: Search "Remote Desktop Connection" in the Start menu, or download "Microsoft App" from the Microsoft Store
+- **Windows**: Search "Microsoft App" in the Microsoft Store and download it
 - **Mac**: Download "Microsoft App" from the Mac App Store
 - **iPhone/iPad**: Download "Microsoft App" from the App Store
 - **Android**: Download "Microsoft App" from the Google Play Store

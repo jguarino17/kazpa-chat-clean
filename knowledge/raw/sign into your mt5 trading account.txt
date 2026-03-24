@@ -2,9 +2,9 @@
 Step 1: Retrieve Account Details:
 Start by finding the email from your broker, sent after you set up your live trading account. This email contains crucial details: your username, password, investor password, and server address. Keep this email handy as we proceed.
 Step 2: Access Your VPS:
-Next, open the Microsoft Remote Desktop app and log into your VPS. This virtual environment is where your trading platform operates 24/7.
+Next, open the Microsoft App and log into your VPS. This virtual environment is where your trading platform operates 24/7.
 Step 3: Launch MT5 Terminal:
-Now, on your VPS, open the MetaTrader 4 program we installed together in a previous lesson.
+Now, on your VPS, open the MetaTrader 5 program we installed together in a previous lesson.
 Step 4: Open a Trading Account in MT5:
 In the MT5 app, navigate to 'File' at the top left corner, then select 'Open an Account.' Here, you'll need to input your server address. Simply hit the green plus sign, search for and select your server, then click 'Next.
 Step 5: Enter Account Information:

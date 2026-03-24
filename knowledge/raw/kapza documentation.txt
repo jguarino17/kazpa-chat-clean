@@ -51,7 +51,7 @@ Follow these in order. Each item has a deeper section later in the guide.
 
             * Stable internet, always on.
 
-            * Remote Desktop access confirmed.
+            * Microsoft App access confirmed.
 [screenshot: RDP window connected to a clean Windows VPS]
 
                2. Broker account ready
@@ -296,14 +296,14 @@ What you need to know
 
                                                                                  * Minimum spec: 2 CPU cores, 4 GB RAM, 20 GB storage, Windows Server 2019 or newer.
 
-                                                                                 * You’ll access it through Remote Desktop Connection (RDP).
+                                                                                 * You’ll access it through the Microsoft App.
 
 Checklist before continuing
  ☑ Windows Server installed
 ☑ Internet speed stable
 ☑ RDP login confirmed
 ☑ MT5 installation allowed (you can download files)
-[screenshot: Remote Desktop window connected to VPS desktop]
+[screenshot: Microsoft App window connected to VPS desktop]
 ________________
 
 
@@ -317,7 +317,7 @@ Educational notes
 
                                                                                     * Compare brokers by regulation, spreads, execution speed, funding methods, and customer service.
 
-                                                                                    * Always open an MT5 account (not MT4).
+                                                                                    * Always open an MT5 account (not MT5).
 
 What to collect
                                                                                        * Broker name + server address (e.g. Broker-Live2)
@@ -653,7 +653,7 @@ ________________
 ⚡ VPS disconnected or rebooted
 Cause: Your VPS provider restarted or timed out.
 Fix:
-                                                                                                                                                            * Reconnect via Remote Desktop.
+                                                                                                                                                            * Reconnect via Microsoft App.
 
                                                                                                                                                             * Check if MT5 is still running — if not, reopen it.
 

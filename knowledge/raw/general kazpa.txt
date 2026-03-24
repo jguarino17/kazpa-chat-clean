@@ -378,7 +378,7 @@ ________________
 
 
 Logging Into Your VPS
-Access to your VPS is done using Microsoft Remote Desktop.
+Access to your VPS is done using Microsoft App.
 You will receive:
                                                                                                                   * An IP address
 
@@ -387,7 +387,7 @@ You will receive:
                                                                                                                   * A password
 
 Steps to log in:
-                                                                                                                     1. Open Microsoft Remote Desktop
+                                                                                                                     1. Open Microsoft App
 
                                                                                                                      2. Enter the VPS IP address
 

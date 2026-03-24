@@ -10,11 +10,11 @@ Once inside the client portal, you have access to various options like depositin
 
 
 Creating a Trading Account:
-To create a live trading account, look for the 'Apply for an Account' button. Select 'MT4' as the platform type, choose your preferred currency, and select 'Pro' for account type to save on trading fees. For leverage, we recommend anything from 1:200 to 1:500 for algorithmic trading. Agree to the terms and confirm.
+To create a live trading account, look for the 'Apply for an Account' button. Select 'MT5' as the platform type, choose your preferred currency, and select 'Pro' for account type to save on trading fees. For leverage, we recommend anything from 1:200 to 1:500 for algorithmic trading. Agree to the terms and confirm.
 
 
 Receiving Account Details:
-Shortly, you'll receive an email with your trading account details, including a username and password. Keep these safe as we'll need them to connect to the MT4 terminal.
+Shortly, you'll receive an email with your trading account details, including a username and password. Keep these safe as we'll need them to connect to the MT5 terminal.
 
 
 Funding Your Account

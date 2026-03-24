@@ -24,7 +24,7 @@ MT5 is the environment where all execution occurs.
 kazpa operates on **MetaTrader 5 only**.
 
 Important rules:
-- MT4 is **not supported**
+- MT5 is **not supported**
 - Other platforms are **not supported**
 - MT5 compatibility is required from the broker
 

@@ -2,7 +2,7 @@
 
 
 Step 1: Copy the software to VPS
-1. Connect to your VPS via Remote Desktop.
+1. Connect to your VPS via Microsoft App.
 2. Locate the EA on your desktop (VistaONE.ex5 file).
 3. Transfer the EA file to the VPS by copying it from your desktop and pasting it onto the VPS desktop.
 Step 2: Load software into MetaTrader 5

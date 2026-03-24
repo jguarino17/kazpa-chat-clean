@@ -8,7 +8,7 @@ ________________
 
 
 Why Do I Need a VPS?
-Using a VPS for MetaTrader (MT4 or MT5) offers key benefits:
+Using a VPS for MetaTrader (MT5 or MT5) offers key benefits:
 * Uninterrupted Trading: Ensures your trading platform runs smoothly even if your local device encounters downtime or connectivity issues.
 * Reliable Environment: Provides a stable setup for automated trading, preventing interruptions due to power or internet outages.
 * Improved Execution: Reduces latency, enhancing trade execution speeds by bringing the MetaTrader platform closer to your broker’s server.
@@ -75,9 +75,9 @@ Here are the steps you need to take in order to begin trading:
 1. Select a VPS
 2. Complete the sign-up process
 3. Once the sign-up process is complete, you will receive your VPS information in an email or your account
-4. Download Microsoft Remote Desktop for your computer, or another Remote Desktop application
-5. Sign in to the VPS via Remote Desktop with your VPS information
-6. Once you sign into your VPS, you will need to download MetaTrader 4 or 5 from your broker (steps below).
+4. Download Microsoft App for your computer (available on Windows, Mac, iPhone, and Android)
+5. Sign in to the VPS via Microsoft App with your VPS information
+6. Once you sign into your VPS, you will need to download MetaTrader 5 from your broker (steps below).
 
 
 Once you have access to your account via your account number and password, and funds are in your account, we can help you set up your algorithm in order to begin trading.
@@ -91,15 +91,15 @@ ________________
 How to Access Your VPS
 Prerequisites:
 * Have your VPS credentials ready, including the IP address or hostname, username, and password.
-* Ensure you have the Windows Remote Desktop app installed on your local computer. You can download it from the Microsoft Store or use the built-in Remote Desktop Connection tool.
+* Ensure you have the Microsoft App installed on your local computer. Download it from the Microsoft Store (Windows) or the App Store (Mac/iPhone) or Google Play (Android).
 🛈 For macOS Users
-You can install the Windows Remote Desktop application from the App Store.
+You can install the Microsoft App from the App Store.
 ________________
 
 
 Steps
-1. Open the Windows Remote Desktop App
-* Launch the Remote Desktop app on your computer. You can find it in the Start menu or by searching for "Remote Desktop."
+1. Open the Microsoft App
+* Launch Microsoft App on your computer. You can find it in the Start menu or by searching for "Microsoft App."
 2. Add a New Connection
 * Click on the "Add PC" button or use the "+" button to create a new connection.
 * Enter the IP address or hostname of your VPS in the "PC name" field.

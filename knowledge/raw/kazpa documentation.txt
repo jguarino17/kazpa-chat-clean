@@ -29,7 +29,7 @@ Step
 	While waiting for your key, visit the Downloads page to get MT5 templates and installation files ready.
 	7️⃣
 	Activate and Run the Software
-	Once you receive your key, activate it inside MT5 and confirm the blue cap icon appears on your chart → your software is live!
+	Once you receive your key, activate it inside MT5 and confirm the blue hat icon appears on your chart → your software is live!
 	📘 Info: You can complete every setup step before receiving your key so activation takes only minutes once delivered.
 💡 Tip: Most users finish setup in 40 – 60 minutes after downloads. While waiting for your license, use this time to read through every section and be 100 % ready to go.
 ________________
@@ -63,7 +63,7 @@ ________________
 
 🧩 Software Overview
 VistaONE — Long-Term Compounding Software
-→ Operates on higher timeframes (H1 – H4)
+→ Operates on EURUSD, M15 timeframe
  → Focuses on low-risk, steady growth
  → Trades less frequently and maintains longer positions
 → Ideal for users seeking consistency and controlled exposure
@@ -98,8 +98,8 @@ Step
 	Retrieve your key after submitting the License Activation Form (issued within 24 hours).
 	5️⃣
 	Install the Software
-	Add VistaONE or VistaX to MT5 and confirm the blue cap icon appears in the top-right corner of your chart.
-	📸 [Screenshot: MT5 chart showing active blue cap icon = software running]
+	Add VistaONE or VistaX to MT5 and confirm the blue hat icon appears in the top-right corner of your chart.
+	📸 [Screenshot: MT5 chart showing active blue hat icon = software running]
 ________________
 
 
@@ -196,13 +196,13 @@ ________________
 
       * Password
 
-📘 Info: You’ll use this information to connect via Remote Desktop Connection (RDP).
+📘 Info: You’ll use this information to connect via the Microsoft App.
 ________________
 
 
 💻 Step 2 — Connect to Your VPS
 🔹 Windows Users
-1️⃣ Press Start → Remote Desktop Connection.
+1️⃣ Open the Microsoft App on your device.
 2️⃣ Enter your VPS IP address → click Connect.
 3️⃣ When prompted, enter your:
          * Username: Administrator
@@ -215,7 +215,7 @@ ________________
 
 
 🔹 Mac Users
-1️⃣ Download Microsoft Remote Desktop from the App Store.
+1️⃣ Download Microsoft App from the App Store.
 2️⃣ Open the app → click Add PC.
 3️⃣ Enter:
             * PC Name: (your VPS IP)
@@ -225,7 +225,7 @@ ________________
             * Password: (your VPS password)
 4️⃣ Double-click to connect → your Windows VPS desktop opens.
 
-📸 [Screenshot: Microsoft Remote Desktop App settings on Mac]
+📸 [Screenshot: Microsoft App App settings on Mac]
 ________________
 
 
@@ -273,13 +273,13 @@ ________________
 ✅ Reconnect any time to monitor progress or make adjustments.
 ✅ Avoid shutting down your VPS unless absolutely necessary.
 📘 Info: When you disconnect from RDP, the VPS keeps running in the cloud. You’re simply logging out of the view.
-📸 [Screenshot: MT5 running on VPS desktop – blue cap icon visible]
+📸 [Screenshot: MT5 running on VPS desktop – blue hat icon visible]
 ________________
 
 
 🧾 Summary
 ✔ You’ve chosen a VPS provider and purchased your plan.
-✔ You’ve connected via Remote Desktop and secured it.
+✔ You’ve connected via Microsoft App and secured it.
 ✔ You’ve installed MT5 and verified broker connection.
 ✔ Your VPS is now running and ready for Kazpa software installation.
 ________________
@@ -637,7 +637,7 @@ Step
 	Activate Inside MT5
 	Paste the key into the software’s settings window.
 	6️⃣
-	Verify It’s Active (Blue Cap Icon)
+	Verify It’s Active (Blue Hat Icon)
 	When active, the blue-cap icon appears in the top-right corner of your MT5 chart.
 	📘 Info: Licenses are bound to the account number and broker details you submit on the activation form.
 If you ever change brokers or account numbers, you’ll need to request a transfer.
@@ -690,7 +690,7 @@ When your license is active, you’ll see:
 ✔ Blue-cap icon in the top-right corner of your chart.
 ✔ “License OK” message in the MT5 Experts tab.
 ✔ Live data and heartbeat logs updating every few minutes.
-📸 [Screenshot: MT5 chart showing blue cap icon (active Kazpa software)]
+📸 [Screenshot: MT5 chart showing blue hat icon (active Kazpa software)]
 ⚠️ If you see “Invalid License” or “No Authorization,” double-check your key for extra spaces and confirm your activation form was submitted correctly.
 ________________
 
@@ -813,8 +813,8 @@ After activation you should see:
 ✔ A blue-cap icon in the top-right corner of the chart.
 ✔ “License OK – Kazpa Software Active” in the Experts tab.
 ✔ Auto Trading button = green in the toolbar.
-📸 [Screenshot: MT5 chart with blue cap icon active]
-⚠️ If you see “Invalid License” or no blue cap:
+📸 [Screenshot: MT5 chart with blue hat icon active]
+⚠️ If you see “Invalid License” or no blue hat:
 – Re-enter your license key.
 – Confirm Auto Trading is enabled.
 – Ensure the correct chart and timeframe are used.
@@ -827,7 +827,7 @@ ________________
  • VistaONE → EURUSD M15
  • VistaX → XAUUSD M5
 2️⃣ Open the Inputs tab to double-check that the set file loaded properly.
-3️⃣ Verify Auto Trading is ON and the blue cap icon is visible.
+3️⃣ Verify Auto Trading is ON and the blue hat icon is visible.
 4️⃣ Watch the Experts tab for “Monitoring – Active” or “License OK” messages.
 💡 Tip: If anything looks incorrect, remove the software and re-attach it with the correct .set file before market open.
 ________________
@@ -1032,7 +1032,7 @@ Fix:
 ________________
 
 
-💥 Problem 5: Blue Cap Not Showing
+💥 Problem 5: Blue Hat Not Showing
 Means: Software is not attached properly or trading disabled.
 Fix:
                                        * Re-attach software to chart → confirm set file and license key loaded.
@@ -1041,7 +1041,7 @@ Fix:
 
                                        * If still missing, close MT5 → reopen → re-attach software.
 
-📸 [Screenshot: MT5 chart showing active blue cap icon]
+📸 [Screenshot: MT5 chart showing active blue hat icon]
 ________________
 
 
@@ -1074,7 +1074,7 @@ ________________
 Fix:
  1️⃣ When MT5 reopens, re-attach software to chart.
 2️⃣ Load the correct set file again and verify Auto Trading = ON.
-3️⃣ Confirm blue cap icon visible.
+3️⃣ Confirm blue hat icon visible.
 💡 Tip: If you use a VPS that restarts weekly for maintenance, reconnect afterward and check your setup.
 ________________
 
@@ -1095,7 +1095,7 @@ Issue
 	No Connection
 	Broker server /VPS issue
 	Re-login + test ping + contact VPS
-	Blue Cap Missing
+	Blue Hat Missing
 	Not attached or Auto Trading OFF
 	Re-attach + enable Auto Trading
 	________________

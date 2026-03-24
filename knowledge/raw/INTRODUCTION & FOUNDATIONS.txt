@@ -104,7 +104,7 @@ ________________
 Talking Points:
                      * Downloading MT5
 
-                     * Correct MT5 icon (blue cap)
+                     * Correct MT5 icon (blue hat)
 
                      * First launch
 
@@ -181,7 +181,7 @@ Talking Points:
 
                                           * Confirming successful activation
 
-                                          * Blue cap icon confirmation
+                                          * Blue hat icon confirmation
 
 ________________
 

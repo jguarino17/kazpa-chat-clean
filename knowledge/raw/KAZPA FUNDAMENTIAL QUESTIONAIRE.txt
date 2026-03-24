@@ -73,9 +73,9 @@ What application is used to log into your VPS?
 ⬜ Myfxbook
 ⬜ Broker trading portal
 ⬜ kazpa dashboard
-✅ Microsoft Remote Desktop
+✅ Microsoft App
 ✔ Correct Answer Explanation:
- VPS access is handled through Microsoft Remote Desktop, allowing you to manage MetaTrader remotely.
+ VPS access is handled through Microsoft App, allowing you to manage MetaTrader remotely.
 ________________
 
 

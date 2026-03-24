@@ -94,7 +94,7 @@ MT5 must be:
 - Fully functional before software installation
 
 Only **MetaTrader 5** is supported.
-MT4 is not supported.
+MT5 is not supported.
 
 ---
 

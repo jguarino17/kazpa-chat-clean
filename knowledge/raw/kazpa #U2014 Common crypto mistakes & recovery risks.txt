@@ -1,0 +1,163 @@
+﻿kazpa — Common crypto mistakes & recovery risks
+Important disclaimer
+kazpa does not manage funds, does not provide financial or tax advice, and is not responsible for user errors. Crypto transactions are irreversible. This document is for educational purposes only.
+________________
+
+
+1. Sending crypto on the wrong network
+Example:
+ Sending USDT (TRC-20) to an ERC-20 address.
+Why this happens:
+* User selects the wrong network during transfer
+
+* Assumes “USDT is USDT” without checking network
+
+Result:
+   * Funds may be permanently lost
+
+   * Recovery is often not possible
+
+How to avoid it:
+      * Always confirm:
+
+         * Asset (USDT)
+
+         * Network (ERC-20)
+
+         * Address
+
+            * If unsure, send a small test transaction first
+
+________________
+
+
+2. Copying the wrong wallet address
+Cause:
+               * Clipboard overwrite
+
+               * Manual typing errors
+
+               * Switching tabs mid-process
+
+Result:
+                  * Funds sent to the wrong address cannot be reversed
+
+Prevention:
+                     * Copy/paste only
+
+                     * Double-check first and last characters of the address
+
+                     * Never rush
+
+________________
+
+
+3. Forgetting exchange withdrawal holds
+Cause:
+                        * Newly purchased crypto
+
+                        * New account security holds
+
+                        * Large transaction flags
+
+What users experience:
+                           * “Withdraw” button disabled
+
+                           * Delays of 24–72 hours
+
+Important note:
+ This is an exchange policy, not a broker or kazpa issue.
+________________
+
+
+4. Not accounting for network fees
+Cause:
+                              * Sending full balance without leaving room for fees
+
+Result:
+                                 * Transaction fails
+
+                                 * Transfer delayed
+
+Fix:
+                                    * Always leave a small buffer for network fees (especially on Ethereum)
+
+________________
+
+
+5. Expecting instant broker credit every time
+Cause:
+                                       * Confusing blockchain confirmation with broker processing
+
+Reality:
+                                          * Blockchain confirmation is fast
+
+                                          * Broker crediting may take minutes to a few hours depending on internal checks
+
+________________
+
+
+6. Sending crypto from someone else’s wallet
+Cause:
+                                             * Friend, third-party service, or shared wallet
+
+Risk:
+                                                * Broker may reject or delay credit
+
+                                                * Compliance issues
+
+Best practice:
+                                                   * Use a wallet or exchange account you personally control
+
+________________
+
+
+7. Losing access to exchange or wallet
+Cause:
+                                                      * Forgotten passwords
+
+                                                      * Lost 2FA device
+
+                                                      * Email access lost
+
+Prevention:
+                                                         * Secure backups
+
+                                                         * Recovery codes saved offline
+
+                                                         * 2FA properly configured
+
+________________
+
+
+8. Assuming crypto transfers are anonymous
+Reality:
+                                                            * Blockchain transactions are public
+
+                                                            * Exchanges perform identity checks
+
+                                                            * Records exist indefinitely
+
+Always assume transactions are traceable.
+________________
+
+
+9. No transaction records kept
+Why this matters:
+                                                               * Taxes
+
+                                                               * Support inquiries
+
+                                                               * Proof of transfer
+
+Fix:
+                                                                  * Save transaction IDs (TXIDs)
+
+                                                                  * Download exchange history periodically
+
+________________
+
+
+Bottom line
+Crypto is fast and efficient — but mistakes are final.
+Move slowly, verify everything, and treat every transaction as irreversible.

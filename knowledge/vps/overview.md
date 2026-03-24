@@ -38,7 +38,7 @@ To connect to your VPS, you use Microsoft App.
 This is the official application used to access Windows-based VPS servers remotely.
 
 Download Microsoft App:
-- Windows: Search "Remote Desktop Connection" in the Start menu, or download "Microsoft App" from the Microsoft Store
+- Windows: Search "Microsoft App" in the Microsoft Store and download it
 - Mac: Download "Microsoft App" from the Mac App Store
 - iPhone / iPad: Download "Microsoft App" from the App Store
 - Android: Download "Microsoft App" from the Google Play Store

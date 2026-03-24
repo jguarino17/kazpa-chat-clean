@@ -57,7 +57,7 @@ You may use:
 * ForexVPS
 * or any reputable VPS provider
 After purchasing:
-* Download Microsoft Remote Desktop
+* Download Microsoft App
    * Desktop / Laptop
    * Mobile device (recommended)
 Keep your VPS credentials handy.

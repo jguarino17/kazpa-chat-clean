@@ -1,0 +1,118 @@
+﻿kazpa — Why many users choose non-US brokers (and what US users should know)
+Important compliance note
+kazpa does not recommend specific brokers, does not manage funds, and does not provide financial or investment advice. Broker selection is the user’s responsibility. Trading involves substantial risk and losses are possible.
+kazpa will not assist with bypassing broker restrictions, KYC/identity requirements, residency rules, or any platform’s terms. Always use accurate information and follow all applicable laws and broker policies.
+________________
+
+
+Why many US brokers don’t work for kazpa’s setup requirements
+kazpa’s softwares are designed for MetaTrader 5 (MT5) execution and typically require higher leverage ranges (commonly 1:200–1:500) to operate as intended for margin flexibility and risk configuration.
+Many US-regulated retail forex brokers:
+* limit leverage (often far below 1:200),
+
+* may not offer MT5 in the same way international brokers do,
+
+* and operate under strict regulatory frameworks that affect account types, execution, and product availability.
+
+Because of those constraints, some users find that a US broker account may not meet the platform + leverage requirements needed for their desired configuration.
+________________
+
+
+Why some non-US brokers don’t accept US residents
+Many offshore or non-US brokers restrict access for US residents due to:
+   * regulatory exposure and licensing limitations,
+
+   * legal risk related to soliciting or serving US clients,
+
+   * and internal compliance policies.
+
+This isn’t a “kazpa rule” — it’s a broker/regulatory decision. If a broker does not accept US residents, the correct move is to respect that restriction and look for lawful alternatives.
+________________
+
+
+What to do if you are in the US (legal options) none of this is advice. 
+If you are a US resident and you want to make an over sea broker account.
+      * Don’t try to force it using different country selections or alternate identity details.
+
+      * Instead, use one of these compliant paths:
+
+         1. Use a broker that legally accepts US residents
+         * This may require running a more conservative configuration due to margin limits.
+
+            2. Buy a canadian adress
+
+               * https://www.canadianaddress.ca/
+
+                  3. Consider non-US options only where you can legally and truthfully open an account
+
+                     * Always follow KYC, residency, and local law requirements.
+4. Be sure to use a VPN when logging into these websites and brokers.
+
+5. During setup, For country code use +1 and use “other” for country 
+6. Buy RNS.ID digital residency
+
+7. If you have passport or ID from another country, use that. 
+
+If you’re unsure what’s allowed for your situation, consult a qualified legal or compliance professional.
+________________
+
+
+What “account type” matters most (without naming a broker)
+Regardless of broker, users typically look for:
+                     * MT5 support
+
+                     * Tight spreads / lower trading costs (often “RAW/ECN/PRO-style” account types)
+
+                     * Stable execution and reputable operations
+
+                     * Transparent fees, withdrawal terms, and client protections
+
+kazpa does not recommend a specific broker or account type. Users should select what fits their risk tolerance, jurisdiction, and due diligence.
+________________
+
+
+Due diligence checklist before choosing any broker
+Before funding any broker account, verify:
+                        * ✅ Legal acceptance of your residency/citizenship
+
+                        * ✅ MT5 availability for your region/account type
+
+                        * ✅ Symbol naming (example: .raw, .pro, .ecn suffixes) and whether it matches your platform feed
+
+                        * ✅ Typical spreads during your trading window
+
+                        * ✅ Commissions and swap/financing charges
+
+                        * ✅ Deposit/withdrawal methods, fees, and timelines
+
+                        * ✅ Support responsiveness (test them before funding)
+
+                        * ✅ Public reputation signals (regulatory status, age, known issues)
+
+If anything feels unclear, stop and do more research before depositing funds.
+________________
+
+
+Community notes (not recommendations)
+Some users may mention brokers they’ve used. This is not an endorsement, and results will vary by person, region, and market conditions. Always do your own research and confirm legal eligibility.
+Examples that have been mentioned by some users:
+                           * monaxa.com
+
+                           * oxsecurities.com
+
+                           * blazemarkets.com
+
+                           * 1xtrade.com
+
+                           * tradesmart.com
+
+                           * lqhmarkets.com
+
+                           * plexytrade.com
+
+________________
+
+
+Bottom line
+kazpa provides MT5 execution software and education — not brokerage services, not financial advice, and not account management. Broker selection is your responsibility. Always follow the law, the broker’s rules, and proper risk management.
+If you want, tell me your country (US or non-US) and whether you’re setting up VistaONE or VistaX, and I’ll tell you what specs to look for (MT5, leverage range, account feed naming, spreads) — without naming or recommending brokers.

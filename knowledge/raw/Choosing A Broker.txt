@@ -2,7 +2,7 @@
 
 
 Step 1: Download MT5
-"Start by navigating to your broker's website. For this example, we'll use eightcap.com, but remember, the process is similar across most brokers. Look for the MetaTrader 4 download section on the website."
+"Start by navigating to your broker's website. For this example, we'll use eightcap.com, but remember, the process is similar across most brokers. Look for the MetaTrader 5 download section on the website."
 
 
 Step 2: Install on Your Computer
@@ -10,7 +10,7 @@ Step 2: Install on Your Computer
 
 
 Step 3: Access Your VPS
-"Now, it's time to move to your VPS. Open your Microsoft Remote Desktop app and sign into your VPS."
+"Now, it's time to move to your VPS. Open your Microsoft App and sign into your VPS."
 
 
 Step 4: Transfer MT5 Installer to Your VPS
