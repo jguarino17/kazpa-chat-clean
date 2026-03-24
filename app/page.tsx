@@ -846,7 +846,7 @@ export default function Page() {
       <header style={S.header}>
         <div style={S.headerInner}>
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <a href="/dashboard" style={S.logo}>
+            <a href="https://kazpa.io/dashboard" style={S.logo}>
               kazpa<span style={S.logoAccent}>.</span>
             </a>
             <div
@@ -880,7 +880,7 @@ export default function Page() {
               V1.7 · Live
             </div>
 
-            <a href="/dashboard" style={S.backLink}>
+            <a href="https://kazpa.io/dashboard" style={S.backLink}>
               ← Dashboard
             </a>
 
